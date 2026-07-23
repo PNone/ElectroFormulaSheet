@@ -127,7 +127,16 @@
     \frac{1}{c}S_z & -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz}
     \end{pmatrix}
     \]
-    \item \textbf{חוק שימור:} $\partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\text{או } \partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha\right)$.
+    \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
+    \[
+    T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix}
+    u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
+    \frac{1}{c}S_x & \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\
+    \frac{1}{c}S_y & \sigma_{yx} & \sigma_{yy} & \sigma_{yz} \\
+    \frac{1}{c}S_z & \sigma_{zx} & \sigma_{zy} & \sigma_{zz}
+    \end{pmatrix}
+    \]
+    \item \textbf{חוק שימור:} $\partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha \text{או } \right)$.
 \end{itemize}
 
 \section{סוגי כיול (\textenglish{Gauge Transformations})}
@@ -136,7 +145,7 @@
     \item \textbf{כיול לורנץ (\textenglish{Lorenz Gauge}):} תנאי: $\partial_\mu A^\mu = 0 \iff \frac{1}{c}\frac{\partial \Phi}{\partial t} + \vec{\nabla}\cdot\vec{A} = 0$.
     מתאים לבעיות יחסותיות וגלים אלקטרומגנטיים. מעביר את משוואות מקסוול לצורה:
     \[
-    \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left(\text{\textenglish{כאשר} } \square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2\right)
+    \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left( \square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2 \text{כאשר }\right)
     \]
     \item \textbf{כיול קולון (\textenglish{Coulomb Gauge}):} תנאי: $\vec{\nabla}\cdot\vec{A} = 0$.
     מתאים לאלקטרוסטטיקה, מגנטוסטטיקה ולקוונטיזציה של השדה. נותן:
@@ -237,7 +246,7 @@
 \begin{itemize}
     \item \textbf{כדוריות לקרטזיות:}
     $\hat{r} = \sin\theta\cos\phi\hat{x} + \sin\theta\sin\phi\hat{y} + \cos\theta\hat{z}$, \quad
-    $\hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{\theta} - \sin\theta\hat{z}$, \quad
+    $\hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{y} - \sin\theta\hat{z}$, \quad
     $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$
     \item \textbf{קרטזיות לכדוריות:}
     $\hat{x} = \sin\theta\cos\phi\hat{r} + \cos\theta\cos\phi\hat{\theta} - \sin\phi\hat{\phi}$, \quad
