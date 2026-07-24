@@ -5,8 +5,8 @@
 
 % --- Multi-column Layout ---
 \usepackage{multicol}
-\setlength{\columnsep}{0.3cm} % Tighter column separator gives more equation width
-\setlength{\columnseprule}{0.2pt} % Thin vertical separator line
+\setlength{\columnsep}{0.4cm} 
+\setlength{\columnseprule}{0.2pt}
 
 % --- Math & Fonts ---
 \usepackage{amsmath, amssymb, amsfonts}
@@ -18,11 +18,11 @@
 \usepackage{polyglossia}
 \setmainlanguage{hebrew}
 \setotherlanguage{english}
-\newfontfamily\hebrewfont{David CLM}[Script=Hebrew]
+\newfontfamily\hebrewfont{David CLM}[Script=Hebrew, Scale=1.1]
 
 \usepackage{bidi}
 
-% --- Tight Lists (removes vertical padding) ---
+% --- Tight Lists ---
 \usepackage{enumitem}
 \setlist{nolistsep, leftmargin=*} 
 
@@ -94,7 +94,7 @@
     \item \textbf{הגדרה:} $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
     \item \textbf{ייצוג מטריצי:}
     {\scriptsize
-    \setlength{\arraycolsep}{2pt}
+    \setlength{\arraycolsep}{1.5pt}
     \[
     F_{\mu\nu} = \begin{pmatrix}
     0 & E_x & E_y & E_z \\
@@ -132,7 +132,7 @@
     \item \textbf{הגדרה טנזורית (לפי מוסכמת הכיתה):} $T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)$
     \item \textbf{רכיבים ומטריצה (אינדקסים תחתונים):}
     {\scriptsize
-    \setlength{\arraycolsep}{1.5pt}
+    \setlength{\arraycolsep}{1.2pt}
     \[
     T_{\mu\nu} = \frac{1}{c} \begin{pmatrix} 
     u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
@@ -145,7 +145,7 @@
     כאשר $u = \frac{1}{8\pi}(E^2+B^2) $ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול.
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
     {\scriptsize
-    \setlength{\arraycolsep}{1.5pt}
+    \setlength{\arraycolsep}{1.2pt}
     \[
     T^{\mu\nu} = \eta^{\mu\alpha}\eta^{\nu\beta} T_{\alpha\beta} = \frac{1}{c} \begin{pmatrix}
     u & \frac{1}{c}S_x & \frac{1}{c}S_y & \frac{1}{c}S_z \\
@@ -156,11 +156,11 @@
     \]
     }
     \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
+    $T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right)$
     {\scriptsize
-    \setlength{\arraycolsep}{1.5pt}
+    \setlength{\arraycolsep}{1.2pt}
     \[
-    T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
-    = \frac{1}{c} \begin{pmatrix}
+    T^\mu{}_\nu = \frac{1}{c} \begin{pmatrix}
     u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
     \frac{1}{c}S_x & \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\
     \frac{1}{c}S_y & \sigma_{yx} & \sigma_{yy} & \sigma_{yz} \\
@@ -206,7 +206,7 @@ $
     \item \textbf{בוסט בציר $x$:} $\gamma = \frac{1}{\sqrt{1-\beta^2}}, \ \beta = \frac{v}{c}$, \textenglish{Rapidity} ($\theta = \text{arctanh}(\beta)$), 
     $\cosh\theta = \gamma, \sinh\theta = \gamma\beta$
     {\scriptsize
-    \setlength{\arraycolsep}{2pt}
+    \setlength{\arraycolsep}{1.5pt}
     \[
     \Lambda^\mu{}_\nu = \begin{pmatrix}
     \gamma & -\gamma\beta & 0 & 0 \\
@@ -223,7 +223,7 @@ $
     }
     \item \textbf{סיבוב סביב ציר $z$ מזווית $\phi$:}
     {\scriptsize
-    \setlength{\arraycolsep}{3pt}
+    \setlength{\arraycolsep}{2pt}
     \[
     R^\mu{}_\nu = \begin{pmatrix}
     1 & 0 & 0 & 0 \\
@@ -243,11 +243,9 @@ $
 
 \section{פונקציות גרין ופוטנציאל}
 חישוב הפוטנציאל הפואסוני $\nabla^2 \Phi = -4\pi \rho$:
-{\scriptsize
 \[
-\Phi(\vec{r}) = \int_V \rho(\vec{r}') G d^3r' + \frac{1}{4\pi} \oint_{\partial V} \left( G \vec{\nabla}'\Phi - \Phi \vec{\nabla}'G \right) \cdot d\vec{A}'
+\Phi(\vec{r}) = \int_V \rho(\vec{r}') G(\vec{r}, \vec{r}') d^3r' + \frac{1}{4\pi} \oint_{\partial V} \left( G \vec{\nabla}'\Phi - \Phi \vec{\nabla}'G \right) \cdot d\vec{A}'
 \]
-}
 \begin{itemize}
     \item \textbf{תנאי דיריכלה ($G_D=0$ על השפה):}\\
     $\Phi(\vec{r}) = \int_V \rho G_D d^3r' - \frac{1}{4\pi} \oint_{\partial V} \Phi(\vec{r}') \frac{\partial G_D}{\partial n'} dA'$
@@ -257,18 +255,21 @@ $
 
 \section{פונקציות גרין ומטעני דמות}
 \begin{itemize}
-    \item \textbf{מישור אינסופי מוארק ($z=0$):} $G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{1}{|\vec{r}-\vec{r}''|}$ כאשר $\vec{r}'' = (x', y', -z')$. (מטען דמות $-q$ ב-$z'=-d$).
+    \item \textbf{מישור אינסופי מוארק ($z=0$):} $G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{1}{|\vec{r}-\vec{r}_{\text{img}} |}$ כאשר $\vec{r}_{\text{img}} = (x', y', -z')$. (מטען דמות $-q$ ב-$z'=-d$).
     \item \textbf{ספירה מוארקת ברדיוס $R$:} מטען דמות $q' = -q \frac{R}{d}$ במיקום $r' = \frac{R^2}{d}$.
     \[
     G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - \frac{R^2}{r'^2}\vec{r}'\right|}
     \]
-    \item \textbf{פיתוח בכדוריות:} $\frac{1}{|\vec{r}-\vec{r}'|} = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \frac{r_<^\ell}{r_>^{\ell+1}} Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)$
+    \item \textbf{פיתוח בכדוריות:} 
+    \[
+    \frac{1}{|\vec{r}-\vec{r}'|} = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \frac{r_<^\ell}{r_>^{\ell+1}} Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+    \]
 \end{itemize}
 
 \section{פוטנציאל בסימטריה כדורית / פיתוח מולטיפולי}
 פוטנציאל מפיזור מטען $\rho(\vec{r}')$:
 \[
-\Phi(\vec{r}) = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} q_{\ell,m} \frac{Y_{\ell,m}(\theta,\phi)}{r^{\ell+1}} \quad ( r > r_{\max} \text{עבור })
+\Phi(\vec{r}) = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{q_{\ell,m}}{2\ell+1} \frac{Y_{\ell,m}(\theta,\phi)}{r^{\ell+1}} \quad ( r > r_{\max} \text{ עבור})
 \]
 כאשר המומנטים המולטיפוליים הם $q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r'$.
 
