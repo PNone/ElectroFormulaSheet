@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 \usepackage{geometry}
 \geometry{top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm}
 
@@ -18,13 +18,12 @@
 \date{}
 
 \begin{document}
-\maketitle
 
 \section{פורמליזם יחסותי, וקטורים, טנזורים ואינדקסים}
 המטריקה במוסכמת \textenglish{Mostly Minus} היא $\eta_{\mu\nu} = \eta^{\mu\nu} = \text{diag}(1, -1, -1, -1)$.
 \begin{itemize}
-    \item \textbf{4-וקטור קונטרא-וואריאנטי (אינדקס עליון):} $A^\mu = (A^0, A^1, A^2, A^3) = (A^0, \vec{A})$. משתנה תחת טרנספורמציה $A'^\mu = \Lambda^\mu{}_\nu A^\nu$. הבסיס מתמרן הפוך.
-    \item \textbf{4-וקטור קו-וואריאנטי (אינדקס תחתון):} $A_\mu = (A_0, A_1, A_2, A_3) = (A^0, -\vec{A})$. משתנה תחת טרנספורמציה $A'_\mu = \Lambda_\mu{}^\nu A_\nu = (\Lambda^{-1})^\nu{}_\mu A_\nu$.
+    \item \textbf{4-וקטור קונטרא-וואריאנטי (אינדקס עליון):} $A^\mu = (A^0, A^1, A^2, A^3) = (A^0, \vec{A})$.\\ משתנה תחת טרנספורמציה $A'^\mu = \Lambda^\mu{}_\nu A^\nu$. הבסיס מתמרן הפוך.
+    \item \textbf{4-וקטור קו-וואריאנטי (אינדקס תחתון):} $A_\mu = (A_0, A_1, A_2, A_3) = (A^0, -\vec{A})$.\\ משתנה תחת טרנספורמציה $A'_\mu = \Lambda_\mu{}^\nu A_\nu = (\Lambda^{-1})^\nu{}_\mu A_\nu$.
     \item \textbf{ייצוג מטריצי של כללי מעבר קואורדינטות:}
     תחת שינוי קואורדינטות $x'^\mu(x)$:
     \[
@@ -42,11 +41,11 @@
     כאשר $J^\mu{}_\nu = \frac{\partial x'^\mu}{\partial x^\nu}$ היא מטריצת היקוביאן $\mathbf{J}$.
     \item \textbf{העלאת/הורדת אינדקסים:} $A_\mu = \eta_{\mu\nu} A^\nu$, $A^\mu = \eta^{\mu\nu} A_\nu$.
     \item \textbf{טרנספורמציה של טנזורים:} 
-    \[
-    T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta}, \quad 
-    T'^\mu{}_\nu = \Lambda^\mu{}_\alpha (\Lambda^{-1})^\beta{}_\nu T^\alpha{}_\beta, \quad 
+    $
+    T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta}, \;
+    T'^\mu{}_\nu = \Lambda^\mu{}_\alpha (\Lambda^{-1})^\beta{}_\nu T^\alpha{}_\beta, \;
     T'_{\mu\nu} = (\Lambda^{-1})^\alpha{}_\mu (\Lambda^{-1})^\beta{}_\nu T_{\alpha\beta}
-    \]
+    $\\
     בכתיב וקטורי/מטריצי: $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^T$ (עבור טנזור עם שני אינדקסים עליונים).
 \end{itemize}
 
@@ -70,7 +69,7 @@
 \begin{itemize}
     \item \textbf{הגדרה:} $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
     \item \textbf{ייצוג מטריצי:}
-    \[
+    $
     F_{\mu\nu} = \begin{pmatrix}
     0 & E_x & E_y & E_z \\
     -E_x & 0 & -B_z & B_y \\
@@ -83,14 +82,13 @@
     E_y & B_z & 0 & -B_x \\
     E_z & -B_y & B_x & 0
     \end{pmatrix}
-    \]
-    \item \textbf{חילוץ שדות (אינדקסים עליונים ותחתונים):} 
-    \[
-    E^i = F^{i0} = -F^{0i}, \quad E_i = F_{i0} = -F^{0i} \quad (E_i = -E^i)
-    \]
-    \[
-    B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}, \quad B_i = -\frac{1}{2}\epsilon_{ijk} F^{jk} \quad (B_i = -B^i)
-    \]
+    $
+    \item \textbf{חילוץ שדות:} 
+    $
+    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0},
+    \,
+    B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}
+    $
     \item \textbf{משוואות מקסוול (אי-הומוגניות):} $\partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu$ ($\vec{\nabla}\cdot\vec{E} = 4\pi\rho$, \quad $\vec{\nabla}\times\vec{B} - \frac{1}{c}\frac{\partial\vec{E}}{\partial t} = \frac{4\pi}{c}\vec{J}$)
     \item \textbf{זהות ביאנקי (משוואות הומוגניות):} $\partial_\alpha F_{\beta\gamma} + \partial_\beta F_{\gamma\alpha} + \partial_\gamma F_{\alpha\beta} = 0 \iff \partial_\mu \tilde{F}^{\mu\nu} = 0$ ($\vec{\nabla}\cdot\vec{B} = 0$, \quad $\vec{\nabla}\times\vec{E} + \frac{1}{c}\frac{\partial\vec{B}}{\partial t} = 0$)
 \end{itemize}
@@ -109,24 +107,25 @@
 \begin{itemize}
     \item \textbf{הגדרה טנזורית (לפי מוסכמת הכיתה):} $T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)$
     \item \textbf{רכיבים ומטריצה (אינדקסים תחתונים):}
-    \[
+    $
     T_{\mu\nu} = \frac{1}{c} \begin{pmatrix} 
     u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
     -\frac{1}{c}S_x & -\sigma_{xx} & -\sigma_{xy} & -\sigma_{xz} \\
     -\frac{1}{c}S_y & -\sigma_{yx} & -\sigma_{yy} & -\sigma_{yz} \\
     -\frac{1}{c}S_z & -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz}
     \end{pmatrix}
-    \]
-    כאשר $u = \frac{1}{8\pi}(E^2+B^2)$ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול.
+    $
+    \\
+    כאשר $u = \frac{1}{8\pi}(E^2+B^2) $ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), \\ ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול.
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
-    \[
+    $
     T^{\mu\nu} = \eta^{\mu\alpha}\eta^{\nu\beta} T_{\alpha\beta} = \frac{1}{c} \begin{pmatrix}
     u & \frac{1}{c}S_x & \frac{1}{c}S_y & \frac{1}{c}S_z \\
     \frac{1}{c}S_x & -\sigma_{xx} & -\sigma_{xy} & -\sigma_{xz} \\
     \frac{1}{c}S_y & -\sigma_{yx} & -\sigma_{yy} & -\sigma_{yz} \\
     \frac{1}{c}S_z & -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz}
     \end{pmatrix}
-    \]
+    $
     \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
     \[
     T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix}
@@ -162,40 +161,37 @@
 משוואות אוילר-לגראנז' עבור השדות: $\frac{\partial \mathcal{L}}{\partial A_\nu} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial(\partial_\mu A_\nu)} \right) = 0 \implies \partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu$.
 
 \textbf{חילוף סדר נגזרת ווריאציה:} מותר להחליף את סדר הנגזרת והווריאציה במרחב המסלולים:
-\[
+$
 \delta \left( \frac{dx^\mu}{d\lambda} \right) = \frac{d}{d\lambda} (\delta x^\mu)
-\]
+$
 
 \section{טרנספורמציות לורנץ וסיבובים}
 \begin{itemize}
-    \item \textbf{בוסט בציר $x$ (עם $\beta, \gamma$):}
+    \item \textbf{בוסט בציר $x$: $\gamma = \frac{1}{\sqrt{1-\beta^2}}, \ \beta = \frac{v}{c}$, \textenglish{Rapidity} ($\theta = \text{arctanh}(\beta)$), 
+    $\cosh\theta = \gamma, \sinh\theta = \gamma\beta$}
     \[
     \Lambda^\mu{}_\nu = \begin{pmatrix}
     \gamma & -\gamma\beta & 0 & 0 \\
     -\gamma\beta & \gamma & 0 & 0 \\
     0 & 0 & 1 & 0 \\
     0 & 0 & 0 & 1
-    \end{pmatrix}, \quad \gamma = \frac{1}{\sqrt{1-\beta^2}}, \ \beta = \frac{v}{c}
-    \]
-    \item \textbf{בוסט באמצעות \textenglish{Rapidity} ($\theta = \text{arctanh}(\beta)$):}
-    $\cosh\theta = \gamma$, $\sinh\theta = \gamma\beta$.
-    \[
-    \Lambda^\mu{}_\nu = \begin{pmatrix}
+    \end{pmatrix} = \begin{pmatrix}
     \cosh\theta & -\sinh\theta & 0 & 0 \\
     -\sinh\theta & \cosh\theta & 0 & 0 \\
     0 & 0 & 1 & 0 \\
     0 & 0 & 0 & 1
     \end{pmatrix}
     \]
+    
     \item \textbf{סיבוב סביב ציר $z$ מזווית $\phi$:}
-    \[
+    $
     R^\mu{}_\nu = \begin{pmatrix}
     1 & 0 & 0 & 0 \\
     0 & \cos\phi & \sin\phi & 0 \\
     0 & -\sin\phi & \cos\phi & 0 \\
     0 & 0 & 0 & 1
     \end{pmatrix}
-    \]
+    $
 \end{itemize}
 
 \section{טנזור לוי-צ'יוויטה}
@@ -218,35 +214,25 @@
 \begin{itemize}
     \item \textbf{מישור אינסופי מוארק ($z=0$):} $G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{1}{|\vec{r}-\vec{r}''|}$ כאשר $\vec{r}'' = (x', y', -z')$. (מטען דמות $-q$ ב-$z'=-d$).
     \item \textbf{ספירה מוארקת ברדיוס $R$:} מטען דמות $q' = -q \frac{R}{d}$ במיקום $r' = \frac{R^2}{d}$.
-    \[
+    $
     G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - \frac{R^2}{r'^2}\vec{r}'\right|}
-    \]
-    \item \textbf{פיתוח בקרטזיות:} $G(\vec{r},\vec{r}') = \frac{1}{2\pi^2} \int \frac{e^{i\vec{k}\cdot(\vec{r}-\vec{r}')}}{k^2} d^3k$
+    $
     \item \textbf{פיתוח בכדוריות:} $\frac{1}{|\vec{r}-\vec{r}'|} = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \frac{r_<^\ell}{r_>^{\ell+1}} Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)$
 \end{itemize}
 
 \section{פוטנציאל בסימטריה כדורית / פיתוח מולטיפולי}
 פוטנציאל מפיזור מטען $\rho(\vec{r}')$:
-\[
+$
 \Phi(\vec{r}) = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} q_{\ell,m} \frac{Y_{\ell,m}(\theta,\phi)}{r^{\ell+1}} \quad ( r > r_{\max} \text{עבור })
-\]
+$
+\\
 כאשר המומנטים המולטיפוליים הם $q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r'$.
-בתוך פיזור המטען:
-\[
-\Phi(\vec{r}) = \sum_{\ell,m} \frac{4\pi}{2\ell+1} Y_{\ell,m}(\theta,\phi) \left[ \frac{1}{r^{\ell+1}} \int_{r'<r} \rho Y_{\ell,m}^* r'^{\ell+2} dr' d\Omega' + r^\ell \int_{r'>r} \rho Y_{\ell,m}^* r'^{1-\ell} dr' d\Omega' \right]
-\]
-
-\section{\textenglish{3D} פונקציית דלתא במערכות קואורדינטות}
-\begin{itemize}
-    \item \textbf{כדוריות $(r, \theta, \phi)$:} $\delta^3(\vec{r}-\vec{r}') = \frac{1}{r^2 \sin\theta} \delta(r-r') \delta(\theta-\theta') \delta(\phi-\phi')$
-    \item \textbf{גליליות $(r, \phi, z)$:} $\delta^3(\vec{r}-\vec{r}') = \frac{1}{r} \delta(r-r') \delta(\phi-\phi') \delta(z-z')$
-\end{itemize}
 
 \section{וקטורי יחידה במערכות קואורדינטות}
 \begin{itemize}
     \item \textbf{כדוריות לקרטזיות:}
-    $\hat{r} = \sin\theta\cos\phi\hat{x} + \sin\theta\sin\phi\hat{y} + \cos\theta\hat{z}$, \quad
-    $\hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{y} - \sin\theta\hat{z}$, \quad
+    $\hat{r} = \sin\theta\cos\phi\hat{x} + \sin\theta\sin\phi\hat{y} + \cos\theta\hat{z}$, \,
+    $\hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{y} - \sin\theta\hat{z}$, \,
     $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$
     \item \textbf{קרטזיות לכדוריות:}
     $\hat{x} = \sin\theta\cos\phi\hat{r} + \cos\theta\cos\phi\hat{\theta} - \sin\phi\hat{\phi}$, \quad
@@ -265,17 +251,17 @@
 \section{מכפלה וקטורית (\textenglish{Cross Product}) של וקטורי יחידה}
 \begin{itemize}
     \item \textbf{כדוריות (מערכת ימנית בסידור $\hat{r}, \hat{\theta}, \hat{\phi}$):}
-    \[
+    $
     \hat{r} \times \hat{\theta} = \hat{\phi}, \quad 
     \hat{\theta} \times \hat{\phi} = \hat{r}, \quad 
     \hat{\phi} \times \hat{r} = \hat{\theta}
-    \]
+    $
     \item \textbf{גליליות (מערכת ימנית בסידור $\hat{r}, \hat{\phi}, \hat{z}$):}
-    \[
+    $
     \hat{r} \times \hat{\phi} = \hat{z}, \quad 
     \hat{\phi} \times \hat{z} = \hat{r}, \quad 
     \hat{z} \times \hat{r} = \hat{\phi}
-    \]
+    $
 \end{itemize}
 
 \end{document}
