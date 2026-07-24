@@ -59,10 +59,10 @@
     \item \textbf{ייצוג מטריצי של כללי מעבר קואורדינטות:}
     תחת שינוי קואורדינטות $x'^\mu(x)$:
     \[
-     A'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \, \mathbf{A}\, \text{קונטרא:}
+    A'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \, \mathbf{A} \quad \text{קונטרא:}
     \]
     \[
-     A'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu \implies \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}\, \text{קו:}
+    A'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu \implies \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A} \quad \text{קו:}
     \]
     כאשר $J^\mu{}_\nu = \frac{\partial x'^\mu}{\partial x^\nu}$ היא מטריצת היקוביאן $\mathbf{J}$.
     \item \textbf{העלאת/הורדת אינדקסים:} $A_\mu = \eta_{\mu\nu} A^\nu$, $A^\mu = \eta^{\mu\nu} A_\nu$.
@@ -112,11 +112,20 @@
     }
     \item \textbf{חילוץ שדות:} 
     \[
-    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0},
+    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0}, \quad
     B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}
     \]
-    \item \textbf{משוואות מקסוול (אי-הומוגניות):} $\partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu$ ($\vec{\nabla}\cdot\vec{E} = 4\pi\rho$, \quad $\vec{\nabla}\times\vec{B} - \frac{1}{c}\frac{\partial\vec{E}}{\partial t} = \frac{4\pi}{c}\vec{J}$)
-    \item \textbf{זהות ביאנקי (משוואות הומוגניות):} $\partial_\alpha F_{\beta\gamma} + \partial_\beta F_{\gamma\alpha} + \partial_\gamma F_{\alpha\beta} = 0 \iff \partial_\mu \tilde{F}^{\mu\nu} = 0$ ($\vec{\nabla}\cdot\vec{B} = 0$, \quad $\vec{\nabla}\times\vec{E} + \frac{1}{c}\frac{\partial\vec{B}}{\partial t} = 0$)
+    \item \textbf{משוואות מקסוול (אי-הומוגניות):}
+    \[
+    \partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu \iff \vec{\nabla}\cdot\vec{E} = 4\pi\rho, \quad \vec{\nabla}\times\vec{B} - \frac{1}{c}\frac{\partial\vec{E}}{\partial t} = \frac{4\pi}{c}\vec{J}
+    \]
+    \item \textbf{זהות ביאנקי (משוואות הומוגניות):}
+    \[
+    \partial_\alpha F_{\beta\gamma} + \partial_\beta F_{\gamma\alpha} + \partial_\gamma F_{\alpha\beta} = 0 \iff \partial_\mu \tilde{F}^{\mu\nu} = 0
+    \]
+    \[
+    \vec{\nabla}\cdot\vec{B} = 0, \quad \vec{\nabla}\times\vec{E} + \frac{1}{c}\frac{\partial\vec{B}}{\partial t} = 0
+    \]
 \end{itemize}
 
 \section{הטנזור הדואלי $\tilde{F}^{\mu\nu}$}
@@ -170,7 +179,10 @@
     \end{pmatrix}
     \]
     }
-    \item \textbf{חוק שימור:} $\partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha \text{או }\right)$.
+    \item \textbf{חוק שימור:} 
+    \[
+    \partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\text{או } \partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha\right)
+    \]
 \end{itemize}
 
 \section{סוגי כיול (\textenglish{Gauge Transformations})}
@@ -179,7 +191,7 @@
     \item \textbf{כיול לורנץ (\textenglish{Lorenz Gauge}):} תנאי: $\partial_\mu A^\mu = 0 \iff \frac{1}{c}\frac{\partial \Phi}{\partial t} + \vec{\nabla}\cdot\vec{A} = 0$.\\
     מתאים לבעיות יחסותיות וגלים אלקטרומגנטיים. מעביר את משוואות מקסוול לצורה:
     \[
-    \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left( \square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2 \text{כאשר }\right)
+    \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left( \text{כאשר } \square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2 \right)
     \]
     \item \textbf{כיול קולון (\textenglish{Coulomb Gauge}):} תנאי: $\vec{\nabla}\cdot\vec{A} = 0$.\\
     מתאים לאלקטרוסטטיקה, מגנטוסטטיקה ולקוונטיזציה של השדה. נותן:
