@@ -59,10 +59,10 @@
     \item \textbf{ייצוג מטריצי של כללי מעבר קואורדינטות:}
     תחת שינוי קואורדינטות $x'^\mu(x)$:
     \[
-    \text{קונטרא:} \, A'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \, \mathbf{A}
+     A'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \, \mathbf{A}\, \text{קונטרא:}
     \]
     \[
-    \text{קו:} \, A'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu \implies \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}
+     A'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu \implies \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}\, \text{קו:}
     \]
     כאשר $J^\mu{}_\nu = \frac{\partial x'^\mu}{\partial x^\nu}$ היא מטריצת היקוביאן $\mathbf{J}$.
     \item \textbf{העלאת/הורדת אינדקסים:} $A_\mu = \eta_{\mu\nu} A^\nu$, $A^\mu = \eta^{\mu\nu} A_\nu$.
@@ -111,8 +111,10 @@
     \]
     }
     \item \textbf{חילוץ שדות:} 
-    $E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0}$,
-    $B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}$
+    \[
+    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0},
+    B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}
+    \]
     \item \textbf{משוואות מקסוול (אי-הומוגניות):} $\partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu$ ($\vec{\nabla}\cdot\vec{E} = 4\pi\rho$, \quad $\vec{\nabla}\times\vec{B} - \frac{1}{c}\frac{\partial\vec{E}}{\partial t} = \frac{4\pi}{c}\vec{J}$)
     \item \textbf{זהות ביאנקי (משוואות הומוגניות):} $\partial_\alpha F_{\beta\gamma} + \partial_\beta F_{\gamma\alpha} + \partial_\gamma F_{\alpha\beta} = 0 \iff \partial_\mu \tilde{F}^{\mu\nu} = 0$ ($\vec{\nabla}\cdot\vec{B} = 0$, \quad $\vec{\nabla}\times\vec{E} + \frac{1}{c}\frac{\partial\vec{B}}{\partial t} = 0$)
 \end{itemize}
@@ -129,7 +131,7 @@
 
 \section{טנזור מאמץ-אנרגיה $T_{\mu\nu}$}
 \begin{itemize}
-    \item \textbf{הגדרה טנזורית (לפי מוסכמת הכיתה):} $T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)$
+    \item \textbf{הגדרה טנזורית:} $T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)$
     \item \textbf{רכיבים ומטריצה (אינדקסים תחתונים):}
     {\scriptsize
     \setlength{\arraycolsep}{1.2pt}
