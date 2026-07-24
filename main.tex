@@ -1,11 +1,11 @@
 \documentclass[11pt,a4paper]{article}
 
-% --- Margins (Maximized printable area) ---
+% --- Margins (Maximizes printable area safely) ---
 \usepackage[top=0.5cm, bottom=0.5cm, left=0.5cm, right=0.5cm]{geometry}
 
 % --- Multi-column Layout ---
 \usepackage{multicol}
-\setlength{\columnsep}{0.4cm}
+\setlength{\columnsep}{0.3cm} % Tighter column separator gives more equation width
 \setlength{\columnseprule}{0.2pt} % Thin vertical separator line
 
 % --- Math & Fonts ---
@@ -59,25 +59,17 @@
     \item \textbf{ייצוג מטריצי של כללי מעבר קואורדינטות:}
     תחת שינוי קואורדינטות $x'^\mu(x)$:
     \[
-    \text{קונטרא-וואריאנטי:} \quad 
-    A'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu 
-    \quad \implies \quad 
-    \mathbf{A}' = \mathbf{J} \, \mathbf{A}
+    \text{קונטרא:} \, A'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \, \mathbf{A}
     \]
     \[
-    \text{קו-וואריאנטי:} \quad 
-    A'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu 
-    \quad \implies \quad 
-    \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}
+    \text{קו:} \, A'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu \implies \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}
     \]
     כאשר $J^\mu{}_\nu = \frac{\partial x'^\mu}{\partial x^\nu}$ היא מטריצת היקוביאן $\mathbf{J}$.
     \item \textbf{העלאת/הורדת אינדקסים:} $A_\mu = \eta_{\mu\nu} A^\nu$, $A^\mu = \eta^{\mu\nu} A_\nu$.
     \item \textbf{טרנספורמציה של טנזורים:} 
-    $
-    T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta}, \;
-    T'^\mu{}_\nu = \Lambda^\mu{}_\alpha (\Lambda^{-1})^\beta{}_\nu T^\alpha{}_\beta, \;
-    T'_{\mu\nu} = (\Lambda^{-1})^\alpha{}_\mu (\Lambda^{-1})^\beta{}_\nu T_{\alpha\beta}
-    $\\
+    $T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta}$,
+    $T'^\mu{}_\nu = \Lambda^\mu{}_\alpha (\Lambda^{-1})^\beta{}_\nu T^\alpha{}_\beta$,
+    $T'_{\mu\nu} = (\Lambda^{-1})^\alpha{}_\mu (\Lambda^{-1})^\beta{}_\nu T_{\alpha\beta}$\\
     בכתיב וקטורי/מטריצי: $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^T$ (עבור טנזור עם שני אינדקסים עליונים).
 \end{itemize}
 
@@ -101,7 +93,8 @@
 \begin{itemize}
     \item \textbf{הגדרה:} $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
     \item \textbf{ייצוג מטריצי:}
-    {\small
+    {\scriptsize
+    \setlength{\arraycolsep}{2pt}
     \[
     F_{\mu\nu} = \begin{pmatrix}
     0 & E_x & E_y & E_z \\
@@ -118,11 +111,8 @@
     \]
     }
     \item \textbf{חילוץ שדות:} 
-    $
-    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0},
-    \,
-    B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}
-    $
+    $E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0}$,
+    $B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}$
     \item \textbf{משוואות מקסוול (אי-הומוגניות):} $\partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu$ ($\vec{\nabla}\cdot\vec{E} = 4\pi\rho$, \quad $\vec{\nabla}\times\vec{B} - \frac{1}{c}\frac{\partial\vec{E}}{\partial t} = \frac{4\pi}{c}\vec{J}$)
     \item \textbf{זהות ביאנקי (משוואות הומוגניות):} $\partial_\alpha F_{\beta\gamma} + \partial_\beta F_{\gamma\alpha} + \partial_\gamma F_{\alpha\beta} = 0 \iff \partial_\mu \tilde{F}^{\mu\nu} = 0$ ($\vec{\nabla}\cdot\vec{B} = 0$, \quad $\vec{\nabla}\times\vec{E} + \frac{1}{c}\frac{\partial\vec{B}}{\partial t} = 0$)
 \end{itemize}
@@ -141,7 +131,8 @@
 \begin{itemize}
     \item \textbf{הגדרה טנזורית (לפי מוסכמת הכיתה):} $T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)$
     \item \textbf{רכיבים ומטריצה (אינדקסים תחתונים):}
-    {\small
+    {\scriptsize
+    \setlength{\arraycolsep}{1.5pt}
     \[
     T_{\mu\nu} = \frac{1}{c} \begin{pmatrix} 
     u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
@@ -153,7 +144,8 @@
     }
     כאשר $u = \frac{1}{8\pi}(E^2+B^2) $ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול.
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
-    {\small
+    {\scriptsize
+    \setlength{\arraycolsep}{1.5pt}
     \[
     T^{\mu\nu} = \eta^{\mu\alpha}\eta^{\nu\beta} T_{\alpha\beta} = \frac{1}{c} \begin{pmatrix}
     u & \frac{1}{c}S_x & \frac{1}{c}S_y & \frac{1}{c}S_z \\
@@ -164,9 +156,11 @@
     \]
     }
     \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
-    {\small
+    {\scriptsize
+    \setlength{\arraycolsep}{1.5pt}
     \[
-    T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix}
+    T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
+    = \frac{1}{c} \begin{pmatrix}
     u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
     \frac{1}{c}S_x & \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\
     \frac{1}{c}S_y & \sigma_{yx} & \sigma_{yy} & \sigma_{yz} \\
@@ -197,7 +191,10 @@
 \[
 \mathcal{L}_{EM} = \mathcal{L}_{\text{field}} + \mathcal{L}_{\text{int}} = -\frac{1}{16\pi} F_{\mu\nu}F^{\mu\nu} - \frac{1}{c}J_\mu A^\mu
 \]
-משוואות אוילר-לגראנז' עבור השדות: $\frac{\partial \mathcal{L}}{\partial A_\nu} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial(\partial_\mu A_\nu)} \right) = 0 \implies \partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu$.
+משוואות אוילר-לגראנז' עבור השדות:
+\[
+\frac{\partial \mathcal{L}}{\partial A_\nu} - \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial(\partial_\mu A_\nu)} \right) = 0 \implies \partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu
+\]
 
 \textbf{חילוף סדר נגזרת ווריאציה:} מותר להחליף את סדר הנגזרת והווריאציה במרחב המסלולים:
 $
@@ -208,7 +205,8 @@ $
 \begin{itemize}
     \item \textbf{בוסט בציר $x$:} $\gamma = \frac{1}{\sqrt{1-\beta^2}}, \ \beta = \frac{v}{c}$, \textenglish{Rapidity} ($\theta = \text{arctanh}(\beta)$), 
     $\cosh\theta = \gamma, \sinh\theta = \gamma\beta$
-    {\small
+    {\scriptsize
+    \setlength{\arraycolsep}{2pt}
     \[
     \Lambda^\mu{}_\nu = \begin{pmatrix}
     \gamma & -\gamma\beta & 0 & 0 \\
@@ -224,7 +222,8 @@ $
     \]
     }
     \item \textbf{סיבוב סביב ציר $z$ מזווית $\phi$:}
-    {\small
+    {\scriptsize
+    \setlength{\arraycolsep}{3pt}
     \[
     R^\mu{}_\nu = \begin{pmatrix}
     1 & 0 & 0 & 0 \\
@@ -244,14 +243,16 @@ $
 
 \section{פונקציות גרין ופוטנציאל}
 חישוב הפוטנציאל הפואסוני $\nabla^2 \Phi = -4\pi \rho$:
-{\small
+{\scriptsize
 \[
-\Phi(\vec{r}) = \int_V \rho(\vec{r}') G(\vec{r}, \vec{r}') d^3r' + \frac{1}{4\pi} \oint_{\partial V} \left( G(\vec{r}, \vec{r}') \vec{\nabla}'\Phi(\vec{r}') - \Phi(\vec{r}') \vec{\nabla}'G(\vec{r}, \vec{r}') \right) \cdot d\vec{A}'
+\Phi(\vec{r}) = \int_V \rho(\vec{r}') G d^3r' + \frac{1}{4\pi} \oint_{\partial V} \left( G \vec{\nabla}'\Phi - \Phi \vec{\nabla}'G \right) \cdot d\vec{A}'
 \]
 }
 \begin{itemize}
-    \item \textbf{תנאי דיריכלה ($G_D=0$ על השפה):} $\Phi(\vec{r}) = \int_V \rho G_D d^3r' - \frac{1}{4\pi} \oint_{\partial V} \Phi(\vec{r}') \frac{\partial G_D}{\partial n'} dA'$
-    \item \textbf{תנאי נוימן ($\frac{\partial G_N}{\partial n'} = \frac{4\pi}{S}$ על השפה):} $\Phi(\vec{r}) = \langle\Phi\rangle_S + \int_V \rho G_N d^3r' + \frac{1}{4\pi} \oint_{\partial V} \frac{\partial \Phi}{\partial n'} G_N dA'$
+    \item \textbf{תנאי דיריכלה ($G_D=0$ על השפה):}\\
+    $\Phi(\vec{r}) = \int_V \rho G_D d^3r' - \frac{1}{4\pi} \oint_{\partial V} \Phi(\vec{r}') \frac{\partial G_D}{\partial n'} dA'$
+    \item \textbf{תנאי נוימן ($\frac{\partial G_N}{\partial n'} = \frac{4\pi}{S}$ על השפה):}\\
+    $\Phi(\vec{r}) = \langle\Phi\rangle_S + \int_V \rho G_N d^3r' + \frac{1}{4\pi} \oint_{\partial V} \frac{\partial \Phi}{\partial n'} G_N dA'$
 \end{itemize}
 
 \section{פונקציות גרין ומטעני דמות}
