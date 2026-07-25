@@ -144,6 +144,10 @@
 \vec{E} = -\vec{\nabla}\Phi - \frac{1}{c}\frac{\partial \vec{A}}{\partial t}, \quad \vec{B} = \vec{\nabla} \times \vec{A}
 \]
 
+\textbf{תנאי שפה וקפיצה על משטח ($\sigma$):} 
+\\
+$\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0, \; \left.\frac{\partial\Phi_2}{\partial n} - \frac{\partial\Phi_1}{\partial n}\right|_{\partial V} = -4\pi\sigma$
+
 \section{הטנזור הדואלי $\tilde{F}^{\mu\nu}$}
 הטנזור הדואלי מוגדר ע"י $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}$. הוא מתקבל מהחלפת השדות: $\vec{E} \to \vec{B}$ ו-$\vec{B} \to -\vec{E}$.
 משמש לכתיבת המשוואות ההומוגניות בקיצור: $\partial_\mu \tilde{F}^{\mu\nu} = 0$.
@@ -240,10 +244,10 @@ $
 \begin{itemize}
     \item \textbf{בוסט בציר $x$:} 
     \\
-    $\gamma = \frac{1}{\sqrt{1-\beta^2}}, \ \beta = \frac{v}{c}$,
-    \\
-    \textenglish{Rapidity} ($\theta = \text{arctanh}(\beta)$), 
-    $\cosh\theta = \gamma, \sinh\theta = \gamma\beta$
+    {\small \textenglish{Rapidity} ($\theta=\text{tanh}^{-1}(\beta)$),
+    $\beta=\frac{v}{c},\cosh\theta=\gamma, \sinh\theta=\gamma\beta$
+    
+    }
     {\scriptsize
     \setlength{\arraycolsep}{3pt}
     \[
@@ -257,7 +261,7 @@ $
     -\sinh\theta & \cosh\theta & 0 & 0 \\
     0 & 0 & 1 & 0 \\
     0 & 0 & 0 & 1
-    \end{pmatrix}
+    \end{pmatrix}, \gamma=\frac{1}{\sqrt{1-\beta^2}}
     \]
     }
     \item \textbf{סיבוב סביב ציר $z$ מזווית $\phi$:}
@@ -360,6 +364,22 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
     \Phi_{\text{in}} = \sum_{\ell,m} A_{\ell,m} r^\ell Y_{\ell,m}(\theta,\phi), \quad \Phi_{\text{out}} = \sum_{\ell,m} \frac{B_{\ell,m}}{r^{\ell+1}} Y_{\ell,m}(\theta,\phi)
     \]
     \item \textbf{עם סימטריה אזימותלית \textenglish{m=0} וכן $Y_{\ell,m}(\theta,\phi) \to P_\ell(\cos\theta)$ (תלוי רק ב-$\theta$, במונחי פולינומי לז'נדר $P_\ell$)}
+
+    \item \textbf{תכונות אורתוגונליות ונירמול:}
+\begin{itemize}
+    \item \textbf{פולינומי לז'נדר ($P_\ell(x)$):} 
+    {\small\[
+    \int_{-1}^{1} P_\ell(x) P_{\ell'}(x) \, dx  = \int_{0}^{\pi} P_\ell(\cos\theta) P_{\ell'}(\cos\theta) \sin\theta \, d\theta = \frac{2}{2\ell+1} \delta_{\ell\ell'}
+    \]}
+    \item \textbf{פונקציות לז'נדר המיוחסות ($P_\ell^m(x)$):}
+    \[
+    \int_{-1}^{1} P_\ell^m(x) P_{\ell'}^m(x) \, dx = \frac{2}{2\ell+1} \frac{(\ell+m)!}{(\ell-m)!} \delta_{\ell\ell'}
+    \]
+    \item \textbf{הרמוניות ספיריות ($Y_{\ell,m}(\theta,\phi)$) — אורתונורמליות מלאה על פני כדור:}
+    \[
+    \int_{0}^{2\pi} d\phi \int_{0}^{\pi} \sin\theta \, d\theta \, Y_{\ell,m}^*(\theta,\phi) Y_{\ell',m'}(\theta,\phi) = \delta_{\ell\ell'} \delta_{mm'}
+    \]
+\end{itemize}
 \end{itemize}
 
 \section{וקטורי יחידה במערכות קואורדינטות}
