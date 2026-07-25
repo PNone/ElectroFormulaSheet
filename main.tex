@@ -160,25 +160,22 @@
     \item \textbf{רכיבים ומטריצה (אינדקסים תחתונים):}
     \[
     T_{\mu\nu} = \frac{1}{c} \begin{pmatrix} 
-    u & -\frac{1}{c}\vec{S}^T \\
+    u & -\frac{1}{c}\vec{p}_{\text{EM}}^T \\
     -\frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
-    
-    כאשר $u = \frac{1}{8\pi}(E^2+B^2)$ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול $\overleftrightarrow{\sigma}$.
-    \\
-    \textbf{צפיפות התנע ושקילות רכיבים:} $p_{\text{EM}}^i = S^i \implies T^{0i} = T^{i0} = \frac{1}{c} p_{\text{EM}}^i$
+    כאשר $u = \frac{1}{8\pi}(E^2+B^2)$ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג / שטף האנרגיה), $\vec{p}_{\text{EM}} = \vec{S}$ (צפיפות התנע האלקטרומגנטי), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול $\overleftrightarrow{\sigma}$.
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
     \[
     T^{\mu\nu} = \eta^{\mu\alpha}\eta^{\nu\beta} T_{\alpha\beta} = \frac{1}{c} \begin{pmatrix}
-    u & \frac{1}{c}\vec{S}^T \\
+    u & \frac{1}{c}\vec{p}_{\text{EM}}^T \\
     \frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
     \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
     \[
     T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = \frac{1}{c} \begin{pmatrix}
-    u & -\frac{1}{c}\vec{S}^T \\
+    u & -\frac{1}{c}\vec{p}_{\text{EM}}^T \\
     \frac{1}{c}\vec{S} & \overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
