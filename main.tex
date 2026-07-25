@@ -139,6 +139,11 @@
     \]
 \end{itemize}
 
+\textbf{השדה החשמלי והמגנטי באמצעות הפוטנציאלים $(\Phi, \vec{A})$:}
+\[
+\vec{E} = -\vec{\nabla}\Phi - \frac{1}{c}\frac{\partial \vec{A}}{\partial t}, \quad \vec{B} = \vec{\nabla} \times \vec{A}
+\]
+
 \section{הטנזור הדואלי $\tilde{F}^{\mu\nu}$}
 הטנזור הדואלי מוגדר ע"י $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}$. הוא מתקבל מהחלפת השדות: $\vec{E} \to \vec{B}$ ו-$\vec{B} \to -\vec{E}$.
 משמש לכתיבת המשוואות ההומוגניות בקיצור: $\partial_\mu \tilde{F}^{\mu\nu} = 0$.
@@ -348,16 +353,32 @@ $
 \section{פוטנציאל בסימטריה כדורית / פיתוח מולטיפולי}
 פוטנציאל מפיזור מטען $\rho(\vec{r}')$:
 \[
-\Phi(\vec{r}) = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{q_{\ell,m}}{2\ell+1} \frac{Y_{\ell,m}(\theta,\phi)}{r^{\ell+1}} \quad ( r > r_{\max} \text{עבור })
+\Phi(\vec{r}) = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{q_{\ell,m}}{2\ell+1} \frac{Y_{\ell,m}(\theta,\phi)}{r^{\ell+1}} \quad (r > r_{\max} \text{עבור })
 \]
-כאשר המומנטים המולטיפוליים הם 
+כאשר המומנטים המולטיפוליים הם:
 \[
-q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r'.
+q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \quad q_{\ell,-m} = (-1)^m q_{\ell,m}^*
 \]
-זהות שימושית למומנטים מרוכבים (עבור צפיפות מטען ממשית $\rho$):
-\[
-q_{\ell,-m} = (-1)^m q_{\ell,m}^*
-\]
+\textbf{טנזור הקוודרופול:} $Q_{ij} = \int \rho(\vec{r}') (3x'_i x'_j - r'^2 \delta_{ij}) d^3r' \implies \text{Tr}(Q) = \sum_{i} Q_{ii} = 0$.
+
+\vspace{2pt}
+\textbf{פוטנציאל של קליפה כדורית ברדיוס $R$ (עם פוטנציאל/צפיפות נתונה על השפה):}
+\begin{itemize}
+    \item \textbf{עם סימטריה אזימותלית (תלוי רק ב-$\theta$, במונחי פולינומי לז'נדר $P_\ell$):}
+    \[
+    \Phi(r,\theta) = \sum_{\ell=0}^\infty \left( A_\ell r^\ell + \frac{B_\ell}{r^{\ell+1}} \right) P_\ell(\cos\theta)
+    \]
+    \[
+    \Phi_{\text{in}}(r,\theta) = \sum_{\ell=0}^\infty A_\ell r^\ell P_\ell(\cos\theta), \quad \Phi_{\text{out}}(r,\theta) = \sum_{\ell=0}^\infty \frac{B_\ell}{r^{\ell+1}} P_\ell(\cos\theta)
+    \]
+    \item \textbf{ללא סימטריה אזימותלית (תלוי ב-$\theta,\phi$, במונחי הרמוניות כדוריות $Y_{\ell,m}$):}
+    \[
+    \Phi(r,\theta,\phi) = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \left( A_{\ell,m} r^\ell + \frac{B_{\ell,m}}{r^{\ell+1}} \right) Y_{\ell,m}(\theta,\phi)
+    \]
+    \[
+    \Phi_{\text{in}} = \sum_{\ell,m} A_{\ell,m} r^\ell Y_{\ell,m}(\theta,\phi), \quad \Phi_{\text{out}} = \sum_{\ell,m} \frac{B_{\ell,m}}{r^{\ell+1}} Y_{\ell,m}(\theta,\phi)
+    \]
+\end{itemize}
 
 \section{וקטורי יחידה במערכות קואורדינטות}
 \begin{itemize}
