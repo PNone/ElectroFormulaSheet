@@ -287,13 +287,20 @@ $
 \section{פונקציות גרין ומטעני דמות}
 \begin{itemize}
     \item \textbf{מישור אינסופי מוארק ($z=0$):} $G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{1}{|\vec{r}-\vec{r}_{\text{img}} |}$ כאשר $\vec{r}_{\text{img}} = (x', y', -z')$. (מטען דמות $-q$ ב-$z'=-d$).
-    \item \textbf{ספירה מוארקת ברדיוס $R$:} מטען דמות $q' = -q \frac{R}{d}$ במיקום $r' = \frac{R^2}{d}$.
+    \item \textbf{ספירה מוארקת ברדיוס $R$:} מטען דמות $q' = -q \frac{R}{r'}$ במיקום $\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$.
     \[
     G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - \frac{R^2}{r'^2}\vec{r}'\right|}
     \]
-    \item \textbf{פיתוח בכדוריות:} 
+    כאשר $\cos\gamma = \hat{r}\cdot\hat{r}' = \cos\theta\cos\theta' + \sin\theta\sin\theta'\cos(\phi-\phi')$:
     \[
-    \frac{1}{|\vec{r}-\vec{r}'|} = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \frac{r_<^\ell}{r_>^{\ell+1}} Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+    G(\vec{r},\vec{r}') = \frac{1}{\sqrt{r^2 + r'^2 - 2rr'\cos\gamma}} - \frac{1}{\sqrt{\frac{r^2 r'^2}{R^2} + R^2 - 2rr'\cos\gamma}}
+    \]
+    \item \textbf{פיתוח בכדוריות (משפט התוספת):} 
+    \[
+    \frac{1}{|\vec{r}-\vec{r}'|} = \sum_{\ell=0}^\infty \frac{r_<^\ell}{r_>^{\ell+1}} P_\ell(\cos\gamma) 
+    \]
+    \[
+    = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \frac{r_<^\ell}{r_>^{\ell+1}} Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
     \]
 \end{itemize}
 
