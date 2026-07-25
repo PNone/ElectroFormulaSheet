@@ -43,16 +43,13 @@
 
 \begin{document}
 
-% Compact Title Banner
-\begin{center}
-    \textbf{\Large דף נוסחאות: אלקטרודינמיקה ואלקטרוסטטיקה (\textenglish{CGS}, \textenglish{Mostly Minus})}
-\end{center}
-\vspace{-6pt}
-
 \begin{multicols*}{2}
 
 \section{פורמליזם יחסותי, וקטורים, טנזורים ואינדקסים}
-המטריקה במוסכמת \textenglish{Mostly Minus} היא $\eta_{\mu\nu} = \eta^{\mu\nu} = \text{diag}(1, -1, -1, -1)$.
+המטריקה במוסכמת \textenglish{Mostly Minus} היא 
+\[
+\eta_{\mu\nu} = \eta^{\mu\nu} = \text{diag}(1, -1, -1, -1)
+\]
 \begin{itemize}
     \item \textbf{4-וקטור קונטרא-וואריאנטי (אינדקס עליון):} $A^\mu = (A^0, A^1, A^2, A^3) = (A^0, \vec{A})$. משתנה תחת טרנספורמציה $A'^\mu = \Lambda^\mu{}_\nu A^\nu$. הבסיס מתמרן הפוך.
     \item \textbf{4-וקטור קו-וואריאנטי (אינדקס תחתון):} $A_\mu = (A_0, A_1, A_2, A_3) = (A^0, -\vec{A})$. משתנה תחת טרנספורמציה $A'_\mu = \Lambda_\mu{}^\nu A_\nu = (\Lambda^{-1})^\nu{}_\mu A_\nu$.
@@ -67,10 +64,24 @@
     כאשר $J^\mu{}_\nu = \frac{\partial x'^\mu}{\partial x^\nu}$ היא מטריצת היקוביאן $\mathbf{J}$.
     \item \textbf{העלאת/הורדת אינדקסים:} $A_\mu = \eta_{\mu\nu} A^\nu$, $A^\mu = \eta^{\mu\nu} A_\nu$.
     \item \textbf{טרנספורמציה של טנזורים:} 
-    $T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta}$,
-    $T'^\mu{}_\nu = \Lambda^\mu{}_\alpha (\Lambda^{-1})^\beta{}_\nu T^\alpha{}_\beta$,
-    $T'_{\mu\nu} = (\Lambda^{-1})^\alpha{}_\mu (\Lambda^{-1})^\beta{}_\nu T_{\alpha\beta}$\\
-    בכתיב וקטורי/מטריצי: $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^T$ (עבור טנזור עם שני אינדקסים עליונים).
+    \[
+    T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta},
+    \]
+    \[
+    T'^\mu{}_\nu = \Lambda^\mu{}_\alpha (\Lambda^{-1})^\beta{}_\nu T^\alpha{}_\beta,
+    \]
+    \[
+    T'_{\mu\nu} = (\Lambda^{-1})^\alpha{}_\mu (\Lambda^{-1})^\beta{}_\nu T_{\alpha\beta}
+    \]
+    \item \textbf{בכתיב וקטורי/מטריצי:}
+\begin{itemize}
+    \item \textbf{אינדקסים עליונים ($T^{\mu\nu}$):} 
+    $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^T$
+    \item \textbf{אינדקסים תחתונים ($T_{\mu\nu}$):} 
+    $\mathbf{T}' = (\Lambda^{-1})^T \mathbf{T} \Lambda^{-1}$
+    \item \textbf{אינדקסים מעורבים ($T^\mu{}_\nu$):} 
+    $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^{-1}$
+\end{itemize}
 \end{itemize}
 
 \section{איזומטריה (טרנספורמציית סימטריה)}
@@ -112,7 +123,7 @@
     }
     \item \textbf{חילוץ שדות:} 
     \[
-    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0}, \quad
+    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0},
     B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}
     \]
     \item \textbf{משוואות מקסוול (אי-הומוגניות):}
@@ -142,8 +153,6 @@
 \begin{itemize}
     \item \textbf{הגדרה טנזורית:} $T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)$
     \item \textbf{רכיבים ומטריצה (אינדקסים תחתונים):}
-    {\scriptsize
-    \setlength{\arraycolsep}{1.2pt}
     \[
     T_{\mu\nu} = \frac{1}{c} \begin{pmatrix} 
     u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
@@ -152,11 +161,10 @@
     -\frac{1}{c}S_z & -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz}
     \end{pmatrix}
     \]
-    }
-    כאשר $u = \frac{1}{8\pi}(E^2+B^2) $ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול.
+    \\
+    כאשר $u = \frac{1}{8\pi}(E^2+B^2) $ (צפיפות אנרגיה), \\
+    $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-\\$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול.
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
-    {\scriptsize
-    \setlength{\arraycolsep}{1.2pt}
     \[
     T^{\mu\nu} = \eta^{\mu\alpha}\eta^{\nu\beta} T_{\alpha\beta} = \frac{1}{c} \begin{pmatrix}
     u & \frac{1}{c}S_x & \frac{1}{c}S_y & \frac{1}{c}S_z \\
@@ -165,11 +173,10 @@
     \frac{1}{c}S_z & -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz}
     \end{pmatrix}
     \]
-    }
     \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
-    $T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right)$
-    {\scriptsize
-    \setlength{\arraycolsep}{1.2pt}
+    \[
+    T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right)
+    \]
     \[
     T^\mu{}_\nu = \frac{1}{c} \begin{pmatrix}
     u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
@@ -178,20 +185,22 @@
     \frac{1}{c}S_z & \sigma_{zx} & \sigma_{zy} & \sigma_{zz}
     \end{pmatrix}
     \]
-    }
     \item \textbf{חוק שימור:} 
     \[
-    \partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\text{או } \partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha\right)
+    \partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha \text{או } \right)
     \]
 \end{itemize}
 
 \section{סוגי כיול (\textenglish{Gauge Transformations})}
 טרנספורמציית כיול: $A_\mu \to A_\mu + \partial_\mu \Lambda$.
 \begin{itemize}
-    \item \textbf{כיול לורנץ (\textenglish{Lorenz Gauge}):} תנאי: $\partial_\mu A^\mu = 0 \iff \frac{1}{c}\frac{\partial \Phi}{\partial t} + \vec{\nabla}\cdot\vec{A} = 0$.\\
+    \item \textbf{כיול לורנץ (\textenglish{Lorenz Gauge}):} תנאי: 
+    \[
+    \partial_\mu A^\mu = 0 \iff \frac{1}{c}\frac{\partial \Phi}{\partial t} + \vec{\nabla}\cdot\vec{A} = 0
+    \]
     מתאים לבעיות יחסותיות וגלים אלקטרומגנטיים. מעביר את משוואות מקסוול לצורה:
     \[
-    \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left( \text{כאשר } \square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2 \right)
+    \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left(\square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2 \text{כאשר } \right)
     \]
     \item \textbf{כיול קולון (\textenglish{Coulomb Gauge}):} תנאי: $\vec{\nabla}\cdot\vec{A} = 0$.\\
     מתאים לאלקטרוסטטיקה, מגנטוסטטיקה ולקוונטיזציה של השדה. נותן:
@@ -217,10 +226,14 @@ $
 
 \section{טרנספורמציות לורנץ וסיבובים}
 \begin{itemize}
-    \item \textbf{בוסט בציר $x$:} $\gamma = \frac{1}{\sqrt{1-\beta^2}}, \ \beta = \frac{v}{c}$, \textenglish{Rapidity} ($\theta = \text{arctanh}(\beta)$), 
+    \item \textbf{בוסט בציר $x$:} 
+    \\
+    $\gamma = \frac{1}{\sqrt{1-\beta^2}}, \ \beta = \frac{v}{c}$,
+    \\
+    \textenglish{Rapidity} ($\theta = \text{arctanh}(\beta)$), 
     $\cosh\theta = \gamma, \sinh\theta = \gamma\beta$
     {\scriptsize
-    \setlength{\arraycolsep}{1.5pt}
+    \setlength{\arraycolsep}{3pt}
     \[
     \Lambda^\mu{}_\nu = \begin{pmatrix}
     \gamma & -\gamma\beta & 0 & 0 \\
@@ -261,10 +274,14 @@ $
 \Phi(\vec{r}) = \int_V \rho(\vec{r}') G(\vec{r}, \vec{r}') d^3r' + \frac{1}{4\pi} \oint_{\partial V} \left( G \vec{\nabla}'\Phi - \Phi \vec{\nabla}'G \right) \cdot d\vec{A}'
 \]
 \begin{itemize}
-    \item \textbf{תנאי דיריכלה ($G_D=0$ על השפה):}\\
-    $\Phi(\vec{r}) = \int_V \rho G_D d^3r' - \frac{1}{4\pi} \oint_{\partial V} \Phi(\vec{r}') \frac{\partial G_D}{\partial n'} dA'$
-    \item \textbf{תנאי נוימן ($\frac{\partial G_N}{\partial n'} = \frac{4\pi}{S}$ על השפה):}\\
-    $\Phi(\vec{r}) = \langle\Phi\rangle_S + \int_V \rho G_N d^3r' + \frac{1}{4\pi} \oint_{\partial V} \frac{\partial \Phi}{\partial n'} G_N dA'$
+    \item \textbf{תנאי דיריכלה ($G_D=0$ על השפה):}
+    \[
+    \Phi(\vec{r}) = \int_V \rho G_D d^3r' - \frac{1}{4\pi} \oint_{\partial V} \Phi(\vec{r}') \frac{\partial G_D}{\partial n'} dA'
+    \]
+    \item \textbf{תנאי נוימן ($\frac{\partial G_N}{\partial n'} = \frac{4\pi}{S}$ על השפה):}
+    \[
+    \Phi(\vec{r}) = \langle\Phi\rangle_S + \int_V \rho G_N d^3r' + \frac{1}{4\pi} \oint_{\partial V} \frac{\partial \Phi}{\partial n'} G_N dA'
+    \]
 \end{itemize}
 
 \section{פונקציות גרין ומטעני דמות}
@@ -283,44 +300,71 @@ $
 \section{פוטנציאל בסימטריה כדורית / פיתוח מולטיפולי}
 פוטנציאל מפיזור מטען $\rho(\vec{r}')$:
 \[
-\Phi(\vec{r}) = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{q_{\ell,m}}{2\ell+1} \frac{Y_{\ell,m}(\theta,\phi)}{r^{\ell+1}} \quad ( r > r_{\max} \text{ עבור})
+\Phi(\vec{r}) = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{q_{\ell,m}}{2\ell+1} \frac{Y_{\ell,m}(\theta,\phi)}{r^{\ell+1}} \quad ( r > r_{\max} \text{עבור })
 \]
-כאשר המומנטים המולטיפוליים הם $q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r'$.
+כאשר המומנטים המולטיפוליים הם 
+\[
+q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r'.
+\]
 
 \section{וקטורי יחידה במערכות קואורדינטות}
 \begin{itemize}
     \item \textbf{כדוריות לקרטזיות:}
-    $\hat{r} = \sin\theta\cos\phi\hat{x} + \sin\theta\sin\phi\hat{y} + \cos\theta\hat{z}$, \,
-    $\hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{y} - \sin\theta\hat{z}$, \,
-    $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$
+    \[\hat{r} = \sin\theta\cos\phi\hat{x} + \sin\theta\sin\phi\hat{y} + \cos\theta\hat{z}
+    \]
+    \[
+    \hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{y} - \sin\theta\hat{z}
+    \]
+    \[
+    \hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}
+    \]
     \item \textbf{קרטזיות לכדוריות:}
-    $\hat{x} = \sin\theta\cos\phi\hat{r} + \cos\theta\cos\phi\hat{\theta} - \sin\phi\hat{\phi}$, \quad
-    $\hat{y} = \sin\theta\sin\phi\hat{r} + \cos\theta\sin\phi\hat{\theta} + \cos\phi\hat{\phi}$, \quad
-    $\hat{z} = \cos\theta\hat{r} - \sin\theta\hat{\theta}$
+    \[
+    \hat{x} = \sin\theta\cos\phi\hat{r} + \cos\theta\cos\phi\hat{\theta} - \sin\phi\hat{\phi}
+    \]
+    \[
+    \hat{y} = \sin\theta\sin\phi\hat{r} + \cos\theta\sin\phi\hat{\theta} + \cos\phi\hat{\phi}
+    \]
+    \[
+    \hat{z} = \cos\theta\hat{r} - \sin\theta\hat{\theta}
+    \]
     \item \textbf{גליליות לקרטזיות:}
-    $\hat{r} = \cos\phi\hat{x} + \sin\phi\hat{y}$, \quad
-    $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$, \quad
-    $\hat{z} = \hat{z}$
+    \[
+    \hat{r} = \cos\phi\hat{x} + \sin\phi\hat{y}
+    \]
+    \[
+    \hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}
+    \]
+    \[
+    \hat{z} = \hat{z}
+    \]
     \item \textbf{קרטזיות לגליליות:}
-    $\hat{x} = \cos\phi\hat{r} - \sin\phi\hat{\phi}$, \quad
-    $\hat{y} = \sin\phi\hat{r} + \cos\phi\hat{\phi}$, \quad
-    $\hat{z} = \hat{z}$
+    \[
+    \hat{x} = \cos\phi\hat{r} - \sin\phi\hat{\phi}
+    \]
+    \[
+    \hat{y} = \sin\phi\hat{r} + \cos\phi\hat{\phi}
+    \]
+    \[
+    \hat{z} = \hat{z}
+    \]
 \end{itemize}
 
 \section{מכפלה וקטורית (\textenglish{Cross Product}) של וקטורי יחידה}
 \begin{itemize}
     \item \textbf{כדוריות (מערכת ימנית בסידור $\hat{r}, \hat{\theta}, \hat{\phi}$):}
-    $
-    \hat{r} \times \hat{\theta} = \hat{\phi}, \quad 
+    \[
+    \hat{r} \times \hat{\theta} = \hat{\phi}
+    , \quad 
     \hat{\theta} \times \hat{\phi} = \hat{r}, \quad 
     \hat{\phi} \times \hat{r} = \hat{\theta}
-    $
+    \]
     \item \textbf{גליליות (מערכת ימנית בסידור $\hat{r}, \hat{\phi}, \hat{z}$):}
-    $
+    \[
     \hat{r} \times \hat{\phi} = \hat{z}, \quad 
     \hat{\phi} \times \hat{z} = \hat{r}, \quad 
     \hat{z} \times \hat{r} = \hat{\phi}
-    $
+    \]
 \end{itemize}
 
 \end{multicols*}
