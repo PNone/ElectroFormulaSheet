@@ -160,39 +160,28 @@
     \item \textbf{רכיבים ומטריצה (אינדקסים תחתונים):}
     \[
     T_{\mu\nu} = \frac{1}{c} \begin{pmatrix} 
-    u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
-    -\frac{1}{c}S_x & -\sigma_{xx} & -\sigma_{xy} & -\sigma_{xz} \\
-    -\frac{1}{c}S_y & -\sigma_{yx} & -\sigma_{yy} & -\sigma_{yz} \\
-    -\frac{1}{c}S_z & -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz}
+    u & -\frac{1}{c}\vec{S}^T \\
+    -\frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
-    \\
-    כאשר $u = \frac{1}{8\pi}(E^2+B^2) $ (צפיפות אנרגיה), \\
-    $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-\\$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול.
+    כאשר $u = \frac{1}{8\pi}(E^2+B^2)$ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול $\overleftrightarrow{\sigma}$.
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
     \[
     T^{\mu\nu} = \eta^{\mu\alpha}\eta^{\nu\beta} T_{\alpha\beta} = \frac{1}{c} \begin{pmatrix}
-    u & \frac{1}{c}S_x & \frac{1}{c}S_y & \frac{1}{c}S_z \\
-    \frac{1}{c}S_x & -\sigma_{xx} & -\sigma_{xy} & -\sigma_{xz} \\
-    \frac{1}{c}S_y & -\sigma_{yx} & -\sigma_{yy} & -\sigma_{yz} \\
-    \frac{1}{c}S_z & -\sigma_{zx} & -\sigma_{zy} & -\sigma_{zz}
+    u & \frac{1}{c}\vec{S}^T \\
+    \frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
     \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
     \[
-    T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = -\frac{1}{4\pi c} \left( F^{\mu\alpha}F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right)
-    \]
-    \[
-    T^\mu{}_\nu = \frac{1}{c} \begin{pmatrix}
-    u & -\frac{1}{c}S_x & -\frac{1}{c}S_y & -\frac{1}{c}S_z \\
-    \frac{1}{c}S_x & \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\
-    \frac{1}{c}S_y & \sigma_{yx} & \sigma_{yy} & \sigma_{yz} \\
-    \frac{1}{c}S_z & \sigma_{zx} & \sigma_{zy} & \sigma_{zz}
+    T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = \frac{1}{c} \begin{pmatrix}
+    u & -\frac{1}{c}\vec{S}^T \\
+    \frac{1}{c}\vec{S} & \overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
     \item \textbf{חוק שימור:} 
     \[
-    \partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha \text{או } \right)
+    \partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha \right)
     \]
 \end{itemize}
 
