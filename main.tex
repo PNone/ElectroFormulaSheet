@@ -286,6 +286,7 @@ $
 
 \section{פונקציות גרין ומטעני דמות}
 \begin{itemize}
+    \item \textbf{הגדרת $r_<$ ו-$r_>$:} $r_< = \min(r, r')$, \quad $r_> = \max(r, r')$.
     \item \textbf{מישור אינסופי מוארק ($z=0$):} $G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{1}{|\vec{r}-\vec{r}_{\text{img}} |}$ כאשר $\vec{r}_{\text{img}} = (x', y', -z')$. (מטען דמות $-q$ ב-$z'=-d$).
     \item \textbf{ספירה מוארקת ברדיוס $R$ (תנאי דיריכלה):} מטען דמות $q' = -q \frac{R}{r'}$ במיקום $\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$.
     \[
@@ -298,13 +299,23 @@ $
     \item \textbf{פיתוח בכדוריות (פונקציית גרין דיריכלה לספירה ברדיוס $R$):}
     \begin{itemize}
         \item \textbf{בתוך הספירה ($r, r' < R$):}
+        {\small
         \[
-        G_D(\vec{r},\vec{r}') =  \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \left( \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{(r \, r')^\ell}{R^{2\ell+1}} \right) Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+        \begin{aligned}
+        G_D(\vec{r},\vec{r}') = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} &\Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{(r \, r')^\ell}{R^{2\ell+1}} \Big] \\
+        &\times Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+        \end{aligned}
         \]
+        }
         \item \textbf{מחוץ לספירה ($r, r' > R$):}
+        {\small
         \[
-        G_D(\vec{r},\vec{r}') =  \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \left( \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{R^{2\ell+1}}{(r \, r')^{\ell+1}} \right) Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+        \begin{aligned}
+        G_D(\vec{r},\vec{r}') = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} &\Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{R^{2\ell+1}}{(r \, r')^{\ell+1}} \Big] \\
+        &\times Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+        \end{aligned}
         \]
+        }
     \end{itemize}
     \item \textbf{משפט התוספת מרחב חופשי:} 
     \[
