@@ -148,7 +148,7 @@
 הטנזור הדואלי מוגדר ע"י $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}$. הוא מתקבל מהחלפת השדות: $\vec{E} \to \vec{B}$ ו-$\vec{B} \to -\vec{E}$.
 משמש לכתיבת המשוואות ההומוגניות בקיצור: $\partial_\mu \tilde{F}^{\mu\nu} = 0$.
 
-\section{גודלים אינווריאנטיים של השדה}
+\section{גדלים אינווריאנטיים של השדה}
 \begin{itemize}
     \item $F_{\mu\nu}F^{\mu\nu} = 2(B^2 - E^2)$
     \item $F_{\mu\nu}\tilde{F}^{\mu\nu} = -4(\vec{E}\cdot\vec{B})$
@@ -226,24 +226,28 @@
     
     \item \textbf{ווריאציית איבר השדה:} 
     משתמשים ב-$\delta F_{\alpha\beta} = \partial_\alpha \delta A_\beta - \partial_\beta \delta A_\alpha$ ובסימטריה $F_{\alpha\beta} F^{\alpha\beta}$:
-    {\small\[
+    \\
+    {\small $
     \delta (F_{\alpha\beta}F^{\alpha\beta}) = 2 F^{\alpha\beta} \delta F_{\alpha\beta} = 2 F^{\alpha\beta} (\partial_\alpha \delta A_\beta - \partial_\beta \delta A_\alpha) = 4 F^{\mu\nu} \partial_\mu \delta A_\nu
-    \]}
-    על ידי החלפת אינדקסים ($\nu \leftrightarrow \mu$):
-    {\small\[\delta \mathcal{L}_{\text{field}} = -\frac{1}{4\pi} F^{\nu\mu} \partial_\nu \delta A_\mu = \frac{1}{4\pi} F^{\mu\nu} \partial_\nu \delta A_\mu\]}
+    $}
+    \\
+    {\small על ידי החלפת אינדקסים ($\nu \leftrightarrow \mu$):
+    $\delta \mathcal{L}_{\text{field}} = -\frac{1}{4\pi} F^{\nu\mu} \partial_\nu \delta A_\mu = \frac{1}{4\pi} F^{\mu\nu} \partial_\nu \delta A_\mu$}
 
     \item \textbf{אינטגרציה בחלקים והשמטת האיבר על השפה ($\delta A_\mu \to 0$ באינסוף):}
-    {\small\[
+    \\
+    {\small $
     \int F^{\mu\nu} \partial_\nu \delta A_\mu \, d^4x = \underbrace{\int \partial_\nu (F^{\mu\nu} \delta A_\mu) \, d^4x}_{= 0 \text{ (איבר שפה)}} - \int (\partial_\nu F^{\mu\nu}) \delta A_\mu \, d^4x
-    \]}
+    $}
 
     \item \textbf{השוואת הווריאציה הכוללת לאפס:}
-    {\small\[
+    \\
+    {\small $
     \delta S = \int \left[ \frac{1}{4\pi} (\partial_\nu F^{\mu\nu}) - \frac{1}{c} J^\mu \right] \delta A_\mu \, d^4x = 0 \implies \partial_\nu F^{\mu\nu} = \frac{4\pi}{c} J^\mu
-    \]}
+    $}
 \end{enumerate}
 
-\textbf{חילוף סדר נגזרת ווריאציה:} מותר להחליף את סדר הנגזרת והווריאציה במרחב המסלולים:
+\textbf{חילוף סדר נגזרת ווריאציה:}
 $
 \delta \left( \frac{dx^\mu}{d\lambda} \right) = \frac{d}{d\lambda} (\delta x^\mu)
 $
@@ -275,14 +279,14 @@ $
     \item \textbf{סיבוב סביב ציר $z$ מזווית $\phi$:}
     {\scriptsize
     \setlength{\arraycolsep}{2pt}
-    \[
+    $
     R^\mu{}_\nu = \begin{pmatrix}
     1 & 0 & 0 & 0 \\
     0 & \cos\phi & \sin\phi & 0 \\
     0 & -\sin\phi & \cos\phi & 0 \\
     0 & 0 & 0 & 1
     \end{pmatrix}
-    \]
+    $
     }
 \end{itemize}
 
@@ -364,13 +368,6 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
 \vspace{2pt}
 \textbf{פוטנציאל של קליפה כדורית ברדיוס $R$ (עם פוטנציאל/צפיפות נתונה על השפה):}
 \begin{itemize}
-    \item \textbf{עם סימטריה אזימותלית (תלוי רק ב-$\theta$, במונחי פולינומי לז'נדר $P_\ell$):}
-    \[
-    \Phi(r,\theta) = \sum_{\ell=0}^\infty \left( A_\ell r^\ell + \frac{B_\ell}{r^{\ell+1}} \right) P_\ell(\cos\theta)
-    \]
-    \[
-    \Phi_{\text{in}}(r,\theta) = \sum_{\ell=0}^\infty A_\ell r^\ell P_\ell(\cos\theta), \quad \Phi_{\text{out}}(r,\theta) = \sum_{\ell=0}^\infty \frac{B_\ell}{r^{\ell+1}} P_\ell(\cos\theta)
-    \]
     \item \textbf{ללא סימטריה אזימותלית (תלוי ב-$\theta,\phi$, במונחי הרמוניות כדוריות $Y_{\ell,m}$):}
     \[
     \Phi(r,\theta,\phi) = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \left( A_{\ell,m} r^\ell + \frac{B_{\ell,m}}{r^{\ell+1}} \right) Y_{\ell,m}(\theta,\phi)
@@ -378,6 +375,7 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
     \[
     \Phi_{\text{in}} = \sum_{\ell,m} A_{\ell,m} r^\ell Y_{\ell,m}(\theta,\phi), \quad \Phi_{\text{out}} = \sum_{\ell,m} \frac{B_{\ell,m}}{r^{\ell+1}} Y_{\ell,m}(\theta,\phi)
     \]
+    \item \textbf{עם סימטריה אזימותלית \textenglish{m=0} וכן $Y_{\ell,m}(\theta,\phi) \to P_\ell(\cos\theta)$ (תלוי רק ב-$\theta$, במונחי פולינומי לז'נדר $P_\ell$)}
 \end{itemize}
 
 \section{וקטורי יחידה במערכות קואורדינטות}
