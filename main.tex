@@ -164,7 +164,10 @@
     -\frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
+    
     כאשר $u = \frac{1}{8\pi}(E^2+B^2)$ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול $\overleftrightarrow{\sigma}$.
+    \\
+    \textbf{צפיפות התנע ושקילות רכיבים:} $p_{\text{EM}}^i = S^i \implies T^{0i} = T^{i0} = \frac{1}{c} p_{\text{EM}}^i$
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
     \[
     T^{\mu\nu} = \eta^{\mu\alpha}\eta^{\nu\beta} T_{\alpha\beta} = \frac{1}{c} \begin{pmatrix}
@@ -208,32 +211,21 @@
 \[
 \mathcal{L}_{EM} = \mathcal{L}_{\text{field}} + \mathcal{L}_{\text{int}} = -\frac{1}{16\pi} F_{\mu\nu}F^{\mu\nu} - \frac{1}{c}J_\mu A^\mu
 \]
-\textbf{אופן ביצוע הווריאציה לפי $A_\mu$ ($\delta S = 0$):}
+\textbf{טריק - מביצוע הווריאציה לפי $A_\mu$ ($\delta S = 0$):}
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{ווריאציית איבר האינטראקציה:} 
-    $\delta \mathcal{L}_{\text{int}} = -\frac{1}{c} J_\mu \delta A^\mu$.
+    \item 
+    $
+\frac{\partial}{\partial(\partial_\nu A_\mu)} \left( \mathcal{L} \right) \propto \frac{\partial}{\partial(\partial_\nu A_\mu)} \left( F_{\alpha\beta} F^{\alpha\beta} \right) = 4 F^{\mu\nu}
+$
+
+    \item
+    $
+\frac{\partial}{\partial A_\mu} \left( \mathcal{L} \right) \propto \frac{\partial}{\partial A_\mu} \left( J_\mu A^\mu \right) = J^\mu
+$
     
-    \item \textbf{ווריאציית איבר השדה:} 
-    משתמשים ב-$\delta F_{\alpha\beta} = \partial_\alpha \delta A_\beta - \partial_\beta \delta A_\alpha$ ובסימטריה $F_{\alpha\beta} F^{\alpha\beta}$:
-    \\
-    {\small $
-    \delta (F_{\alpha\beta}F^{\alpha\beta}) = 2 F^{\alpha\beta} \delta F_{\alpha\beta} = 2 F^{\alpha\beta} (\partial_\alpha \delta A_\beta - \partial_\beta \delta A_\alpha) = 4 F^{\mu\nu} \partial_\mu \delta A_\nu
-    $}
-    \\
-    {\small על ידי החלפת אינדקסים ($\nu \leftrightarrow \mu$):
-    $\delta \mathcal{L}_{\text{field}} = -\frac{1}{4\pi} F^{\nu\mu} \partial_\nu \delta A_\mu = \frac{1}{4\pi} F^{\mu\nu} \partial_\nu \delta A_\mu$}
 
-    \item \textbf{אינטגרציה בחלקים והשמטת האיבר על השפה ($\delta A_\mu \to 0$ באינסוף):}
-    \\
-    {\small $
-    \int F^{\mu\nu} \partial_\nu \delta A_\mu \, d^4x = \underbrace{\int \partial_\nu (F^{\mu\nu} \delta A_\mu) \, d^4x}_{= 0 \text{ (איבר שפה)}} - \int (\partial_\nu F^{\mu\nu}) \delta A_\mu \, d^4x
-    $}
-
-    \item \textbf{השוואת הווריאציה הכוללת לאפס:}
-    \\
-    {\small $
-    \delta S = \int \left[ \frac{1}{4\pi} (\partial_\nu F^{\mu\nu}) - \frac{1}{c} J^\mu \right] \delta A_\mu \, d^4x = 0 \implies \partial_\nu F^{\mu\nu} = \frac{4\pi}{c} J^\mu
-    $}
+    \item
+    $0 = \frac{\partial}{\partial A_\mu} \left( \mathcal{L} \right) - \frac{\partial}{\partial(\partial_\nu A_\mu)} \left( \mathcal{L} \right) \implies \partial_\nu F^{\mu\nu} = \frac{4\pi}{c} J^\mu$
 \end{enumerate}
 
 \textbf{חילוף סדר נגזרת ווריאציה:}
