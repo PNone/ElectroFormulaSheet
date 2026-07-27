@@ -56,8 +56,8 @@
     \item \textbf{העלאת/הורדת אינדקסים:} $A_\mu = \eta_{\mu\nu} A^\nu$, $A^\mu = \eta^{\mu\nu} A_\nu$.
     \item \textbf{טרנספורמציה של טנזורים (כתיב אינדקסים):} 
     \[
-    T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta}, \quad
-    T'^\mu{}_\nu = \Lambda^\mu{}_\alpha \Lambda_\nu{}^\beta T^\alpha{}_\beta, \quad
+    T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta}, \
+    T'^\mu{}_\nu = \Lambda^\mu{}_\alpha \Lambda_\nu{}^\beta T^\alpha{}_\beta, 
     T'_{\mu\nu} = \Lambda_\mu{}^\alpha \Lambda_\nu{}^\beta T_{\alpha\beta}
     \]
     \item \textbf{טרנספורמציה של טנזורים (כתיב מטריצי):}
@@ -155,10 +155,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):}
     \[
-    T^{\mu\nu} = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F^{\nu\alpha} - \frac{1}{4}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix} 
-    u & c\,\vec{p}_{\text{EM}}^T \\
-    \frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
-    \end{pmatrix} 
+    T^{\mu\nu} = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F^{\nu\alpha} - \frac{1}{4}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right) 
     = \begin{pmatrix} 
     \frac{u}{c} & \vec{p}_{\text{EM}}^T \\
     \frac{1}{c^2}\vec{S} & -\frac{1}{c}\overleftrightarrow{\sigma}
@@ -167,10 +164,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 
     \item \textbf{הצגה קו-וואריאנטית ($T_{\mu\nu}$):}
     \[
-    T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix} 
-    u & -c\,\vec{p}_{\text{EM}}^T \\
-    -\frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
-    \end{pmatrix} 
+    T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)
     = \begin{pmatrix} 
     \frac{u}{c} & -\vec{p}_{\text{EM}}^T \\
     -\frac{1}{c^2}\vec{S} & -\frac{1}{c}\overleftrightarrow{\sigma}
@@ -179,10 +173,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 
     \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
     \[
-    T^\mu{}_\nu = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F_\nu{}^\alpha - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix} 
-    u & -c\,\vec{p}_{\text{EM}}^T \\
-    \frac{1}{c}\vec{S} & \overleftrightarrow{\sigma}
-    \end{pmatrix} 
+    T^\mu{}_\nu = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F_\nu{}^\alpha - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
     = \begin{pmatrix} 
     \frac{u}{c} & -\vec{p}_{\text{EM}}^T \\
     \frac{1}{c^2}\vec{S} & \frac{1}{c}\overleftrightarrow{\sigma}
@@ -191,10 +182,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 
     \item \textbf{הצגה מעורבת ($T_\mu{}^\nu$):}
     \[
-    T_\mu{}^\nu = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F^{\nu\alpha} - \frac{1}{4}\delta_\mu^\nu F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix} 
-    u & c\,\vec{p}_{\text{EM}}^T \\
-    -\frac{1}{c}\vec{S} & \overleftrightarrow{\sigma}
-    \end{pmatrix} 
+    T_\mu{}^\nu = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F^{\nu\alpha} - \frac{1}{4}\delta_\mu^\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
     = \begin{pmatrix} 
     \frac{u}{c} & \vec{p}_{\text{EM}}^T \\
     -\frac{1}{c^2}\vec{S} & \frac{1}{c}\overleftrightarrow{\sigma}
@@ -314,10 +302,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \]
 
     \item \textbf{ספירה מוארקת ברדיוס $R$ (תנאי דיריכלה):}
-    \begin{itemize}
-        \item \textbf{מטען מקורי מחוץ לספירה ($r' > R$):} מטען $q$ ממוקם ב-$\vec{r}'$. מטען דמות $q' = -q \frac{R}{r'}$ ממוקם \textbf{בתוך הספירה} ב-$\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$ (כך ש-$r_{\text{img}} < R$).
-        \item \textbf{מטען מקורי בתוך הספירה ($r' < R$):} מטען $q$ ממוקם ב-$\vec{r}'$. מטען דמות $q' = -q \frac{R}{r'}$ ממוקם \textbf{מחוץ לספירה} ב-$\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$ (כך ש-$r_{\text{img}} > R$).
-    \end{itemize}
+    מטען $q$ ממוקם ב-$\vec{r}'$. מטען דמות $q' = -q \frac{R}{r'}$ ממוקם ב-$\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$.
     \[
     G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - \frac{R^2}{r'^2}\vec{r}'\right|}
     \]
