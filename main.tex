@@ -226,17 +226,39 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \]
 \end{itemize}
 
-\section{פעולה ומשוואות אוילר-לגראנז'}
-הפעולה היחסותית היא $S = \int \mathcal{L} \, d^4x$, כאשר צפיפות הלגראנז'יאן:
-\[
-\mathcal{L}_{EM} = \mathcal{L}_{\text{field}} + \mathcal{L}_{\text{int}} = -\frac{1}{16\pi} F_{\mu\nu}F^{\mu\nu} - \frac{1}{c}J_\mu A^\mu
-\]
-\textbf{וריאציה לפי $A_\mu$ ($\delta S = 0$):}
-\begin{enumerate}[leftmargin=*]
-    \item $\frac{\partial\mathcal{L}}{\partial(\partial_\nu A_\mu)} = -\frac{1}{4\pi} F^{\nu\mu} = \frac{1}{4\pi} F^{\mu\nu}$
-    \item $\frac{\partial\mathcal{L}}{\partial A_\mu} = -\frac{1}{c} J^\mu$
-    \item $0 = \partial_\nu \left(\frac{\partial\mathcal{L}}{\partial(\partial_\nu A_\mu)}\right) - \frac{\partial\mathcal{L}}{\partial A_\mu} \implies \partial_\nu F^{\mu\nu} = \frac{4\pi}{c} J^\mu$
-\end{enumerate}
+\section{הערך האינטגרלי (הפעולה) ומשוואות שדה}
+
+\begin{itemize}
+    \item \textbf{הפעולה האלקטרומגנטית ($S$):}
+    \[
+    S = \int \mathcal{L}_{\text{EM}} \, d^4x = \int \left( \mathcal{L}_{\text{field}} + \mathcal{L}_{\text{int}} \right) d^4x
+    \]
+    כאשר $d^4x = c \, dt \, d^3x$.
+
+    \item \textbf{צפיפות הלגראנז'יאן ($\mathcal{L}_{\text{EM}}$):}
+    \[
+    \mathcal{L}_{\text{EM}} = -\frac{1}{16\pi c} F_{\mu\nu}F^{\mu\nu} - \frac{1}{c^2} J_\mu A^\mu
+    \]
+    \begin{itemize}
+        \item \textbf{איבר השדה החופשי:} $\mathcal{L}_{\text{field}} = -\frac{1}{16\pi c} F_{\mu\nu}F^{\mu\nu} = \frac{1}{8\pi c} \left( E^2 - B^2 \right)$
+        \item \textbf{איבר האינטראקציה:} $\mathcal{L}_{\text{int}} = -\frac{1}{c^2} J_\mu A^\mu = -\frac{1}{c} \rho \Phi + \frac{1}{c^2} \vec{J} \cdot \vec{A}$
+    \end{itemize}
+
+    \item \textbf{משוואות אוילר-לגראנז' לשדה ($A_\nu$):}
+    \[
+    \partial_\mu \left( \frac{\partial \mathcal{L}_{\text{EM}}}{\partial (\partial_\mu A_\nu)} \right) - \frac{\partial \mathcal{L}_{\text{EM}}}{\partial A_\nu} = 0
+    \]
+
+    \item \textbf{נגזרות אינטגרנד הוואריאציה:}
+    \[
+    \frac{\partial \mathcal{L}_{\text{EM}}}{\partial (\partial_\mu A_\nu)} = -\frac{1}{4\pi c} F^{\mu\nu}, \quad \frac{\partial \mathcal{L}_{\text{EM}}}{\partial A_\nu} = -\frac{1}{c^2} J^\nu
+    \]
+
+    \item \textbf{הצבה וואריאציה ($\delta S = 0$) $\Leftarrow$ משוואות מקסוול לא-הומוגניות:}
+    \[
+    \partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu
+    \]
+\end{itemize}
 
 \section{טרנספורמציות לורנץ וסיבובים}
 \begin{itemize}
