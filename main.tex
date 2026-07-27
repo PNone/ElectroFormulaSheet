@@ -144,37 +144,68 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 
 \section{טנזור מאמץ-אנרגיה $T_{\mu\nu}$}
 \begin{itemize}
-    \item \textbf{הגדרה טנזורית:} $T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)$
-    \item \textbf{רכיבים ומטריצה (אינדקסים תחתונים):}
-    \[
-    T_{\mu\nu} = \frac{1}{c} \begin{pmatrix} 
-    u & -\frac{1}{c}\vec{p}_{\text{EM}}^T \\
-    -\frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
-    \end{pmatrix}
-    \]
-    כאשר $u = \frac{1}{8\pi}(E^2+B^2)$ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג / שטף האנרגיה), $\vec{p}_{\text{EM}} = \vec{S}$ (צפיפות התנע האלקטרומגנטי), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול $\overleftrightarrow{\sigma}$.
+    \item \textbf{גדלים אלקטרומגנטיים (CGS):}
+    \begin{itemize}
+        \item צפיפות אנרגיה: $u = \frac{1}{8\pi}(E^2+B^2)$
+        \item שטף אנרגיה (וקטור פוינטינג): $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$
+        \item צפיפות תנע: $\vec{p}_{\text{EM}} = \frac{1}{c^2}\vec{S} = \frac{1}{4\pi c}(\vec{E}\times\vec{B})$
+        \item צפיפות תנע זוויתי: $\vec{\mathcal{L}}_{\text{EM}} = \vec{r} \times \vec{p}_{\text{EM}} = \frac{1}{c^2}(\vec{r} \times \vec{S})$
+        \item טנזור המאמצים של מקסוול: $\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$
+    \end{itemize}
 
-    \item \textbf{צפיפות תנע זוויתי:} $\vec{\mathcal{L}}_{\text{EM}} = \vec{r} \times \vec{p}_{\text{EM}} = \vec{r} \times \vec{S}$ ($\vec{L}_{\text{EM}} = \int \vec{\mathcal{L}}_{\text{EM}} \, d^3r$).
-    
-    \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
+    \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):}
     \[
-    T^{\mu\nu} = \eta^{\mu\alpha}\eta^{\nu\beta} T_{\alpha\beta} = \frac{1}{c} \begin{pmatrix}
-    u & \frac{1}{c}\vec{p}_{\text{EM}}^T \\
+    T^{\mu\nu} = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F^{\nu\alpha} - \frac{1}{4}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix} 
+    u & c\,\vec{p}_{\text{EM}}^T \\
     \frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
+    \end{pmatrix} 
+    = \begin{pmatrix} 
+    \frac{u}{c} & \vec{p}_{\text{EM}}^T \\
+    \frac{1}{c^2}\vec{S} & -\frac{1}{c}\overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
+
+    \item \textbf{הצגה קו-וואריאנטית ($T_{\mu\nu}$):}
+    \[
+    T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix} 
+    u & -c\,\vec{p}_{\text{EM}}^T \\
+    -\frac{1}{c}\vec{S} & -\overleftrightarrow{\sigma}
+    \end{pmatrix} 
+    = \begin{pmatrix} 
+    \frac{u}{c} & -\vec{p}_{\text{EM}}^T \\
+    -\frac{1}{c^2}\vec{S} & -\frac{1}{c}\overleftrightarrow{\sigma}
+    \end{pmatrix}
+    \]
+
     \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
     \[
-    T^\mu{}_\nu = T^{\mu\alpha}\eta_{\alpha\nu} = \frac{1}{c} \begin{pmatrix}
-    u & -\frac{1}{c}\vec{p}_{\text{EM}}^T \\
+    T^\mu{}_\nu = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F_\nu{}^\alpha - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix} 
+    u & -c\,\vec{p}_{\text{EM}}^T \\
     \frac{1}{c}\vec{S} & \overleftrightarrow{\sigma}
+    \end{pmatrix} 
+    = \begin{pmatrix} 
+    \frac{u}{c} & -\vec{p}_{\text{EM}}^T \\
+    \frac{1}{c^2}\vec{S} & \frac{1}{c}\overleftrightarrow{\sigma}
     \end{pmatrix}
     \]
+
+    \item \textbf{הצגה מעורבת ($T_\mu{}^\nu$):}
+    \[
+    T_\mu{}^\nu = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F^{\nu\alpha} - \frac{1}{4}\delta_\mu^\nu F_{\alpha\beta}F^{\alpha\beta} \right) = \frac{1}{c} \begin{pmatrix} 
+    u & c\,\vec{p}_{\text{EM}}^T \\
+    -\frac{1}{c}\vec{S} & \overleftrightarrow{\sigma}
+    \end{pmatrix} 
+    = \begin{pmatrix} 
+    \frac{u}{c} & \vec{p}_{\text{EM}}^T \\
+    -\frac{1}{c^2}\vec{S} & \frac{1}{c}\overleftrightarrow{\sigma}
+    \end{pmatrix}
+    \]
+
     \item \textbf{חוק שימור:} 
     \[
-    \partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha \right)
+    \partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha} J_\alpha
     \]
-    \item \textbf{עקבת הטנזור (Trace):} $\text{Tr}(T) = T^\mu{}_\mu = 0 \quad (\text{נובע מ-} \eta^{\mu\nu}\eta_{\mu\nu}=4 \text{ ב-4 ממדים})$.
+    \item \textbf{עקבת הטנזור (Trace):} $\text{Tr}(T) = T^\mu{}_\mu = 0$.
 \end{itemize}
 
 \section{סוגי כיול (\textenglish{Gauge Transformations})}
@@ -259,7 +290,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \[
     \Phi(\vec{r}) = \int_V \rho G_D d^3r' - \frac{1}{4\pi} \oint_{\partial V} \Phi(\vec{r}') \frac{\partial G_D}{\partial n'} dA'
     \]
-    \item \textbf{תנאי נוימן ($\frac{\partial G_N}{\partial n'} = \frac{4\pi}{S}$ על השפה):}
+    \item \textbf{תנאי נוימן ($\frac{\partial G_N}{\partial n'} = -\frac{4\pi}{S}$ על השפה):}
     \[
     \Phi(\vec{r}) = \langle\Phi\rangle_S + \int_V \rho G_N d^3r' + \frac{1}{4\pi} \oint_{\partial V} \frac{\partial \Phi}{\partial n'} G_N dA'
     \]
