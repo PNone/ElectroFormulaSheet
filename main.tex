@@ -196,10 +196,15 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \end{pmatrix}
     \]
 
-    \item \textbf{חוק שימור:} 
-    $
-    \partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha} J_\alpha
-    $
+    \item \textbf{דיברגנץ' טנזור המאמץ-אנרגיה (שימור תנע-אנרגיה וצפיפות 4-כוח לורנץ):}
+    \[
+    \partial_\mu T^\mu{}_\nu = -\frac{1}{c^2} F^\mu{}_\nu J_\mu = -f_\nu
+    \]
+    \begin{itemize}
+        \item \textbf{רכיב הזמן ($\nu=0$ - שימור אנרגיה):} $\frac{\partial u}{\partial t} + \vec{\nabla} \cdot \vec{S} = -\vec{J} \cdot \vec{E}$
+        \item \textbf{רכיבים מרחביים ($\nu=i$ - שימור תנע):} $\frac{\partial \vec{p}_{\text{EM}}}{\partial t} - \vec{\nabla} \cdot \overleftrightarrow{\sigma} = -\left( \rho \vec{E} + \frac{1}{c} \vec{J} \times \vec{B} \right)$
+        \item \textbf{מערכת סגורה (ללא מטענים/זרמים, $J_\mu=0$):} $\partial_\mu T^\mu{}_\nu = 0$
+    \end{itemize}
     \item \textbf{עקבת הטנזור (Trace):} $\text{Tr}(T) = T^\mu{}_\mu = 0$.
 \end{itemize}
 
