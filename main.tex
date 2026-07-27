@@ -286,7 +286,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \item \textbf{הגדרת פונקציית גרין:} $\nabla'^2 G(\vec{r}, \vec{r}') = -4\pi \delta^{(3)}(\vec{r} - \vec{r}')$
     \item \textbf{מבנה כללי (סינגולרי + הרמוני):}
     \[
-    G(\vec{r}, \vec{r}') = \frac{1}{|\vec{r} - \vec{r}'|} + F(\vec{r}, \vec{r}') \quad \text{כאשר } \nabla'^2 F(\vec{r}, \vec{r}') = 0
+    G(\vec{r}, \vec{r}') = \frac{1}{|\vec{r} - \vec{r}'|} + F(\vec{r}, \vec{r}') \quad (\nabla'^2 F(\vec{r}, \vec{r}') = 0 \text{כאשר })
     \]
     \item \textbf{סימטריה:} $G(\vec{r}, \vec{r}') = G(\vec{r}', \vec{r})$
     \item \textbf{נוסחת הפתרון הכללית (משפט גרין):}
@@ -320,19 +320,22 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
         \item \textbf{בתוך הספירה ($r, r' < R$):}
         {\small
         \[
-        G_D(\vec{r},\vec{r}') = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} \Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{(r \, r')^\ell}{R^{2\ell+1}} \Big] Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+        G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{(r \, r')^\ell}{R^{2\ell+1}} \Big] Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
         \]
         }
         \item \textbf{מחוץ לספירה ($r, r' > R$):}
         {\small
         \[
-        G_D(\vec{r},\vec{r}') = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} \Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{R^{2\ell+1}}{(r \, r')^{\ell+1}} \Big] Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+        G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{R^{2\ell+1}}{(r \, r')^{\ell+1}} \Big] Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
         \]
         }
     \end{itemize}
-    \item \textbf{משפט התוספת מרחב חופשי:} 
+    \item \textbf{משפט התוספת במרחב החופשי:}
     \[
-    \frac{1}{|\vec{r}-\vec{r}'|} = \sum_{\ell=0}^\infty \frac{r_<^\ell}{r_>^{\ell+1}} P_\ell(\cos\gamma) = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \frac{r_<^\ell}{r_>^{\ell+1}} Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+    \frac{1}{|\vec{r} - \vec{r}'|} = \sum_{l=0}^{\infty} \frac{r_<^l}{r_>^{l+1}} P_l(\cos\gamma)
+    \]
+    \[
+    P_l(\cos\gamma) = \frac{4\pi}{2l+1} \sum_{m=-l}^{l} Y_{lm}^*(\theta', \phi') Y_{lm}(\theta, \phi)
     \]
 \end{itemize}
 
