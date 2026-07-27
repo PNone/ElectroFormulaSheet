@@ -51,37 +51,21 @@
 \eta_{\mu\nu} = \eta^{\mu\nu} = \text{diag}(1, -1, -1, -1)
 \]
 \begin{itemize}
-    \item \textbf{4-וקטור קונטרא-וואריאנטי (אינדקס עליון):} $A^\mu = (A^0, A^1, A^2, A^3) = (A^0, \vec{A})$. משתנה תחת טרנספורמציה $A'^\mu = \Lambda^\mu{}_\nu A^\nu$. הבסיס מתמרן הפוך.
-    \item \textbf{4-וקטור קו-וואריאנטי (אינדקס תחתון):} $A_\mu = (A_0, A_1, A_2, A_3) = (A^0, -\vec{A})$. משתנה תחת טרנספורמציה $A'_\mu = \Lambda_\mu{}^\nu A_\nu = (\Lambda^{-1})^\nu{}_\mu A_\nu$.
-    \item \textbf{ייצוג מטריצי של כללי מעבר קואורדינטות:}
-    תחת שינוי קואורדינטות $x'^\mu(x)$:
-    \[
-    A'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \, \mathbf{A} \quad \text{קונטרא:}
-    \]
-    \[
-    A'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu \implies \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A} \quad \text{קו:}
-    \]
-    כאשר $J^\mu{}_\nu = \frac{\partial x'^\mu}{\partial x^\nu}$ היא מטריצת היקוביאן $\mathbf{J}$.
+    \item \textbf{4-וקטור קונטרא-וואריאנטי (אינדקס עליון):} $A^\mu = (A^0, \vec{A})$. משתנה תחת $A'^\mu = \Lambda^\mu{}_\nu A^\nu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \mathbf{A}$.
+    \item \textbf{4-וקטור קו-וואריאנטי (אינדקס תחתון):} $A_\mu = (A_0, -\vec{A})$. משתנה תחת $A'_\mu = \Lambda_\mu{}^\nu A_\nu = (\Lambda^{-1})^\nu{}_\mu A_\nu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu \implies \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}$.
     \item \textbf{העלאת/הורדת אינדקסים:} $A_\mu = \eta_{\mu\nu} A^\nu$, $A^\mu = \eta^{\mu\nu} A_\nu$.
-    \item \textbf{טרנספורמציה של טנזורים:} 
+    \item \textbf{טרנספורמציה של טנזורים (כתיב אינדקסים):} 
     \[
-    T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta},
+    T'^{\mu\nu} = \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta T^{\alpha\beta}, \quad
+    T'^\mu{}_\nu = \Lambda^\mu{}_\alpha \Lambda_\nu{}^\beta T^\alpha{}_\beta, \quad
+    T'_{\mu\nu} = \Lambda_\mu{}^\alpha \Lambda_\nu{}^\beta T_{\alpha\beta}
     \]
-    \[
-    T'^\mu{}_\nu = \Lambda^\mu{}_\alpha (\Lambda^{-1})^\beta{}_\nu T^\alpha{}_\beta,
-    \]
-    \[
-    T'_{\mu\nu} = (\Lambda^{-1})^\alpha{}_\mu (\Lambda^{-1})^\beta{}_\nu T_{\alpha\beta}
-    \]
-    \item \textbf{בכתיב וקטורי/מטריצי:}
-\begin{itemize}
-    \item \textbf{אינדקסים עליונים ($T^{\mu\nu}$):} 
-    $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^T$
-    \item \textbf{אינדקסים תחתונים ($T_{\mu\nu}$):} 
-    $\mathbf{T}' = (\Lambda^{-1})^T \mathbf{T} \Lambda^{-1}$
-    \item \textbf{אינדקסים מעורבים ($T^\mu{}_\nu$):} 
-    $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^{-1}$
-\end{itemize}
+    \item \textbf{טרנספורמציה של טנזורים (כתיב מטריצי):}
+    \begin{itemize}
+        \item \textbf{עליונים ($T^{\mu\nu}$):} $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^T$
+        \item \textbf{תחתונים ($T_{\mu\nu}$):} $\mathbf{T}' = (\Lambda^{-1})^T \mathbf{T} \Lambda^{-1}$
+        \item \textbf{מעורבים ($T^\mu{}_\nu$):} $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^{-1}$
+    \end{itemize}
 \end{itemize}
 
 \section{איזומטריה (טרנספורמציית סימטריה)}
@@ -123,7 +107,7 @@
     }
     \item \textbf{חילוץ שדות:} 
     \[
-    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0},
+    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0}, \quad
     B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}
     \]
     \item \textbf{משוואות מקסוול (אי-הומוגניות):}
@@ -146,7 +130,7 @@
 
 \textbf{תנאי שפה וקפיצה על משטח ($\sigma$):} 
 \\
-$\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0, \; \left.\frac{\partial\Phi_2}{\partial n} - \frac{\partial\Phi_1}{\partial n}\right|_{\partial V} = -4\pi\sigma$
+$\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0, \; \left.\frac{\partial\Phi_2}{\partial n} - \frac{\partial\Phi_1}{\partial n}\right|_{\text{surface}} = -4\pi\sigma$
 
 \section{הטנזור הדואלי $\tilde{F}^{\mu\nu}$}
 הטנזור הדואלי מוגדר ע"י $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}$. הוא מתקבל מהחלפת השדות: $\vec{E} \to \vec{B}$ ו-$\vec{B} \to -\vec{E}$.
@@ -170,7 +154,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \]
     כאשר $u = \frac{1}{8\pi}(E^2+B^2)$ (צפיפות אנרגיה), $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$ (וקטור פוינטינג / שטף האנרגיה), $\vec{p}_{\text{EM}} = \vec{S}$ (צפיפות התנע האלקטרומגנטי), ו-$\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$ הוא טנזור המאמצים של מקסוול $\overleftrightarrow{\sigma}$.
 
-    \item \textbf{צפיפות תנע זוויתי:} $\vec{\mathcal{L}}_{\text{EM}} = \vec{r} \times \vec{p}_{\text{EM}} = \vec{r} \times \vec{S}$ (התנע הזוויתי הכולל מחושב ע"י אינטגרל נפחי: $\vec{L}_{\text{EM}} = \int \vec{\mathcal{L}}_{\text{EM}} \, d^3r$).
+    \item \textbf{צפיפות תנע זוויתי:} $\vec{\mathcal{L}}_{\text{EM}} = \vec{r} \times \vec{p}_{\text{EM}} = \vec{r} \times \vec{S}$ ($\vec{L}_{\text{EM}} = \int \vec{\mathcal{L}}_{\text{EM}} \, d^3r$).
     
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):} 
     \[
@@ -190,9 +174,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \[
     \partial^\mu T_{\mu\nu} = -\frac{1}{c^2} F_{\nu\alpha}J^\alpha \quad \left(\partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\alpha}J_\alpha \right)
     \]
-    \item \textbf{עקבת הטנזור (Trace)}:
-    \\
-    $\text{Tr}(T) = T^\mu{}_\mu = 0 \quad ( \text{ ב-4 ממדים} \eta^{\mu\nu}\eta_{\mu\nu}=4 \text{נובע מ-})$.
+    \item \textbf{עקבת הטנזור (Trace):} $\text{Tr}(T) = T^\mu{}_\mu = 0 \quad (\text{נובע מ-} \eta^{\mu\nu}\eta_{\mu\nu}=4 \text{ ב-4 ממדים})$.
 \end{itemize}
 
 \section{סוגי כיול (\textenglish{Gauge Transformations})}
@@ -204,7 +186,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \]
     מתאים לבעיות יחסותיות וגלים אלקטרומגנטיים. מעביר את משוואות מקסוול לצורה:
     \[
-    \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left(\square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2 \text{כאשר } \right)
+    \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left(\square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2\right)
     \]
     \item \textbf{כיול קולון (\textenglish{Coulomb Gauge}):} תנאי: $\vec{\nabla}\cdot\vec{A} = 0$.\\
     מתאים לאלקטרוסטטיקה, מגנטוסטטיקה ולקוונטיזציה של השדה. נותן:
@@ -214,42 +196,22 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 \end{itemize}
 
 \section{פעולה ומשוואות אוילר-לגראנז'}
-הפעולה היחסותית היא $S = \int \mathcal{L} \, d^4x$, כאשר צפיפות הלגראנז'יאן מתפרקת ל:
+הפעולה היחסותית היא $S = \int \mathcal{L} \, d^4x$, כאשר צפיפות הלגראנז'יאן:
 \[
 \mathcal{L}_{EM} = \mathcal{L}_{\text{field}} + \mathcal{L}_{\text{int}} = -\frac{1}{16\pi} F_{\mu\nu}F^{\mu\nu} - \frac{1}{c}J_\mu A^\mu
 \]
-\textbf{טריק - מביצוע הווריאציה לפי $A_\mu$ ($\delta S = 0$):}
+\textbf{וריאציה לפי $A_\mu$ ($\delta S = 0$):}
 \begin{enumerate}[leftmargin=*]
-    \item 
-    $
-\frac{\partial}{\partial(\partial_\nu A_\mu)} \left( \mathcal{L} \right) \propto \frac{\partial}{\partial(\partial_\nu A_\mu)} \left( F_{\alpha\beta} F^{\alpha\beta} \right) = 4 F^{\mu\nu}
-$
-
-    \item
-    $
-\frac{\partial}{\partial A_\mu} \left( \mathcal{L} \right) \propto \frac{\partial}{\partial A_\mu} \left( J_\mu A^\mu \right) = J^\mu
-$
-    
-
-    \item
-    $0 = \frac{\partial}{\partial A_\mu} \left( \mathcal{L} \right) - \frac{\partial}{\partial(\partial_\nu A_\mu)} \left( \mathcal{L} \right) \implies \partial_\nu F^{\mu\nu} = \frac{4\pi}{c} J^\mu$
+    \item $\frac{\partial\mathcal{L}}{\partial(\partial_\nu A_\mu)} = -\frac{1}{4\pi} F^{\nu\mu} = \frac{1}{4\pi} F^{\mu\nu}$
+    \item $\frac{\partial\mathcal{L}}{\partial A_\mu} = -\frac{1}{c} J^\mu$
+    \item $0 = \partial_\nu \left(\frac{\partial\mathcal{L}}{\partial(\partial_\nu A_\mu)}\right) - \frac{\partial\mathcal{L}}{\partial A_\mu} \implies \partial_\nu F^{\mu\nu} = \frac{4\pi}{c} J^\mu$
 \end{enumerate}
-
-\textbf{חילוף סדר נגזרת ווריאציה:}
-$
-\delta \left( \frac{dx^\mu}{d\lambda} \right) = \frac{d}{d\lambda} (\delta x^\mu)
-$
 
 \section{טרנספורמציות לורנץ וסיבובים}
 \begin{itemize}
-    \item \textbf{בוסט בציר $x$:} 
-    \\
-    {\small \textenglish{Rapidity} ($\theta=\text{tanh}^{-1}(\beta)$),
-    $\beta=\frac{v}{c},\cosh\theta=\gamma, \sinh\theta=\gamma\beta$
-    
-    }
+    \item \textbf{בוסט בציר $x$:} \textenglish{Rapidity} ($\theta=\text{tanh}^{-1}(\beta)$), $\beta=\frac{v}{c}, \cosh\theta=\gamma, \sinh\theta=\gamma\beta$
     {\scriptsize
-    \setlength{\arraycolsep}{3pt}
+    \setlength{\arraycolsep}{2.5pt}
     \[
     \Lambda^\mu{}_\nu = \begin{pmatrix}
     \gamma & -\gamma\beta & 0 & 0 \\
@@ -261,39 +223,24 @@ $
     -\sinh\theta & \cosh\theta & 0 & 0 \\
     0 & 0 & 1 & 0 \\
     0 & 0 & 0 & 1
-    \end{pmatrix}, \gamma=\frac{1}{\sqrt{1-\beta^2}}
+    \end{pmatrix}, \quad \gamma=\frac{1}{\sqrt{1-\beta^2}}
     \]
     }
-    \item \textbf{סיבוב סביב ציר $z$ מזווית $\phi$:}
+    \item \textbf{סיבוב פסיבי סביב ציר $z$ (שינוי קואורדינטות $x'^\mu = \Lambda_z(\theta)^\mu{}_\nu x^\nu$):}
     {\scriptsize
-    \setlength{\arraycolsep}{2pt}
-    $
-    R^\mu{}_\nu = \begin{pmatrix}
+    \setlength{\arraycolsep}{2.5pt}
+    \[
+    \Lambda_z(\theta) = \begin{pmatrix}
     1 & 0 & 0 & 0 \\
-    0 & \cos\phi & \sin\phi & 0 \\
-    0 & -\sin\phi & \cos\phi & 0 \\
+    0 & \cos\theta & \sin\theta & 0 \\
+    0 & -\sin\theta & \cos\theta & 0 \\
     0 & 0 & 0 & 1
     \end{pmatrix}
-    $
+    \]
     }
-
-    \section*{סיבוב במרחב (פסיבי מול אקטיבי / רכיבים מול בסיס)}
-\begin{itemize}
-    \item \textbf{שינוי קואורדינטות / רכיבים קונטרא-וואריאנטיים ($x'^\mu = \Lambda^\mu{}_\nu x^\nu$):}
-    טרנספורמציה פסיבית — סיבוב מערכת הצירים בזווית $\theta$ (הגוף נשאר במקום, הרכיבים מסתובבים בזווית הפוכה $-\theta$):
-    \[
-    \Lambda_z(\theta) = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & \cos\theta & \sin\theta & 0 \\ 0 & -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
-    \]
-    
-    \item \textbf{סיבוב וקטורי הבסיס ($\vec{e}'_\mu = \vec{e}_\nu (\Lambda^{-1})^\nu{}_\mu$):}
-    טרנספורמציה אקטיבית — סיבוב פיזי של וקטורי הבסיס עצמם בזווית $\theta$ (המינוס בשורה הראשונה):
-    \[
-    \mathbf{R}_z(\theta) = (\Lambda_z(\theta))^{-1} = \Lambda_z(-\theta) = \begin{pmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}
-    \]
-
-    \item \textbf{טרנספורמציה לבסיס הדואלי ($\vec{e}'^\mu = \Lambda^\mu{}_\nu \vec{e}^\nu$ / וקטורים קו-וואריאנטיים $A'_\mu$):}
-    הבסיס הדואלי המוגדר ע"י $\vec{e}^\mu \cdot \vec{e}_\nu = \delta^\mu_\nu$ משתנה **בדיוק כמו רכיבי הווקטור** ($x'^\mu$), בעוד הרכיבים הקו-וואריאנטיים ($A_\mu$) משתנים כמו בסיס המרחב הישיר ($\vec{e}_\mu$).
-\end{itemize}
+    \item \textbf{סיבוב אקטיבי של וקטורי הבסיס ($\vec{e}'_\mu = \vec{e}_\nu (\Lambda^{-1})^\nu{}_\mu$):}
+    $\mathbf{R}_z(\theta) = \Lambda_z(-\theta) = \Lambda_z(\theta)^T$.
+    \item \textbf{בסיס דואלי ($\vec{e}'^\mu = \Lambda^\mu{}_\nu \vec{e}^\nu$):} משתנה פסיבית כמו רכיבי הווקטור ($x'^\mu$).
 \end{itemize}
 
 \section{טנזור לוי-צ'יוויטה}
@@ -335,28 +282,19 @@ $
         \item \textbf{בתוך הספירה ($r, r' < R$):}
         {\small
         \[
-        \begin{aligned}
-        G_D(\vec{r},\vec{r}') = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} &\Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{(r \, r')^\ell}{R^{2\ell+1}} \Big] \\
-        &\times Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
-        \end{aligned}
+        G_D(\vec{r},\vec{r}') = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} \Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{(r \, r')^\ell}{R^{2\ell+1}} \Big] Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
         \]
         }
         \item \textbf{מחוץ לספירה ($r, r' > R$):}
         {\small
         \[
-        \begin{aligned}
-        G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} &\Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{R^{2\ell+1}}{(r \, r')^{\ell+1}} \Big] \\
-        &\times Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
-        \end{aligned}
+        G_D(\vec{r},\vec{r}') = 4\pi \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{1}{2\ell+1} \Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{R^{2\ell+1}}{(r \, r')^{\ell+1}} \Big] Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
         \]
         }
     \end{itemize}
     \item \textbf{משפט התוספת מרחב חופשי:} 
     \[
-    \frac{1}{|\vec{r}-\vec{r}'|} = \sum_{\ell=0}^\infty \frac{r_<^\ell}{r_>^{\ell+1}} P_\ell(\cos\gamma) 
-    \]
-    \[
-    = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \frac{r_<^\ell}{r_>^{\ell+1}} Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
+    \frac{1}{|\vec{r}-\vec{r}'|} = \sum_{\ell=0}^\infty \frac{r_<^\ell}{r_>^{\ell+1}} P_\ell(\cos\gamma) = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \frac{r_<^\ell}{r_>^{\ell+1}} Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
     \]
 \end{itemize}
 
@@ -372,92 +310,57 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
 \textbf{טנזור הקוודרופול:} $Q_{ij} = \int \rho(\vec{r}') (3x'_i x'_j - r'^2 \delta_{ij}) d^3r' \implies \text{Tr}(Q) = \sum_{i} Q_{ii} = 0$.
 
 \vspace{2pt}
-\textbf{פוטנציאל של קליפה כדורית ברדיוס $R$ (עם פוטנציאל/צפיפות נתונה על השפה):}
+\textbf{פוטנציאל של קליפה כדורית ברדיוס $R$:}
 \begin{itemize}
-    \item \textbf{ללא סימטריה אזימותלית (תלוי ב-$\theta,\phi$, במונחי הרמוניות כדוריות $Y_{\ell,m}$):}
-    \[
-    \Phi(r,\theta,\phi) = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \left( A_{\ell,m} r^\ell + \frac{B_{\ell,m}}{r^{\ell+1}} \right) Y_{\ell,m}(\theta,\phi)
-    \]
+    \item \textbf{כללי (תלוי ב-$\theta,\phi$, במונחי הרמוניות כדוריות $Y_{\ell,m}$):}
     \[
     \Phi_{\text{in}} = \sum_{\ell,m} A_{\ell,m} r^\ell Y_{\ell,m}(\theta,\phi), \quad \Phi_{\text{out}} = \sum_{\ell,m} \frac{B_{\ell,m}}{r^{\ell+1}} Y_{\ell,m}(\theta,\phi)
     \]
-    \item \textbf{עם סימטריה אזימותלית \textenglish{m=0} וכן $Y_{\ell,m}(\theta,\phi) \to P_\ell(\cos\theta)$ (תלוי רק ב-$\theta$, במונחי פולינומי לז'נדר $P_\ell$)}
+    \item \textbf{סימטריה אזימותלית ($m=0$):} הפירוק מצטמצם לפולינומי לז'נדר $P_\ell(\cos\theta)$ עם מקדמים $A_\ell, B_\ell$.
 
     \item \textbf{תכונות אורתוגונליות ונירמול:}
-\begin{itemize}
-    \item \textbf{פולינומי לז'נדר ($P_\ell(x)$):} 
-    {\small\[
-    \int_{-1}^{1} P_\ell(x) P_{\ell'}(x) \, dx  = \int_{0}^{\pi} P_\ell(\cos\theta) P_{\ell'}(\cos\theta) \sin\theta \, d\theta = \frac{2}{2\ell+1} \delta_{\ell\ell'}
-    \]}
-    \item \textbf{פונקציות לז'נדר המיוחסות ($P_\ell^m(x)$):}
-    \[
-    \int_{-1}^{1} P_\ell^m(x) P_{\ell'}^m(x) \, dx = \frac{2}{2\ell+1} \frac{(\ell+m)!}{(\ell-m)!} \delta_{\ell\ell'}
-    \]
-    \item \textbf{הרמוניות ספיריות ($Y_{\ell,m}(\theta,\phi)$) — אורתונורמליות מלאה על פני כדור:}
-    \[
-    \int_{0}^{2\pi} d\phi \int_{0}^{\pi} \sin\theta \, d\theta \, Y_{\ell,m}^*(\theta,\phi) Y_{\ell',m'}(\theta,\phi) = \delta_{\ell\ell'} \delta_{mm'}
-    \]
-\end{itemize}
+    \begin{itemize}
+        \item \textbf{פולינומי לז'נדר ($P_\ell(x)$):} 
+        {\small \[
+        \int_{-1}^{1} P_\ell(x) P_{\ell'}(x) \, dx = \int_{0}^{\pi} P_\ell(\cos\theta) P_{\ell'}(\cos\theta) \sin\theta \, d\theta = \frac{2}{2\ell+1} \delta_{\ell\ell'}
+        \]}
+        \item \textbf{פונקציות לז'נדר המיוחסות ($P_\ell^m(x)$):}
+        \[
+        \int_{-1}^{1} P_\ell^m(x) P_{\ell'}^m(x) \, dx = \frac{2}{2\ell+1} \frac{(\ell+m)!}{(\ell-m)!} \delta_{\ell\ell'}
+        \]
+        \item \textbf{הרמוניות כדוריות ($Y_{\ell,m}(\theta,\phi)$):}
+        \[
+        \int_{0}^{2\pi} d\phi \int_{0}^{\pi} \sin\theta \, d\theta \, Y_{\ell,m}^*(\theta,\phi) Y_{\ell',m'}(\theta,\phi) = \delta_{\ell\ell'} \delta_{mm'}
+        \]
+    \end{itemize}
 \end{itemize}
 
 \section{וקטורי יחידה במערכות קואורדינטות}
 \begin{itemize}
     \item \textbf{כדוריות לקרטזיות:}
-    \[\hat{r} = \sin\theta\cos\phi\hat{x} + \sin\theta\sin\phi\hat{y} + \cos\theta\hat{z}
-    \]
-    \[
-    \hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{y} - \sin\theta\hat{z}
-    \]
-    \[
-    \hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}
-    \]
+    $\hat{r} = \sin\theta\cos\phi\hat{x} + \sin\theta\sin\phi\hat{y} + \cos\theta\hat{z}$, \quad
+    $\hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{y} - \sin\theta\hat{z}$, \quad
+    $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$
     \item \textbf{קרטזיות לכדוריות:}
-    \[
-    \hat{x} = \sin\theta\cos\phi\hat{r} + \cos\theta\cos\phi\hat{\theta} - \sin\phi\hat{\phi}
-    \]
-    \[
-    \hat{y} = \sin\theta\sin\phi\hat{r} + \cos\theta\sin\phi\hat{\theta} + \cos\phi\hat{\phi}
-    \]
-    \[
-    \hat{z} = \cos\theta\hat{r} - \sin\theta\hat{\theta}
-    \]
+    $\hat{x} = \sin\theta\cos\phi\hat{r} + \cos\theta\cos\phi\hat{\theta} - \sin\phi\hat{\phi}$, \quad
+    $\hat{y} = \sin\theta\sin\phi\hat{r} + \cos\theta\sin\phi\hat{\theta} + \cos\phi\hat{\phi}$, \quad
+    $\hat{z} = \cos\theta\hat{r} - \sin\theta\hat{\theta}$
     \item \textbf{גליליות לקרטזיות:}
-    \[
-    \hat{r} = \cos\phi\hat{x} + \sin\phi\hat{y}
-    \]
-    \[
-    \hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}
-    \]
-    \[
-    \hat{z} = \hat{z}
-    \]
+    $\hat{r} = \cos\phi\hat{x} + \sin\phi\hat{y}$, \quad
+    $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$, \quad
+    $\hat{z} = \hat{z}$
     \item \textbf{קרטזיות לגליליות:}
-    \[
-    \hat{x} = \cos\phi\hat{r} - \sin\phi\hat{\phi}
-    \]
-    \[
-    \hat{y} = \sin\phi\hat{r} + \cos\phi\hat{\phi}
-    \]
-    \[
-    \hat{z} = \hat{z}
-    \]
+    $\hat{x} = \cos\phi\hat{r} - \sin\phi\hat{\phi}$, \quad
+    $\hat{y} = \sin\phi\hat{r} + \cos\phi\hat{\phi}$, \quad
+    $\hat{z} = \hat{z}$
 \end{itemize}
 
 \section{מכפלה וקטורית (\textenglish{Cross Product}) של וקטורי יחידה}
 \begin{itemize}
-    \item \textbf{כדוריות (מערכת ימנית בסידור $\hat{r}, \hat{\theta}, \hat{\phi}$):}
-    \[
-    \hat{r} \times \hat{\theta} = \hat{\phi}
-    , \quad 
-    \hat{\theta} \times \hat{\phi} = \hat{r}, \quad 
-    \hat{\phi} \times \hat{r} = \hat{\theta}
-    \]
-    \item \textbf{גליליות (מערכת ימנית בסידור $\hat{r}, \hat{\phi}, \hat{z}$):}
-    \[
-    \hat{r} \times \hat{\phi} = \hat{z}, \quad 
-    \hat{\phi} \times \hat{z} = \hat{r}, \quad 
-    \hat{z} \times \hat{r} = \hat{\phi}
-    \]
+    \item \textbf{כדוריות ($\hat{r}, \hat{\theta}, \hat{\phi}$):}
+    $\hat{r} \times \hat{\theta} = \hat{\phi}, \quad \hat{\theta} \times \hat{\phi} = \hat{r}, \quad \hat{\phi} \times \hat{r} = \hat{\theta}$
+    \item \textbf{גליליות ($\hat{r}, \hat{\phi}, \hat{z}$):}
+    $\hat{r} \times \hat{\phi} = \hat{z}, \quad \hat{\phi} \times \hat{z} = \hat{r}, \quad \hat{z} \times \hat{r} = \hat{\phi}$
 \end{itemize}
 
 \end{multicols*}
