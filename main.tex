@@ -306,8 +306,18 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 \section{פונקציות גרין ומטעני דמות}
 \begin{itemize}
     \item \textbf{הגדרת $r_<$ ו-$r_>$:} $r_< = \min(r, r')$, \quad $r_> = \max(r, r')$.
-    \item \textbf{מישור אינסופי מוארק ($z=0$):} $G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{1}{|\vec{r}-\vec{r}_{\text{img}} |}$ כאשר $\vec{r}_{\text{img}} = (x', y', -z')$. (מטען דמות $-q$ ב-$z'=-d$).
-    \item \textbf{ספירה מוארקת ברדיוס $R$ (תנאי דיריכלה):} מטען דמות $q' = -q \frac{R}{r'}$ במיקום $\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$.
+
+    \item \textbf{מישור אינסופי מוארק ($z=0$):} 
+    מטען מקורי $q$ ממוקם ב-$\vec{r}' = (x', y', z')$ (כאשר $z' > 0$). מטען דמות $q' = -q$ ממוקם ב-$\vec{r}_{\text{img}} = (x', y', -z')$ (בחצי המרחב השלילי $z' < 0$):
+    \[
+    G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{1}{|\vec{r}-\vec{r}_{\text{img}}|}
+    \]
+
+    \item \textbf{ספירה מוארקת ברדיוס $R$ (תנאי דיריכלה):}
+    \begin{itemize}
+        \item \textbf{מטען מקורי מחוץ לספירה ($r' > R$):} מטען $q$ ממוקם ב-$\vec{r}'$. מטען דמות $q' = -q \frac{R}{r'}$ ממוקם \textbf{בתוך הספירה} ב-$\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$ (כך ש-$r_{\text{img}} < R$).
+        \item \textbf{מטען מקורי בתוך הספירה ($r' < R$):} מטען $q$ ממוקם ב-$\vec{r}'$. מטען דמות $q' = -q \frac{R}{r'}$ ממוקם \textbf{מחוץ לספירה} ב-$\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$ (כך ש-$r_{\text{img}} > R$).
+    \end{itemize}
     \[
     G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - \frac{R^2}{r'^2}\vec{r}'\right|}
     \]
@@ -315,6 +325,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \[
     G(\vec{r},\vec{r}') = \frac{1}{\sqrt{r^2 + r'^2 - 2rr'\cos\gamma}} - \frac{1}{\sqrt{\frac{r^2 r'^2}{R^2} + R^2 - 2rr'\cos\gamma}}
     \]
+
     \item \textbf{פיתוח בכדוריות (פונקציית גרין דיריכלה לספירה ברדיוס $R$):}
     \begin{itemize}
         \item \textbf{בתוך הספירה ($r, r' < R$):}
@@ -330,6 +341,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
         \]
         }
     \end{itemize}
+
     \item \textbf{משפט התוספת במרחב החופשי:}
     \[
     \frac{1}{|\vec{r} - \vec{r}'|} = \sum_{l=0}^{\infty} \frac{r_<^l}{r_>^{l+1}} P_l(\cos\gamma)
