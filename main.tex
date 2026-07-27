@@ -280,19 +280,26 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \item \textbf{4 אינדקסים:} במרחב מינקובסקי (\textenglish{Mostly Minus}): $\epsilon^{0123} = +1$, ולכן $\epsilon_{0123} = -1$.
 \end{itemize}
 
-\section{פונקציות גרין ופוטנציאל}
-חישוב הפוטנציאל הפואסוני $\nabla^2 \Phi = -4\pi \rho$:
-\[
-\Phi(\vec{r}) = \int_V \rho(\vec{r}') G(\vec{r}, \vec{r}') d^3r' + \frac{1}{4\pi} \oint_{\partial V} \left( G \vec{\nabla}'\Phi - \Phi \vec{\nabla}'G \right) \cdot d\vec{A}'
-\]
+\section{פונקציות גרין ופתרון משוואת פואסון}
 \begin{itemize}
-    \item \textbf{תנאי דיריכלה ($G_D=0$ על השפה):}
+    \item \textbf{חישוב הפוטנציאל הפואסוני:} $\nabla^2 \Phi = -4\pi \rho$
+    \item \textbf{הגדרת פונקציית גרין:} $\nabla'^2 G(\vec{r}, \vec{r}') = -4\pi \delta^{(3)}(\vec{r} - \vec{r}')$
+    \item \textbf{מבנה כללי (סינגולרי + הרמוני):}
     \[
-    \Phi(\vec{r}) = \int_V \rho G_D d^3r' - \frac{1}{4\pi} \oint_{\partial V} \Phi(\vec{r}') \frac{\partial G_D}{\partial n'} dA'
+    G(\vec{r}, \vec{r}') = \frac{1}{|\vec{r} - \vec{r}'|} + F(\vec{r}, \vec{r}') \quad \text{כאשר } \nabla'^2 F(\vec{r}, \vec{r}') = 0
     \]
-    \item \textbf{תנאי נוימן ($\frac{\partial G_N}{\partial n'} = -\frac{4\pi}{S}$ על השפה):}
+    \item \textbf{סימטריה:} $G(\vec{r}, \vec{r}') = G(\vec{r}', \vec{r})$
+    \item \textbf{נוסחת הפתרון הכללית (משפט גרין):}
     \[
-    \Phi(\vec{r}) = \langle\Phi\rangle_S + \int_V \rho G_N d^3r' + \frac{1}{4\pi} \oint_{\partial V} \frac{\partial \Phi}{\partial n'} G_N dA'
+    \Phi(\vec{r}) = \int_V \rho(\vec{r}') G(\vec{r}, \vec{r}') \, d^3r' - \frac{1}{4\pi} \oint_S \left[ \Phi(\vec{r}') \frac{\partial G}{\partial n'} - G \frac{\partial \Phi}{\partial n'} \right] dA'
+    \]
+    \item \textbf{תנאי דיריכלה ($G_D = 0$ על $S$):}
+    \[
+    \Phi(\vec{r}) = \int_V \rho(\vec{r}') G_D(\vec{r}, \vec{r}') \, d^3r' - \frac{1}{4\pi} \oint_S \Phi(\vec{r}') \frac{\partial G_D}{\partial n'} \, dA'
+    \]
+    \item \textbf{תנאי נוימן ($\frac{\partial G_N}{\partial n'} = -\frac{4\pi}{S}$ על $S$):}
+    \[
+    \Phi(\vec{r}) = \langle \Phi \rangle_S + \int_V \rho(\vec{r}') G_N(\vec{r}, \vec{r}') \, d^3r' + \frac{1}{4\pi} \oint_S G_N(\vec{r}, \vec{r}') \frac{\partial \Phi}{\partial n'} \, dA'
     \]
 \end{itemize}
 
