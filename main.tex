@@ -79,6 +79,11 @@ $
 T^\mu{}_\nu \quad \leftrightarrow \quad T_{\text{שורה}, \, \text{עמודה}} = T_{\mu, \nu}
 $
 
+\item \textbf{טרנספוז:}
+$
+    (F^T)^{\mu\nu} = F^{\nu\mu}, \ (g^T)_{\mu\nu} = g_{\nu\mu} \ (T^T)^\mu{}_\nu = T_\nu{}^\mu
+$
+
 \end{itemize}
 
 \section{איזומטריה (טרנספורמציית סימטריה)}
@@ -120,7 +125,7 @@ $
     }
     \item \textbf{חילוץ שדות:} 
     \[
-    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0}, \quad
+    E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0}, \:
     B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}
     \]
     \item \textbf{משוואות מקסוול (אי-הומוגניות):}
@@ -209,7 +214,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \begin{itemize}
         \item \textbf{רכיב הזמן ($\nu=0$ - שימור אנרגיה):} $\frac{\partial u}{\partial t} + \vec{\nabla} \cdot \vec{S} = -\vec{J} \cdot \vec{E}$
         \item \textbf{רכיבים מרחביים ($\nu=i$ - שימור תנע):} $\frac{\partial \vec{p}_{\text{EM}}}{\partial t} - \vec{\nabla} \cdot \overleftrightarrow{\sigma} = -\left( \rho \vec{E} + \frac{1}{c} \vec{J} \times \vec{B} \right)$
-        \item \textbf{מערכת סגורה (ללא מטענים/זרמים, $J_\mu=0$):} $\partial_\mu T^\mu{}_\nu = 0$
+        \item \textbf{מע' סגורה (ללא מטענים/זרמים, $J_\mu=0$):} $\partial_\mu T^\mu{}_\nu = 0$
     \end{itemize}
     \item \textbf{עקבת הטנזור (Trace):} $\text{Tr}(T) = T^\mu{}_\mu = 0$.
 \end{itemize}
@@ -226,7 +231,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left(\square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2\right)
     \]
     \item \textbf{כיול קולון (\textenglish{Coulomb Gauge}):} תנאי: $\vec{\nabla}\cdot\vec{A} = 0$.\\
-    מתאים לאלקטרוסטטיקה, מגנטוסטטיקה ולקוונטיזציה של השדה. נותן:
+    מתאים לא"ס, מ"ס ולקוונטיזציה של השדה. נותן:
     \[
     \nabla^2 \Phi = -4\pi\rho \implies \Phi(\vec{r}, t) = \int \frac{\rho(\vec{r}', t)}{|\vec{r}-\vec{r}'|} d^3 r'
     \]
@@ -260,12 +265,12 @@ $
 \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) - \frac{\partial \mathcal{L}}{\partial \phi} = 0
 $
 
-    \item \textbf{נגזרות אינטגרנד הוואריאציה:}
-    \[
+    \item \textbf{נגזרות:}
+    $
     \frac{\partial \mathcal{L}_{\text{EM}}}{\partial (\partial_\mu A_\nu)} = -\frac{1}{4\pi c} F^{\mu\nu}, \quad \frac{\partial \mathcal{L}_{\text{EM}}}{\partial A_\nu} = -\frac{1}{c^2} J^\nu
-    \]
+    $
 
-    \item \textbf{הצבה וואריאציה ($\delta S = 0$) $\Leftarrow$ מ' מקסוול לא-הומוגניות:}
+    \item \textbf{$\delta S = 0$ $\Leftarrow$ מ' מקסוול לא-הומוגניות:}
     $
     \partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu
     $
@@ -313,7 +318,7 @@ $
     \item \textbf{4 אינדקסים:} במרחב מינקובסקי (\textenglish{Mostly Minus}): $\epsilon^{0123} = +1$, ולכן $\epsilon_{0123} = -1$.
 \end{itemize}
 
-\subsection{אופרטורים דיפרנציאליים}
+\section{אופרטורים דיפרנציאליים}
 
 \begin{itemize}
     \item \textbf{גרדיאנט:} 
