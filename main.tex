@@ -313,6 +313,31 @@ $
     \item \textbf{4 אינדקסים:} במרחב מינקובסקי (\textenglish{Mostly Minus}): $\epsilon^{0123} = +1$, ולכן $\epsilon_{0123} = -1$.
 \end{itemize}
 
+\subsection{אופרטורים דיפרנציאליים}
+
+\begin{itemize}
+    \item \textbf{גרדיאנט:} 
+    $ \vec{\nabla}\phi = \frac{\partial \phi}{\partial x^i} e^i = \partial_i \phi \, e^i
+    $
+    ($\partial_i \phi$ קו-וואריאנטי.)
+
+    \item \textbf{דיברגנס:} עבור שדה וקטורי
+    $
+    \vec{\nabla} \cdot \vec{E} = \frac{1}{\sqrt{g}} \partial_j \left( \sqrt{g} \, E^j \right)
+    $
+
+    \item \textbf{רוטור:} הרכיב הקונטרה 
+    $ (\vec{\nabla} \times \vec{E})^i = \frac{\varepsilon^{ijk}}{\sqrt{g}} \frac{\partial E_k}{\partial x^j} = \frac{\varepsilon^{ijk}}{\sqrt{g}} \partial_j E_k
+    $
+
+    \item \textbf{לפלסיאן:}
+    \[
+    \nabla^2 \phi = \vec{\nabla} \cdot \vec{\nabla}\phi = \frac{1}{\sqrt{g}} \frac{\partial}{\partial x^j} \left( \sqrt{g} \, g^{jk} \frac{\partial \phi}{\partial x^k} \right) = \frac{1}{\sqrt{g}} \partial_j \left( \sqrt{g} \, g^{jk} \partial_k \phi \right)
+    \]
+    שימו לב כי $\partial^i(\cdot) \neq \partial_i(g^{ji}\cdot)$.
+    הנגזרת עם אינדקס למעלה מוגדרת $\partial^i(\cdot) = g^{ji} \partial_j(\cdot)$. כי הקוא' עקומות
+\end{itemize}
+
 \section{פונקציות גרין ופתרון משוואת פואסון}
 \begin{itemize}
     \item \textbf{חישוב הפוטנציאל הפואסוני:} $\nabla^2 \Phi = -4\pi \rho$
