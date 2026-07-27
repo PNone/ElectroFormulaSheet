@@ -276,6 +276,24 @@ $
     \end{pmatrix}
     $
     }
+
+    \section*{סיבוב במרחב (פסיבי מול אקטיבי / רכיבים מול בסיס)}
+\begin{itemize}
+    \item \textbf{שינוי קואורדינטות / רכיבים קונטרא-וואריאנטיים ($x'^\mu = \Lambda^\mu{}_\nu x^\nu$):}
+    טרנספורמציה פסיבית — סיבוב מערכת הצירים בזווית $\theta$ (הגוף נשאר במקום, הרכיבים מסתובבים בזווית הפוכה $-\theta$):
+    \[
+    \Lambda_z(\theta) = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & \cos\theta & \sin\theta & 0 \\ 0 & -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
+    \]
+    
+    \item \textbf{סיבוב וקטורי הבסיס ($\vec{e}'_\mu = \vec{e}_\nu (\Lambda^{-1})^\nu{}_\mu$):}
+    טרנספורמציה אקטיבית — סיבוב פיזי של וקטורי הבסיס עצמם בזווית $\theta$ (המינוס בשורה הראשונה):
+    \[
+    \mathbf{R}_z(\theta) = (\Lambda_z(\theta))^{-1} = \Lambda_z(-\theta) = \begin{pmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}
+    \]
+
+    \item \textbf{טרנספורמציה לבסיס הדואלי ($\vec{e}'^\mu = \Lambda^\mu{}_\nu \vec{e}^\nu$ / וקטורים קו-וואריאנטיים $A'_\mu$):}
+    הבסיס הדואלי המוגדר ע"י $\vec{e}^\mu \cdot \vec{e}_\nu = \delta^\mu_\nu$ משתנה **בדיוק כמו רכיבי הווקטור** ($x'^\mu$), בעוד הרכיבים הקו-וואריאנטיים ($A_\mu$) משתנים כמו בסיס המרחב הישיר ($\vec{e}_\mu$).
+\end{itemize}
 \end{itemize}
 
 \section{טנזור לוי-צ'יוויטה}
