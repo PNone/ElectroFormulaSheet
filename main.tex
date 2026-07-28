@@ -10,10 +10,11 @@
 
 % --- Math & Fonts ---
 \usepackage{amsmath, amssymb, amsfonts}
-\DeclareMathSizes{8.5}{8.5}{7}{6} % {fontsize}{textstyle}{scriptstyle}{scriptscriptstyle}
+\DeclareMathSizes{10}{10}{7}{6} % {fontsize}{textstyle}{scriptstyle}{scriptscriptstyle}
 \usepackage{bm}
 \usepackage{array}
 \usepackage{booktabs}
+\usepackage{xcolor}
 
 % --- Hebrew & English Support ---
 \usepackage{polyglossia}
@@ -25,22 +26,41 @@
 
 % --- Tight Lists ---
 \usepackage{enumitem}
-\setlist{nolistsep, leftmargin=*} 
+\setlist{
+    noitemsep,                   % מרווח אפסי בין איטמים
+    topsep=1pt,                  % מרווח אפסי מעל/מתחת לרשימה
+    partopsep=0pt,
+    parsep=0pt,
+    leftmargin=10pt              % צמצום ההזחה הצידית של הרשימה
+}
+% \setlist{nolistsep, leftmargin=*} 
+
 
 % --- Compact Section Headings ---
 \usepackage{titlesec}
-\titleformat{\section}{\large\bfseries}{\thesection}{0.4em}{}
-\titlespacing*{\section}{0pt}{3pt}{1pt}
+% \titleformat{\section}{\large\bfseries}{\thesection}{0.4em}{}
+% \titlespacing*{\section}{0pt}{3pt}{1pt}
+
+% פורמט כותרת \section קומפקטית
+\titleformat{\section}
+  {\normalfont\bfseries\small\color{blue!80!black}}
+  {\thesection}{1em}{}
+\titlespacing*{\section}
+  {0pt}{3pt}{2pt} % {left}{before-space}{after-space}
+
+
 
 % --- Compact Math Spacing ---
 \AtBeginDocument{
-  \setlength{\abovedisplayskip}{2pt}
-  \setlength{\belowdisplayskip}{2pt}
+  \setlength{\abovedisplayskip}{1pt}
+  \setlength{\belowdisplayskip}{1pt}
   \setlength{\abovedisplayshortskip}{1pt}
   \setlength{\belowdisplayshortskip}{1pt}
 }
 
 \pagestyle{empty} % Removes page numbers to save vertical space
+\raggedbottom
+
 
 \begin{document}
 \fontsize{10pt}{12pt}\selectfont
@@ -72,8 +92,8 @@
 \item \textbf{זמן עצמי ($\tau$) והאינטרוואל השמור ($ds$):}
 \begin{itemize}
     \item \textbf{קשר לאורך השמור:} $ds^2 = c^2 d\tau^2 = \eta_{\mu\nu} dx^\mu dx^\nu$
-    \item \textbf{קשר לזמן במערכת כללית ($t$):} $d\tau = \frac{ds}{c} = \frac{dt}{\gamma}$
-    \item \textbf{אינטגרל במסלול:} $\tau = \int \frac{ds}{c} = \int_{t_1}^{t_2} \sqrt{1 - \frac{v^2(t)}{c^2}} \, dt$
+    \item \textbf{קשר לזמן במערכת כללית ($t$):} $d\tau = \dfrac{ds}{c} = \dfrac{dt}{\gamma}$
+    \item \textbf{אינטגרל במסלול:} $\tau = \int \dfrac{ds}{c} = \int_{t_1}^{t_2} \sqrt{1 - \dfrac{v^2(t)}{c^2}} \, dt$
 \end{itemize}
 
 \item \textbf{ייצוג טנזורים כמטריצות :}
@@ -97,11 +117,11 @@ $
 \section{4-וקטורים חשובים}
 \begin{itemize}
     \item \textbf{מיקום:} $x^\mu = (ct, \vec{r})$, \quad $x_\mu = (ct, -\vec{r})$
-    \item \textbf{נגזרת (\textenglish{4-Grad}):} $\partial_\mu \equiv \frac{\partial}{\partial x^\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, \vec{\nabla}\right)$, \ $\partial^\mu \equiv \frac{\partial}{\partial x_\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, -\vec{\nabla}\right)$
+    \item \textbf{נגזרת:} $\partial_\mu \equiv \frac{\partial}{\partial x^\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, \vec{\nabla}\right)$, \ $\partial^\mu \equiv \frac{\partial}{\partial x_\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, -\vec{\nabla}\right)$
     \item \textbf{מהירות-4:} $U^\mu = \frac{dx^\mu}{d\tau} = \gamma(c, \vec{v})$, כאשר $U^\mu U_\mu = c^2$
     \item \textbf{תנע-אנרגיה 4:} $P^\mu = m U^\mu = \left(\frac{E}{c}, \vec{p}\right) = (\gamma m c, \gamma m \vec{v})$, כאשר $P^\mu P_\mu = m^2 c^2$
     \item \textbf{פוטנציאל-4:} $A^\mu = (\Phi, \vec{A})$, \quad $A_\mu = (\Phi, -\vec{A})$
-    \item \textbf{צפיפות זרם-4:} $J^\mu = (\rho c, \vec{J})$, \quad $J_\mu = (\rho c, -\vec{J})$
+    \item \textbf{צפיפות זרם-4:} $J_\mu = (\rho c, -\vec{J}), \ J^\mu = \rho_0 u^\mu = (\rho c, \vec{J})$ \\ ($\text{ צפיפות במע' מנוחה} \rho_0, \; \rho = \gamma \rho_0$)
 \end{itemize}
 
 \section{משוואות מקסוול וטנזור השדה $F_{\mu\nu}$}
@@ -150,7 +170,7 @@ $
 
 \textbf{תנאי שפה וקפיצה על משטח ($\sigma$):} 
 \\
-$\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0, \; \left.\frac{\partial\Phi_2}{\partial n} - \frac{\partial\Phi_1}{\partial n}\right|_{\text{surface}} = -4\pi\sigma$
+$\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0, \; \left.\dfrac{\partial\Phi_2}{\partial n} - \dfrac{\partial\Phi_1}{\partial n}\right|_{\text{surface}} = -4\pi\sigma$
 
 \section{הטנזור הדואלי $\tilde{F}^{\mu\nu}$}
 הטנזור הדואלי מוגדר ע"י $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}$. הוא מתקבל מהחלפת השדות: $\vec{E} \to \vec{B}$ ו-$\vec{B} \to -\vec{E}$.
@@ -173,32 +193,28 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
         \item טנזור המאמצים של מקסוול:\\ $\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$
     \end{itemize}
 
-    \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):}
-    \[
-    T^{\mu\nu} = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F^{\nu\alpha} - \frac{1}{4}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right) 
+    \item 
+    $T^{\mu\nu} = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F^{\nu\alpha} - \frac{1}{4}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right) 
     = \begin{pmatrix} 
     \frac{u}{c} & \vec{p}_{\text{EM}}^T \\
     \frac{1}{c^2}\vec{S} & -\frac{1}{c}\overleftrightarrow{\sigma}
     \end{pmatrix}
-    \]
+    $
 
-    \item \textbf{הצגה קו-וואריאנטית ($T_{\mu\nu}$):}
-    \[
+    \item $
     T_{\mu\nu} = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F_\nu{}^\alpha - \frac{1}{4}\eta_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} \right)
     = \begin{pmatrix} 
     \frac{u}{c} & -\vec{p}_{\text{EM}}^T \\
     -\frac{1}{c^2}\vec{S} & -\frac{1}{c}\overleftrightarrow{\sigma}
     \end{pmatrix}
-    \]
+    $
 
-    \item \textbf{הצגה מעורבת ($T^\mu{}_\nu$):}
-    \[
-    T^\mu{}_\nu = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F_\nu{}^\alpha - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
+    \item $T^\mu{}_\nu = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F_\nu{}^\alpha - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
     = \begin{pmatrix} 
     \frac{u}{c} & -\vec{p}_{\text{EM}}^T \\
     \frac{1}{c^2}\vec{S} & \frac{1}{c}\overleftrightarrow{\sigma}
     \end{pmatrix}
-    \]
+    $
 
     \item \textbf{דיברגנץ טנזור מאמץ-אנ' (שימור תנע-אנ' וצפיפות 4-כוח לורנץ):}
     \[
@@ -257,17 +273,17 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 
     \item \textbf{משוואות \textenglish{EL} לשדה ($A_\nu$):}
     $
-    \partial_\mu \left( \frac{\partial \mathcal{L}_{\text{EM}}}{\partial (\partial_\mu A_\nu)} \right) - \frac{\partial \mathcal{L}_{\text{EM}}}{\partial A_\nu} = 0
+    \partial_\mu \left( \dfrac{\partial \mathcal{L}_{\text{EM}}}{\partial (\partial_\mu A_\nu)} \right) - \dfrac{\partial \mathcal{L}_{\text{EM}}}{\partial A_\nu} = 0
     $
 
     \item \textbf{משוואת \textenglish{EL} לשדה סקלרי ($\phi$):}
 $
-\partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) - \frac{\partial \mathcal{L}}{\partial \phi} = 0
+\partial_\mu \left( \dfrac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) - \dfrac{\partial \mathcal{L}}{\partial \phi} = 0
 $
 
     \item \textbf{נגזרות:}
     $
-    \frac{\partial \mathcal{L}_{\text{EM}}}{\partial (\partial_\mu A_\nu)} = -\frac{1}{4\pi c} F^{\mu\nu}, \quad \frac{\partial \mathcal{L}_{\text{EM}}}{\partial A_\nu} = -\frac{1}{c^2} J^\nu
+    \dfrac{\partial \mathcal{L}_{\text{EM}}}{\partial (\partial_\mu A_\nu)} = -\dfrac{1}{4\pi c} F^{\mu\nu}, \; \dfrac{\partial \mathcal{L}_{\text{EM}}}{\partial A_\nu} = -\dfrac{1}{c^2} J^\nu
     $
 
     \item \textbf{$\delta S = 0$ $\Leftarrow$ מ' מקסוול לא-הומוגניות:}
@@ -278,7 +294,7 @@ $
 
 \section{טרנספורמציות לורנץ וסיבובים}
 \begin{itemize}
-    \item \textbf{בוסט בציר $x$:} \textenglish{Rapidity} ($\theta=\text{tanh}^{-1}(\beta)$), $\beta=\frac{v}{c}, \cosh\theta=\gamma, \sinh\theta=\gamma\beta$
+    \item \textbf{בוסט ב$x$:} \textenglish{Rapidity} ($\theta=\text{tanh}^{-1}(\beta)$), $\cosh\theta=\gamma, \sinh\theta=\gamma\beta$
     {\scriptsize
     \setlength{\arraycolsep}{2.5pt}
     \[
@@ -292,8 +308,8 @@ $
     -\sinh\theta & \cosh\theta & 0 & 0 \\
     0 & 0 & 1 & 0 \\
     0 & 0 & 0 & 1
-    \end{pmatrix}, \quad \gamma=\frac{1}{\sqrt{1-\beta^2}}
-    \]
+    \end{pmatrix}, \ \gamma=\frac{1}{\sqrt{1-\beta^2}}
+    , \beta=\frac{v}{c}\]
     }
     \item \textbf{סיבוב פסיבי סביב ציר $z$ (שינוי קואורדינטות $x'^\mu = \Lambda_z(\theta)^\mu{}_\nu x^\nu$):}
     {\scriptsize
@@ -392,23 +408,28 @@ $
     \]
 
     \item \textbf{פונקציית גרין דיריכלה לספירה ברדיוס $R$ (פיתוח ספרי):}
-\[
+{\small\[
 G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \left[ \frac{r_<^\ell}{r_>^{\ell+1}} - W_\ell(r,r') \right] Y_{\ell m}^*(\theta',\phi') Y_{\ell m}(\theta,\phi)
 \]
-\[
-W_\ell = \begin{cases} 
-\dfrac{(rr')^\ell}{R^{2\ell+1}} & \text{בתוך הספירה } (r,r'<R) \\[4pt]
-\dfrac{R^{2\ell+1}}{(rr')^{\ell+1}} & \text{מחוץ לספירה } (r,r'>R)
-\end{cases}
-\]
 
-    \item \textbf{משפט התוספת במרחב החופשי:}
-    \[
-    \frac{1}{|\vec{r} - \vec{r}'|} = \sum_{l=0}^{\infty} \frac{r_<^l}{r_>^{l+1}} P_l(\cos\gamma)
-    \]
-    \[
-    P_l(\cos\gamma) = \frac{4\pi}{2l+1} \sum_{m=-l}^{l} Y_{lm}^*(\theta', \phi') Y_{lm}(\theta, \phi)
-    \]
+$W_\ell = \begin{cases} 
+(rr')^\ell R^{-(2\ell+1)} & \text{בתוך הספירה } (r,r'<R) \\
+R^{2\ell+1} (rr')^{-(\ell+1)} & \text{מחוץ לספירה } (r,r'>R)
+\end{cases}
+$}
+    \item
+    {\small \[
+    \dfrac{1}{|\vec{r} - \vec{r}'|} = \sum_{l=0}^{\infty} \dfrac{r_<^l}{r_>^{l+1}} P_l(\cos\gamma)\]
+     \[P_l(\cos\gamma) = \dfrac{4\pi}{2l+1} \sum_{m=-l}^{l} Y_{lm}^*(\theta', \phi') Y_{lm}(\theta, \phi)\]}
+
+    \item \textbf{תכונות זוגיות (Parity) של פולינומי לז'נדר והרמוניות ספריות:}
+\begin{itemize}
+    \item $P_\ell(-x) = (-1)^\ell P_\ell(x) \Rightarrow P_\ell(\cos(\pi - \theta)) = (-1)^\ell P_\ell(\cos\theta)$
+    \item \textbf{פולינומים נלווים:} $P_\ell^m(-x) = (-1)^{\ell-m} P_\ell^m(x)$
+    \item \textbf{שיקוף מרחבי ($\vec{r} \to -\vec{r}$):} $\theta \to \pi - \theta, \; \phi \to \phi + \pi \Rightarrow Y_{\ell,m}(\pi - \theta, \, \phi + \pi) = (-1)^\ell Y_{\ell,m}(\theta, \phi)$
+    \item \textbf{צמוד וזווית $\phi$:} $Y_{\ell, -m}(\theta, \phi) = (-1)^m Y_{\ell, m}^*(\theta, \phi), \ Y_{\ell,m}(\theta, -\phi) = (-1)^m Y_{\ell,-m}(\theta, \phi)$
+\end{itemize}
+
 \end{itemize}
 \section{פוטנציאל בסימטריה כדורית / פיתוח מולטיפולי}
 פוטנציאל מפיזור מטען $\rho(\vec{r}')$:
@@ -426,8 +447,6 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
     \[
 \phi(r, \theta, \phi) = \sum_{\ell=0}^{\infty} \sum_{m=-\ell}^{\ell} \left( A_{\ell,m} r^\ell + B_{\ell,m} r^{-(\ell+1)} \right) Y_{\ell,m}(\theta, \phi)
 \]
-
-
     
     \item \textbf{סימטריה אזימותלית ($m=0$):} הפירוק מצטמצם לפולינומי לז'נדר $P_\ell(\cos\theta)$ עם מקדמים $A_\ell, B_\ell$.
 
@@ -473,15 +492,20 @@ $
 \section*{פוטנציאל וקטורי מגנטי $\vec{A}$}
 \noindent
 \textbf{חישוב מגנטוסטטי מאינטגרל צפיפות זרם (כיול קולון $\nabla \cdot \vec{A} = 0$):}
-\[
-\vec{A}(\vec{r}) = \frac{1}{c} \int \frac{\vec{J}(\vec{r}')}{|\vec{r} - \vec{r}'|} \, d^3r'
-\]
+\noindent
+{\small\[\vec{A}(\vec{r}) = \frac{1}{c} \int \frac{\vec{J}(\vec{r}')}{|\vec{r} - \vec{r}'|} \, d^3r', \ \vec{B}(\vec{r}) = \nabla \times \vec{A} = \frac{1}{c} \int \frac{\vec{J}(\vec{r}') \times (\vec{r} - \vec{r}')}{|\vec{r} - \vec{r}'|^3} \, d^3r'\]}
 
 \noindent
-\textbf{פוטנציאל וקטורי מעוכב (תלוי בזמן, כיול לורנץ $\nabla \cdot \vec{A} + \frac{1}{c}\frac{\partial \phi}{\partial t} = 0$):}
-\[
-\vec{A}(\vec{r}, t) = \frac{1}{c} \int \frac{\vec{J}\left(\vec{r}', \, t - \frac{|\vec{r} - \vec{r}'|}{c}\right)}{|\vec{r} - \vec{r}'|} \, d^3r'
-\]
+\text{פוטנציאל וקטורי מעוכב (תלוי בזמן, כיול לורנץ $\nabla \cdot \vec{A} + \frac{1}{c}\frac{\partial \phi}{\partial t} = 0$)}
+
+\begin{itemize}
+    \item \textbf{מונופול מגנטי ($n=0$):} $\vec{A}_{\text{mono}} = 0, \quad \vec{B}_{\text{mono}} = 0$.
+    
+    \item \textbf{איבר הדיפול המגנטי ($n=1$):} האיבר המוביל במרחקים גדולים:
+    \[
+    \vec{A}_{\text{dip}}(\vec{r}) = \frac{\vec{m} \times \vec{r}}{r^3} = \frac{\vec{m} \times \hat{r}}{r^2}, \ \vec{B}(\vec{r}) = \nabla \times \vec{A}_{\text{dip}}(\vec{r}) = \frac{3(\vec{m} \cdot \hat{r})\hat{r} - \vec{m}}{r^3}
+    \]
+\end{itemize}
 
 \section*{קרינה מולטיפולית והספק}
 
@@ -502,6 +526,7 @@ $
 
 \section{וקטורי יחידה במערכות קואורדינטות}
 \begin{itemize}
+
     \item \textbf{כדוריות לקרטזיות:}
     $\hat{r} = \sin\theta\cos\phi\hat{x} + \sin\theta\sin\phi\hat{y} + \cos\theta\hat{z}$, \quad
     $\hat{\theta} = \cos\theta\cos\phi\hat{x} + \cos\theta\sin\phi\hat{y} - \sin\theta\hat{z}$, \quad
