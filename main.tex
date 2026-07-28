@@ -72,10 +72,10 @@
 \begin{multicols*}{2}
 
 \section{פורמליזם יחסותי, וקטורים, טנזורים ואינדקסים}
-המטריקה במוסכמת \textenglish{Mostly Minus} היא 
-\[
+המטריקה ב \textenglish{Mostly Minus} היא 
+$
 \eta_{\mu\nu} = \eta^{\mu\nu} = \text{diag}(1, -1, -1, -1)
-\]
+$
 \begin{itemize}
     \item \textbf{4-וקטור קונטרה (אינדקס עליון):} $A^\mu = (A^0, \vec{A})$. משתנה תחת $A'^\mu = \Lambda^\mu{}_\nu A^\nu = \dfrac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \mathbf{A}$.
     \item \textbf{4-וקטור קו (אינדקס תחתון):} $A_\mu=(A_0, -\vec{A})$. משתנה תחת $A'_\mu =\Lambda_\mu{}^\nu A_\nu = (\Lambda^{-1})^\nu{}_\mu A_\nu = \dfrac{\partial x^\nu}{\partial x'^\mu} A_\nu \Rightarrow \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}$.
@@ -167,18 +167,18 @@ $
     \]
 \end{itemize}
 
-\textbf{השדה החשמלי והמגנטי באמצעות הפוטנציאלים $(\Phi, \vec{A})$:}
-\[
-\vec{E} = -\vec{\nabla}\Phi - \frac{1}{c}\frac{\partial \vec{A}}{\partial t}, \quad \vec{B} = \vec{\nabla} \times \vec{A}
-\]
+\textbf{B,E באמצעות הפוט $(\Phi, \vec{A})$:}
+$
+\vec{E} = -\vec{\nabla}\Phi - \frac{1}{c}\frac{\partial \vec{A}}{\partial t}, \ \vec{B} = \vec{\nabla} \times \vec{A}
+$
 
 \textbf{תנאי שפה וקפיצה על משטח ($\sigma$):} 
 \\
 $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0, \; \left.\dfrac{\partial\Phi_2}{\partial n} - \dfrac{\partial\Phi_1}{\partial n}\right|_{\text{surface}} = -4\pi\sigma$
 
 \section{הטנזור הדואלי $\tilde{F}^{\mu\nu}$}
-הטנזור הדואלי מוגדר ע"י $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}$. הוא מתקבל מהחלפת השדות: $\vec{E} \to \vec{B}$ ו-$\vec{B} \to -\vec{E}$.
-משמש לכתיבת המשוואות ההומוגניות בקיצור: $\partial_\mu \tilde{F}^{\mu\nu} = 0$.
+מוגדר ע"י $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta}$. מתקבל מהחלפת השדות: $\vec{E} \to \vec{B}$ ו-$\vec{B} \to -\vec{E}$.
+משמש לכתיבת המשוואות ההומ' בקיצור: $\partial_\mu \tilde{F}^{\mu\nu} = 0$.
 
 \section{גדלים אינווריאנטיים של השדה}
 \begin{itemize*}[label=\textbullet, itemjoin={,\quad}]
@@ -194,7 +194,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
         \item שטף אנרגיה (וקטור פוינטינג): $\vec{S} = \dfrac{c}{4\pi}(\vec{E}\times\vec{B})$
         \item צפיפות תנע: $\vec{p}_{\text{EM}} = \dfrac{1}{c^2}\vec{S} = \dfrac{1}{4\pi c}(\vec{E}\times\vec{B})$
         \item צפיפות תנע זוויתי: $\vec{\mathcal{L}}_{\text{EM}} = \vec{r} \times \vec{p}_{\text{EM}} = \frac{1}{c^2}(\vec{r} \times \vec{S})$
-        \item טנזור המאמצים של מקסוול:\\ $\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$
+        \item טנזור המאמצים: $\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$
     \end{itemize}
 
     \item 
@@ -506,6 +506,16 @@ $
 
 \section*{קרינה מולטיפולית והספק}
 \noindent
+{\small
+$
+\vec{A}_{\text{rad}}(\vec{r},t) = \dfrac{1}{cr} \iiint d^3r' \, \vec{J}\left(\vec{r}', t - \dfrac{r}{c} + \dfrac{\hat{r} \cdot \vec{r}'}{c}\right)
+$
+}\\
+{\small$
+\vec{B}_{\text{rad}}(\vec{r},t) = -\dfrac{\hat{r}}{c} \times \dfrac{\partial \vec{A}_{\text{rad}}}{\partial t},
+\vec{E}_{\text{rad}}(\vec{r},t) = \hat{r} \times \left[ \dfrac{\hat{r}}{c} \times \dfrac{\partial \vec{A}_{\text{rad}}}{\partial t} \right] = -\hat{r} \times \vec{B}_{\text{rad}}(\vec{r},t)
+$}
+\noindent
 \textbf{נוסחת לֶרְמוֹר (לא-יחסותי $v \ll c$):}
 $P = \dfrac{2}{3} \dfrac{q^2 a^2}{c^3} \ \left(a = |\ddot{\vec{r}}_0|\right)$
 
@@ -558,8 +568,11 @@ $
 \section*{קרינת מולטיפולים (שדה רחוק $r \gg \lambda \gg d$, כאשר $\lambda = \frac{2\pi c}{\omega}$, יחידות \textenglish{CGS})}
 
 \noindent
-\textbf{קיצורים וסימונים:} $t' = t - r/c$, $\vec{E} = \vec{B} \times \hat{r}$. 
-נגדיר $\vec{V}_{\mathbf{Q}} \equiv (\dddot{\mathbf{Q}} \cdot \hat{r}) \times \hat{r}$ כאשר $(\dddot{\mathbf{Q}} \cdot \hat{r})_i = \sum_j \dddot{Q}_{ij} \hat{r}_j$.
+\textbf{קירובים:} 
+{\small $r \gg d$: \textbf{מקור נקודתי} ($\dfrac{1}{|\vec{r}-\vec{r}'|} \approx \frac{1}{r}$) \ $|$ \ 
+$r \gg \lambda$: \textbf{אזור קרינה} (איברי $r^{-1}$, $\vec{E} \perp \vec{B} \perp \hat{r}$) \ $|$ \ 
+$\lambda \gg d \Leftrightarrow \dfrac{v}{c} \ll 1$: \textbf{לא-יחסותי} (הפרדה למולטיפולים). \\
+\textbf{קיצורים וסימונים:} $t' = t - r/c$, \quad $\vec{E} = \vec{B} \times \hat{r}$, \quad $\vec{V}_{\mathbf{Q}} \equiv (\dddot{\mathbf{Q}} \cdot \hat{r}) \times \hat{r}$ כאשר $(\dddot{\mathbf{Q}} \cdot \hat{r})_i = \sum_j \dddot{Q}_{ij} \hat{r}_j$.}
 
 \vspace{3pt}
 \begingroup
