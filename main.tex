@@ -24,6 +24,7 @@
 
 \usepackage{bidi}
 
+\usepackage[inline]{enumitem}
 % --- Tight Lists ---
 \usepackage{enumitem}
 \setlist{
@@ -31,7 +32,7 @@
     topsep=1pt,                  % מרווח אפסי מעל/מתחת לרשימה
     partopsep=0pt,
     parsep=0pt,
-    leftmargin=10pt              % צמצום ההזחה הצידית של הרשימה
+    leftmargin=6pt              % צמצום ההזחה הצידית של הרשימה
 }
 % \setlist{nolistsep, leftmargin=*} 
 
@@ -46,7 +47,7 @@
   {\normalfont\bfseries\small\color{blue!80!black}}
   {\thesection}{1em}{}
 \titlespacing*{\section}
-  {0pt}{3pt}{2pt} % {left}{before-space}{after-space}
+  {0pt}{1pt}{1pt} % {left}{before-space}{after-space}
 
 
 
@@ -60,6 +61,9 @@
 
 \pagestyle{empty} % Removes page numbers to save vertical space
 \raggedbottom
+
+\usepackage{tabularx}
+\usepackage{array}
 
 
 \begin{document}
@@ -177,10 +181,10 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 משמש לכתיבת המשוואות ההומוגניות בקיצור: $\partial_\mu \tilde{F}^{\mu\nu} = 0$.
 
 \section{גדלים אינווריאנטיים של השדה}
-\begin{itemize}
+\begin{itemize*}[label=\textbullet, itemjoin={,\quad}]
     \item $F_{\mu\nu}F^{\mu\nu} = 2(B^2 - E^2)$
     \item $F_{\mu\nu}\tilde{F}^{\mu\nu} = -4(\vec{E}\cdot\vec{B})$
-\end{itemize}
+\end{itemize*}
 
 \section{טנזור מאמץ-אנרגיה $T_{\mu\nu}^{A}$}
 \begin{itemize}
@@ -222,7 +226,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \]
     \begin{itemize}
         \item \textbf{רכיב הזמן ($\nu=0$ - שימור אנרגיה):} $\frac{\partial u}{\partial t} + \vec{\nabla} \cdot \vec{S} = -\vec{J} \cdot \vec{E}$
-        \item \textbf{רכיבים מרחביים ($\nu=i$ - שימור תנע):} $\frac{\partial \vec{p}_{\text{EM}}}{\partial t} - \vec{\nabla} \cdot \overleftrightarrow{\sigma} = -\left( \rho \vec{E} + \frac{1}{c} \vec{J} \times \vec{B} \right)$
+        \item \textbf{' מרחביים ($\nu=i$ - '' תנע):} $\frac{\partial \vec{p}_{\text{EM}}}{\partial t} - \vec{\nabla} \cdot \overleftrightarrow{\sigma} = -\left( \rho \vec{E} + \frac{1}{c} \vec{J} \times \vec{B} \right)$
         \item \textbf{מע' סגורה (ללא מטענים/זרמים, $J_\mu=0$):} $\partial_\mu T^\mu{}_\nu = 0$
         \item 
         $
@@ -311,17 +315,17 @@ $
     \end{pmatrix}, \ \gamma=\frac{1}{\sqrt{1-\beta^2}}
     , \beta=\frac{v}{c}\]
     }
-    \item \textbf{סיבוב פסיבי סביב ציר $z$ (שינוי קואורדינטות $x'^\mu = \Lambda_z(\theta)^\mu{}_\nu x^\nu$):}
+    \item \textbf{סיבוב סביב $z$ ($x'^\mu = \Lambda_z(\theta)^\mu{}_\nu x^\nu$):}
     {\scriptsize
     \setlength{\arraycolsep}{2.5pt}
-    \[
+    $
     \Lambda_z(\theta) = \begin{pmatrix}
     1 & 0 & 0 & 0 \\
     0 & \cos\theta & \sin\theta & 0 \\
     0 & -\sin\theta & \cos\theta & 0 \\
     0 & 0 & 0 & 1
     \end{pmatrix}
-    \]
+    $
     }
 \end{itemize}
 
@@ -358,7 +362,7 @@ $
     \item \textbf{קשר בין וקטורי יחידה $\hat{e}_\mu$ לווקטורי בסיס מטבעיים $e_\mu = \frac{\partial}{\partial x^\mu}$:}
 \begin{itemize}
     \item \textbf{גליליות:} $\hat{\rho} = e_\rho, \quad \hat{\phi} = \frac{1}{\rho} e_\phi, \quad \hat{z} = e_z \quad \left(e_\phi = \rho \hat{\phi}\right)$
-    \item \textbf{ספריות:}\\ $\hat{r} = e_r, \ \hat{\theta} = \dfrac{1}{r} e_\theta, \ \hat{\phi} = \dfrac{1}{r \sin\theta} e_\phi \ \left(e_\theta = r\hat{\theta}, \; e_\phi = r\sin\theta \hat{\phi}\right)$
+    \item \textbf{ספ':} $\hat{r} = e_r, \ \hat{\theta} = \dfrac{1}{r} e_\theta, \ \hat{\phi} = \dfrac{1}{r \sin\theta} e_\phi \ \left(e_\theta = r\hat{\theta}, \; e_\phi = r\sin\theta \hat{\phi}\right)$
 \end{itemize}
 \end{itemize}
 
@@ -367,10 +371,10 @@ $
 \begin{itemize}
     \item \textbf{חישוב הפוטנציאל הפואסוני:} $\nabla^2 \Phi = -4\pi \rho$
     \item \textbf{הגדרת פונקציית גרין:} $\nabla'^2 G(\vec{r}, \vec{r}') = -4\pi \delta^{(3)}(\vec{r} - \vec{r}')$
-    \item \textbf{מבנה כללי (סינגולרי + הרמוני):}
-    \[
-    G(\vec{r}, \vec{r}') = \frac{1}{|\vec{r} - \vec{r}'|} + F(\vec{r}, \vec{r}') \quad (\nabla'^2 F(\vec{r}, \vec{r}') = 0 \text{כאשר })
-    \]
+    \item \textbf{כללי (סינגולרי+הרמוני):}
+    {\small$
+    G(\vec{r}, \vec{r}') = \frac{1}{|\vec{r} - \vec{r}'|} + F(\vec{r}, \vec{r}'), \nabla'^2 F(\vec{r}, \vec{r}') = 0
+    $}
     \item \textbf{סימטריה:} $G(\vec{r}, \vec{r}') = G(\vec{r}', \vec{r})$
     \item \textbf{נוסחת הפתרון הכללית (משפט גרין):}
     \[
@@ -390,6 +394,8 @@ $
 \begin{itemize}
     \item \textbf{הגדרת $r_<$ ו-$r_>$:} $r_< = \min(r, r')$, \quad $r_> = \max(r, r')$.
 
+    \item $\tilde{r}_< = \min(rr', R^2)$, $\tilde{r}_> = \max(rr', R^2)$.
+
     \item \textbf{מישור אינסופי מוארק ($z=0$):} 
     מטען מקורי $q$ ממוקם ב-$\vec{r}' = (x', y', z')$ (כאשר $z' > 0$). מטען דמות $q' = -q$ ב-$\vec{r}_{\text{img}} = (x', y', -z')$ ($z' < 0$):
     $
@@ -408,21 +414,12 @@ $
     \]
 
     \item \textbf{פונקציית גרין דיריכלה לספירה ברדיוס $R$ (פיתוח ספרי):}
-{\small\[
-G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \left[ \frac{r_<^\ell}{r_>^{\ell+1}} - W_\ell(r,r') \right] Y_{\ell m}^*(\theta',\phi') Y_{\ell m}(\theta,\phi)
-\]
+$
+G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \left[ \frac{r_<^\ell}{r_>^{\ell+1}} - \dfrac{\tilde{r}_<^\ell}{\tilde{r}_>^{\ell+1}} \right] Y_{\ell m}^*(\theta',\phi') Y_{\ell m}(\theta,\phi)
+$
+\end{itemize}
 
-$W_\ell = \begin{cases} 
-(rr')^\ell R^{-(2\ell+1)} & \text{בתוך הספירה } (r,r'<R) \\
-R^{2\ell+1} (rr')^{-(\ell+1)} & \text{מחוץ לספירה } (r,r'>R)
-\end{cases}
-$}
-    \item
-    {\small \[
-    \dfrac{1}{|\vec{r} - \vec{r}'|} = \sum_{l=0}^{\infty} \dfrac{r_<^l}{r_>^{l+1}} P_l(\cos\gamma)\]
-     \[P_l(\cos\gamma) = \dfrac{4\pi}{2l+1} \sum_{m=-l}^{l} Y_{lm}^*(\theta', \phi') Y_{lm}(\theta, \phi)\]}
-
-    \item \textbf{תכונות זוגיות (Parity) של פולינומי לז'נדר והרמוניות ספריות:}
+\section{תכונות זוגיות (Parity) של פולינומי לז'נדר והרמוניות ספריות:}
 \begin{itemize}
     \item $P_\ell(-x) = (-1)^\ell P_\ell(x) \Rightarrow P_\ell(\cos(\pi - \theta)) = (-1)^\ell P_\ell(\cos\theta)$
     \item \textbf{פולינומים נלווים:} $P_\ell^m(-x) = (-1)^{\ell-m} P_\ell^m(x)$
@@ -430,7 +427,6 @@ $}
     \item \textbf{צמוד וזווית $\phi$:} $Y_{\ell, -m}(\theta, \phi) = (-1)^m Y_{\ell, m}^*(\theta, \phi), \ Y_{\ell,m}(\theta, -\phi) = (-1)^m Y_{\ell,-m}(\theta, \phi)$
 \end{itemize}
 
-\end{itemize}
 \section{פוטנציאל בסימטריה כדורית / פיתוח מולטיפולי}
 פוטנציאל מפיזור מטען $\rho(\vec{r}')$:
 \[
@@ -448,7 +444,7 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
 \phi(r, \theta, \phi) = \sum_{\ell=0}^{\infty} \sum_{m=-\ell}^{\ell} \left( A_{\ell,m} r^\ell + B_{\ell,m} r^{-(\ell+1)} \right) Y_{\ell,m}(\theta, \phi)
 \]
     
-    \item \textbf{סימטריה אזימותלית ($m=0$):} הפירוק מצטמצם לפולינומי לז'נדר $P_\ell(\cos\theta)$ עם מקדמים $A_\ell, B_\ell$.
+    \item \textbf{סימ' אזימ' ($m=0$):} מצטמצם לפ' לז'נדר $P_\ell(\cos\theta)$ עם $A_\ell, B_\ell$.
 
     \item \textbf{תכונות אורתוגונליות ונירמול:}
     \begin{itemize}
@@ -456,14 +452,18 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
          \[
         \int_{-1}^{1} P_\ell(x) P_{\ell'}(x) \, dx = \int_{0}^{\pi} P_\ell(\cos\theta) P_{\ell'}(\cos\theta) \sin\theta \, d\theta = \frac{2}{2\ell+1} \delta_{\ell\ell'}
         \]
-        \item \textbf{פונקציות לז'נדר המיוחסות ($P_\ell^m(x)$):}
-        \[
+        \item
+        $
         \int_{-1}^{1} P_\ell^m(x) P_{\ell'}^m(x) \, dx = \frac{2}{2\ell+1} \frac{(\ell+m)!}{(\ell-m)!} \delta_{\ell\ell'}
-        \]
-        \item \textbf{הרמוניות כדוריות ($Y_{\ell,m}(\theta,\phi)$):}
-        \[
+        $
+        \item $
         \int_{0}^{2\pi} d\phi \int_{0}^{\pi} \sin\theta \, d\theta \, Y_{\ell,m}^*(\theta,\phi) Y_{\ell',m'}(\theta,\phi) = \delta_{\ell\ell'} \delta_{mm'}
-        \]
+        $
+        \item $
+    \dfrac{1}{|\vec{r} - \vec{r}'|} = \sum_{l=0}^{\infty} \dfrac{r_<^l}{r_>^{l+1}} P_l(\cos\gamma)$
+      \item $
+      P_l(\cos\gamma) = \dfrac{4\pi}{2l+1} \sum_{m=-l}^{l} Y_{lm}^*(\theta', \phi') Y_{lm}(\theta, \phi)
+      $
     \end{itemize}
 \end{itemize}
 
@@ -471,13 +471,8 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
 \noindent
 פיתוח טיילור של הפוטנציאל האלקטרוסטטי במרחקים גדולים:
 \[
-\phi(\vec{r}) = \frac{q}{r} + \frac{\vec{d} \cdot \vec{r}}{r^3} + \frac{1}{2} \sum_{i,j} Q_{ij} \frac{x_i x_j}{r^5} + \mathcal{O}\left(\frac{1}{r^4}\right)
+\phi(\vec{r}) = \frac{q}{r} + \frac{\vec{d} \cdot \vec{r}}{r^3} + \frac{1}{2} \sum_{i,j} Q_{ij} \frac{x_i x_j}{r^5} = \dfrac{q}{r} + \dfrac{d_i x_i}{r^3} + \frac{1}{2} Q_{ij} \dfrac{x_i x_j}{r^5}
 \]
-\textbf{אינדקסים:} 
-$
-\phi(\vec{r}) = \dfrac{q}{r} + \dfrac{d_i x_i}{r^3} + \frac{1}{2} Q_{ij} \dfrac{x_i x_j}{r^5} + \dots \ (i,j \in \{x,y,z\})
-$
-
 \noindent
 \textbf{הגדרת איברי המולטיפול:}
 \begin{itemize}
@@ -499,30 +494,23 @@ $
 \text{פוטנציאל וקטורי מעוכב (תלוי בזמן, כיול לורנץ $\nabla \cdot \vec{A} + \frac{1}{c}\frac{\partial \phi}{\partial t} = 0$)}
 
 \begin{itemize}
-    \item \textbf{מונופול מגנטי ($n=0$):} $\vec{A}_{\text{mono}} = 0, \quad \vec{B}_{\text{mono}} = 0$.
-    
     \item \textbf{איבר הדיפול המגנטי ($n=1$):} האיבר המוביל במרחקים גדולים:
     \[
     \vec{A}_{\text{dip}}(\vec{r}) = \frac{\vec{m} \times \vec{r}}{r^3} = \frac{\vec{m} \times \hat{r}}{r^2}, \ \vec{B}(\vec{r}) = \nabla \times \vec{A}_{\text{dip}}(\vec{r}) = \frac{3(\vec{m} \cdot \hat{r})\hat{r} - \vec{m}}{r^3}
     \]
-\end{itemize}
-
-\section*{קרינה מולטיפולית והספק}
-
-\noindent
-\textbf{נוסחת לֶרְמוֹר (לא-יחסותי $v \ll c$):}
-$
-P = \dfrac{2}{3} \dfrac{q^2 a^2}{c^3} \ \left(a = |\ddot{\vec{r}}_0|\right)
-$
-
-\noindent
-\textbf{חישוב התאוצה $a$ ללרמור:} $\vec{a} = \frac{\vec{F}}{m} = \frac{q}{m}\left(\vec{E} + \frac{\vec{v}}{c}\times\vec{B}\right)$ \quad $|$ \quad \textbf{תנועה מעגלית:} $a = \frac{v^2}{R} = \omega^2 R$ \quad $|$ \quad \textbf{מתנד:} $\langle a^2 \rangle = \frac{1}{2}\omega^4 x_0^2$
-
-\noindent
-\textbf{מומנט דיפול מגנטי $\vec{m}$:}
+    \item \textbf{מומנט דיפול מגנטי $\vec{m}$:}
 $
 \vec{m} = \frac{1}{2c} \int (\vec{r}' \times \vec{J}(\vec{r}')) \, d^3r'
 $
+\end{itemize}
+
+\section*{קרינה מולטיפולית והספק}
+\noindent
+\textbf{נוסחת לֶרְמוֹר (לא-יחסותי $v \ll c$):}
+$P = \dfrac{2}{3} \dfrac{q^2 a^2}{c^3} \ \left(a = |\ddot{\vec{r}}_0|\right)$
+
+\noindent
+\textbf{חישוב התאוצה $a$ ללרמור:} $\vec{a} = \frac{\vec{F}}{m} = \frac{q}{m}\left(\vec{E} + \frac{\vec{v}}{c}\times\vec{B}\right)$ \quad $|$ \quad \textbf{תנועה מעגלית:} $a = \frac{v^2}{R} = \omega^2 R$ \quad $|$ \quad \textbf{מתנד:} $\langle a^2 \rangle = \frac{1}{2}\omega^4 x_0^2$
 
 \section{וקטורי יחידה במערכות קואורדינטות}
 \begin{itemize}
@@ -535,23 +523,92 @@ $
     $\hat{x} = \sin\theta\cos\phi\hat{r} + \cos\theta\cos\phi\hat{\theta} - \sin\phi\hat{\phi}$, \quad
     $\hat{y} = \sin\theta\sin\phi\hat{r} + \cos\theta\sin\phi\hat{\theta} + \cos\phi\hat{\phi}$, \quad
     $\hat{z} = \cos\theta\hat{r} - \sin\theta\hat{\theta}$
-    \item \textbf{גליליות לקרטזיות:}
+    \item \textbf{גליליות לק':}
     $\hat{r} = \cos\phi\hat{x} + \sin\phi\hat{y}$, \
     $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$, \
     $\hat{z} = \hat{z}$
-    \item \textbf{קרטזיות לגליליות:}
+    \item \textbf{קרט' לגליליות:}
     $\hat{x} = \cos\phi\hat{r} - \sin\phi\hat{\phi}$, \
     $\hat{y} = \sin\phi\hat{r} + \cos\phi\hat{\phi}$, \
     $\hat{z} = \hat{z}$
-\end{itemize}
 
-\section{מכפלה וקטורית (\textenglish{Cross Product}) של וקטורי יחידה}
-\begin{itemize}
     \item \textbf{כדוריות ($\hat{r}, \hat{\theta}, \hat{\phi}$):}
     $\hat{r} \times \hat{\theta} = \hat{\phi}, \quad \hat{\theta} \times \hat{\phi} = \hat{r}, \quad \hat{\phi} \times \hat{r} = \hat{\theta}$
     \item \textbf{גליליות ($\hat{r}, \hat{\phi}, \hat{z}$):}
     $\hat{r} \times \hat{\phi} = \hat{z}, \quad \hat{\phi} \times \hat{z} = \hat{r}, \quad \hat{z} \times \hat{r} = \hat{\phi}$
+
+    $
+\begin{pmatrix} \hat{r} \\ \hat{\theta} \\ \hat{\phi} \end{pmatrix} = 
+\begin{pmatrix} 
+\sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\ 
+\cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\ 
+-\sin\phi & \cos\phi & 0 
+\end{pmatrix}
+\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix}
+ $ \\ $ \begin{pmatrix} \hat{\rho} \\ \hat{\phi} \\ \hat{z} \end{pmatrix} = 
+\begin{pmatrix} 
+\cos\phi & \sin\phi & 0 \\ 
+-\sin\phi & \cos\phi & 0 \\ 
+0 & 0 & 1 
+\end{pmatrix}
+\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix}
+$
 \end{itemize}
+
+\section*{קרינת מולטיפולים (שדה רחוק $r \gg \lambda \gg d$, יחידות CGS)}
+
+\noindent
+\textbf{קיצורים וסימונים:} $t' = t - r/c$, $\vec{E} = \vec{B} \times \hat{r}$. 
+נגדיר $\vec{V}_{\mathbf{Q}} \equiv (\dddot{\mathbf{Q}} \cdot \hat{r}) \times \hat{r}$ כאשר $(\dddot{\mathbf{Q}} \cdot \hat{r})_i = \sum_j \dddot{Q}_{ij} \hat{r}_j$.
+
+\vspace{3pt}
+\begingroup
+% 1. הגדלת מקדם גובה השורות מ-1.9 ל-2.3 (מרווח נדיב שמונע חיתוך נוסחאות)
+\renewcommand{\arraystretch}{2.3}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+
+\begin{tabularx}{\linewidth}{|c|c|*{3}{>{\centering\arraybackslash}X|}}
+\hline
+\textbf{גודל} & \textbf{מונופול} ($q$) & \textbf{ED} ($\vec{p}$) & \textbf{MD} ($\vec{m}$) & \textbf{EQ} ($Q_{ij}$) \\ \hline
+
+$\Phi(\vec{r},t)$ 
+& $\dfrac{q}{r}$ 
+& $\dfrac{\dot{\vec{p}} \cdot \hat{r}}{cr}$ 
+& $0$ 
+& $\dfrac{\hat{r} \cdot \dddot{\mathbf{Q}} \cdot \hat{r}}{6c^2 r}$ \\ \hline
+
+$\vec{A}(\vec{r},t)$ 
+& $0$ 
+& $\dfrac{\dot{\vec{p}}}{cr}$ 
+& $\dfrac{\dot{\vec{m}} \times \hat{r}}{cr}$ 
+& $\dfrac{\dddot{\mathbf{Q}} \cdot \hat{r}}{6c^2 r}$ \\ \hline
+
+$\vec{B}(\vec{r},t)$ 
+& $0$ 
+& $\dfrac{\ddot{\vec{p}} \times \hat{r}}{c^2 r}$ 
+& $\dfrac{(\ddot{\vec{m}} \times \hat{r}) \times \hat{r}}{c^2 r}$ 
+& $\dfrac{\vec{V}_{\mathbf{Q}}}{6c^3 r}$ \\ \hline
+
+$\vec{E}(\vec{r},t)$ 
+& $\dfrac{q\hat{r}}{r^2}$ 
+& $\dfrac{(\ddot{\vec{p}} \times \hat{r}) \times \hat{r}}{c^2 r}$ 
+& $\dfrac{\ddot{\vec{m}} \times \hat{r}}{c^2 r}$ 
+& $\dfrac{\vec{V}_{\mathbf{Q}} \times \hat{r}}{6c^3 r}$ \\ \hline
+
+$\dfrac{dP}{d\Omega}$ 
+& $0$ 
+& $\dfrac{|\ddot{\vec{p}} \times \hat{r}|^2}{4\pi c^3}$ 
+& $\dfrac{|\ddot{\vec{m}} \times \hat{r}|^2}{4\pi c^3}$ 
+& $\dfrac{|\vec{V}_{\mathbf{Q}}|^2}{144\pi c^5}$ \\ \hline
+
+$P_{\text{total}}$ 
+& $0$ 
+& $\dfrac{2}{3c^3}|\ddot{\vec{p}}|^2$ 
+& $\dfrac{2}{3c^3}|\ddot{\vec{m}}|^2$ 
+& $\dfrac{1}{180 c^5} \sum\limits_{i,j} |\dddot{Q}_{ij}|^2$ \\ \hline
+\end{tabularx}
+\endgroup
 
 \end{multicols*}
 \end{document}
