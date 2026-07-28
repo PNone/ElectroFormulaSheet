@@ -471,7 +471,7 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
 \noindent
 פיתוח טיילור של הפוטנציאל האלקטרוסטטי במרחקים גדולים:
 \[
-\phi(\vec{r}) = \frac{q}{r} + \frac{\vec{d} \cdot \vec{r}}{r^3} + \frac{1}{2} \sum_{i,j} Q_{ij} \frac{x_i x_j}{r^5} = \dfrac{q}{r} + \dfrac{d_i x_i}{r^3} + \frac{1}{2} Q_{ij} \dfrac{x_i x_j}{r^5}
+\phi(\vec{r}) = \frac{q}{r} + \frac{\vec{d} \cdot \vec{r}}{r^3} + \sum_{i,j} Q_{ij} \frac{x_i x_j}{r^5} = \dfrac{q}{r} + \dfrac{d_i x_i}{r^3} + Q_{ij} \dfrac{x_i x_j}{r^5}
 \]
 \noindent
 \textbf{הגדרת איברי המולטיפול:}
@@ -480,7 +480,7 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
     \item \textbf{מומנט דיפול חשמלי:} $\vec{d} = \int \vec{r}' \rho(\vec{r}') \, d^3r'$
     \item \textbf{קוואדרופול ($\text{Tr}(Q)=0$):} 
     $
-    Q_{ij} = \int \rho(\vec{r}') \left( 3x'_i x'_j - r'^2 \delta_{ij} \right) d^3r'
+    Q_{ij} = \frac{1}{2} \int \rho(\vec{r}') \left( 3x'_i x'_j - r'^2 \delta_{ij} \right) d^3r'
     $
 \end{itemize}
 
@@ -555,7 +555,7 @@ $P = \dfrac{2}{3} \dfrac{q^2 a^2}{c^3} \ \left(a = |\ddot{\vec{r}}_0|\right)$
 $
 \end{itemize}
 
-\section*{קרינת מולטיפולים (שדה רחוק $r \gg \lambda \gg d$, יחידות CGS)}
+\section*{קרינת מולטיפולים (שדה רחוק $r \gg \lambda \gg d$, כאשר $\lambda = \frac{2\pi c}{\omega}$, יחידות \textenglish{CGS})}
 
 \noindent
 \textbf{קיצורים וסימונים:} $t' = t - r/c$, $\vec{E} = \vec{B} \times \hat{r}$. 
@@ -576,37 +576,37 @@ $\Phi(\vec{r},t)$
 & $\dfrac{q}{r}$ 
 & $\dfrac{\dot{\vec{p}} \cdot \hat{r}}{cr}$ 
 & $0$ 
-& $\dfrac{\hat{r} \cdot \dddot{\mathbf{Q}} \cdot \hat{r}}{6c^2 r}$ \\ \hline
+& $\dfrac{\hat{r} \cdot \dddot{\mathbf{Q}} \cdot \hat{r}}{3c^2 r}$ \\ \hline
 
 $\vec{A}(\vec{r},t)$ 
 & $0$ 
 & $\dfrac{\dot{\vec{p}}}{cr}$ 
 & $\dfrac{\dot{\vec{m}} \times \hat{r}}{cr}$ 
-& $\dfrac{\dddot{\mathbf{Q}} \cdot \hat{r}}{6c^2 r}$ \\ \hline
+& $\dfrac{\dddot{\mathbf{Q}} \cdot \hat{r}}{3c^2 r}$ \\ \hline
 
 $\vec{B}(\vec{r},t)$ 
 & $0$ 
 & $\dfrac{\ddot{\vec{p}} \times \hat{r}}{c^2 r}$ 
 & $\dfrac{(\ddot{\vec{m}} \times \hat{r}) \times \hat{r}}{c^2 r}$ 
-& $\dfrac{\vec{V}_{\mathbf{Q}}}{6c^3 r}$ \\ \hline
+& $\dfrac{\vec{V}_{\mathbf{Q}}}{3c^3 r}$ \\ \hline
 
 $\vec{E}(\vec{r},t)$ 
 & $\dfrac{q\hat{r}}{r^2}$ 
 & $\dfrac{(\ddot{\vec{p}} \times \hat{r}) \times \hat{r}}{c^2 r}$ 
 & $\dfrac{\ddot{\vec{m}} \times \hat{r}}{c^2 r}$ 
-& $\dfrac{\vec{V}_{\mathbf{Q}} \times \hat{r}}{6c^3 r}$ \\ \hline
+& $\dfrac{\vec{V}_{\mathbf{Q}} \times \hat{r}}{3c^3 r}$ \\ \hline
 
 $\dfrac{dP}{d\Omega}$ 
 & $0$ 
 & $\dfrac{|\ddot{\vec{p}} \times \hat{r}|^2}{4\pi c^3}$ 
 & $\dfrac{|\ddot{\vec{m}} \times \hat{r}|^2}{4\pi c^3}$ 
-& $\dfrac{|\vec{V}_{\mathbf{Q}}|^2}{144\pi c^5}$ \\ \hline
+& $\dfrac{|\vec{V}_{\mathbf{Q}}|^2}{36\pi c^5}$ \\ \hline
 
 $P_{\text{total}}$ 
 & $0$ 
 & $\dfrac{2}{3c^3}|\ddot{\vec{p}}|^2$ 
 & $\dfrac{2}{3c^3}|\ddot{\vec{m}}|^2$ 
-& $\dfrac{1}{180 c^5} \sum\limits_{i,j} |\dddot{Q}_{ij}|^2$ \\ \hline
+& $\dfrac{1}{45 c^5} \sum\limits_{i,j} |\dddot{Q}_{ij}|^2$ \\ \hline
 \end{tabularx}
 \endgroup
 
