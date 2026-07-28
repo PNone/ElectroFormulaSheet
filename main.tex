@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
 % --- Margins (Maximizes printable area safely) ---
 \usepackage[top=0.5cm, bottom=0.5cm, left=0.5cm, right=0.5cm]{geometry}
@@ -10,6 +10,7 @@
 
 % --- Math & Fonts ---
 \usepackage{amsmath, amssymb, amsfonts}
+\DeclareMathSizes{8.5}{8.5}{7}{6} % {fontsize}{textstyle}{scriptstyle}{scriptscriptstyle}
 \usepackage{bm}
 \usepackage{array}
 \usepackage{booktabs}
@@ -29,7 +30,7 @@
 % --- Compact Section Headings ---
 \usepackage{titlesec}
 \titleformat{\section}{\large\bfseries}{\thesection}{0.4em}{}
-\titlespacing*{\section}{0pt}{3pt}{2pt}
+\titlespacing*{\section}{0pt}{3pt}{1pt}
 
 % --- Compact Math Spacing ---
 \AtBeginDocument{
@@ -42,6 +43,7 @@
 \pagestyle{empty} % Removes page numbers to save vertical space
 
 \begin{document}
+\fontsize{10pt}{12pt}\selectfont
 
 \begin{multicols*}{2}
 
@@ -51,8 +53,8 @@
 \eta_{\mu\nu} = \eta^{\mu\nu} = \text{diag}(1, -1, -1, -1)
 \]
 \begin{itemize}
-    \item \textbf{4-וקטור קונטרה (אינדקס עליון):} $A^\mu = (A^0, \vec{A})$. משתנה תחת $A'^\mu = \Lambda^\mu{}_\nu A^\nu = \frac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \mathbf{A}$.
-    \item \textbf{4-וקטור קו ('' תחתון):} $A_\mu=(A_0, -\vec{A})$. משתנה תחת $A'_\mu =\Lambda_\mu{}^\nu A_\nu = (\Lambda^{-1})^\nu{}_\mu A_\nu = \frac{\partial x^\nu}{\partial x'^\mu} A_\nu \Rightarrow \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}$.
+    \item \textbf{4-וקטור קונטרה (אינדקס עליון):} $A^\mu = (A^0, \vec{A})$. משתנה תחת $A'^\mu = \Lambda^\mu{}_\nu A^\nu = \dfrac{\partial x'^\mu}{\partial x^\nu} A^\nu \implies \mathbf{A}' = \mathbf{J} \mathbf{A}$.
+    \item \textbf{4-וקטור קו (אינדקס תחתון):} $A_\mu=(A_0, -\vec{A})$. משתנה תחת $A'_\mu =\Lambda_\mu{}^\nu A_\nu = (\Lambda^{-1})^\nu{}_\mu A_\nu = \dfrac{\partial x^\nu}{\partial x'^\mu} A_\nu \Rightarrow \mathbf{A}' = (\mathbf{J}^{-1})^T \mathbf{A}$.
     \item \textbf{העלאת/הורדת אינדקסים:} $A_\mu = \eta_{\mu\nu} A^\nu$, $A^\mu = \eta^{\mu\nu} A_\nu$.
     \item \textbf{טרנספורמציה של טנזורים (כתיב אינדקסים):} 
     \[
@@ -81,21 +83,21 @@ $
 
 \item \textbf{טרנספוז:}
 $
-    (F^T)^{\mu\nu} = F^{\nu\mu}, \ (g^T)_{\mu\nu} = g_{\nu\mu} \ (T^T)^\mu{}_\nu = T_\nu{}^\mu
+    (F^T)^{\mu\nu} = F^{\nu\mu}, \ (g^T)_{\mu\nu} = g_{\nu\mu}, \ (T^T)^\mu{}_\nu = T_\nu{}^\mu
 $
 
 \end{itemize}
 
 \section{איזומטריה (טרנספורמציית סימטריה)}
-טרנספורמציה $x'^\mu = \Lambda^\mu{}_\nu x^\nu$ היא איזומטריה של מרחב מינקובסקי אם היא שומרת על המטריקה:
-\[
-\eta_{\alpha\beta} \Lambda^\alpha{}_\mu \Lambda^\beta{}_\nu = \eta_{\mu\nu} \quad \iff \quad \Lambda^T \eta \Lambda = \eta
-\]
+טרנספ' $x'^\mu = \Lambda^\mu{}_\nu x^\nu$ היא איזומטריה של מ' מינקובסקי אם היא שומרת על המטריקה:
+$
+\eta_{\alpha\beta} \Lambda^\alpha{}_\mu \Lambda^\beta{}_\nu = \eta_{\mu\nu} \Leftrightarrow \Lambda^T \eta \Lambda = \eta
+$
 
 \section{4-וקטורים חשובים}
 \begin{itemize}
     \item \textbf{מיקום:} $x^\mu = (ct, \vec{r})$, \quad $x_\mu = (ct, -\vec{r})$
-    \item \textbf{נגזרת (\textenglish{4-Gradient}):} $\partial_\mu \equiv \frac{\partial}{\partial x^\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, \vec{\nabla}\right)$, \quad $\partial^\mu \equiv \frac{\partial}{\partial x_\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, -\vec{\nabla}\right)$
+    \item \textbf{נגזרת (\textenglish{4-Grad}):} $\partial_\mu \equiv \frac{\partial}{\partial x^\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, \vec{\nabla}\right)$, \ $\partial^\mu \equiv \frac{\partial}{\partial x_\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, -\vec{\nabla}\right)$
     \item \textbf{מהירות-4:} $U^\mu = \frac{dx^\mu}{d\tau} = \gamma(c, \vec{v})$, כאשר $U^\mu U_\mu = c^2$
     \item \textbf{תנע-אנרגיה 4:} $P^\mu = m U^\mu = \left(\frac{E}{c}, \vec{p}\right) = (\gamma m c, \gamma m \vec{v})$, כאשר $P^\mu P_\mu = m^2 c^2$
     \item \textbf{פוטנציאל-4:} $A^\mu = (\Phi, \vec{A})$, \quad $A_\mu = (\Phi, -\vec{A})$
@@ -123,11 +125,11 @@ $
     \end{pmatrix}
     \]
     }
-    \item \textbf{חילוץ שדות:} 
-    \[
+    \item 
+    $
     E^i = F^{i0} = -F^{0i} = F_{0i} = -F_{i0}, \:
     B^i = \frac{1}{2}\epsilon^{ijk} F^{jk} = \frac{1}{2}\epsilon^{ijk} F_{jk}
-    \]
+    $
     \item \textbf{משוואות מקסוול (אי-הומוגניות):}
     \[
     \partial_\mu F^{\mu\nu} = \frac{4\pi}{c} J^\nu \iff \vec{\nabla}\cdot\vec{E} = 4\pi\rho, \quad \vec{\nabla}\times\vec{B} - \frac{1}{c}\frac{\partial\vec{E}}{\partial t} = \frac{4\pi}{c}\vec{J}
@@ -160,15 +162,15 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \item $F_{\mu\nu}\tilde{F}^{\mu\nu} = -4(\vec{E}\cdot\vec{B})$
 \end{itemize}
 
-\section{טנזור מאמץ-אנרגיה $T_{\mu\nu}$}
+\section{טנזור מאמץ-אנרגיה $T_{\mu\nu}^{A}$}
 \begin{itemize}
     \item \textbf{גדלים אלקטרומגנטיים (CGS):}
     \begin{itemize}
-        \item צפיפות אנרגיה: $u = \frac{1}{8\pi}(E^2+B^2)$
-        \item שטף אנרגיה (וקטור פוינטינג): $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$
-        \item צפיפות תנע: $\vec{p}_{\text{EM}} = \frac{1}{c^2}\vec{S} = \frac{1}{4\pi c}(\vec{E}\times\vec{B})$
+        \item צפיפות אנרגיה: $u = \dfrac{1}{8\pi}(E^2+B^2)$
+        \item שטף אנרגיה (וקטור פוינטינג): $\vec{S} = \dfrac{c}{4\pi}(\vec{E}\times\vec{B})$
+        \item צפיפות תנע: $\vec{p}_{\text{EM}} = \dfrac{1}{c^2}\vec{S} = \dfrac{1}{4\pi c}(\vec{E}\times\vec{B})$
         \item צפיפות תנע זוויתי: $\vec{\mathcal{L}}_{\text{EM}} = \vec{r} \times \vec{p}_{\text{EM}} = \frac{1}{c^2}(\vec{r} \times \vec{S})$
-        \item טנזור המאמצים של מקסוול: $\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$
+        \item טנזור המאמצים של מקסוול:\\ $\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$
     \end{itemize}
 
     \item \textbf{הצגה קונטרא-וואריאנטית ($T^{\mu\nu}$):}
@@ -198,16 +200,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \end{pmatrix}
     \]
 
-    \item \textbf{הצגה מעורבת ($T_\mu{}^\nu$):}
-    \[
-    T_\mu{}^\nu = -\frac{1}{4\pi c} \left( F_{\mu\alpha}F^{\nu\alpha} - \frac{1}{4}\delta_\mu^\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
-    = \begin{pmatrix} 
-    \frac{u}{c} & \vec{p}_{\text{EM}}^T \\
-    -\frac{1}{c^2}\vec{S} & \frac{1}{c}\overleftrightarrow{\sigma}
-    \end{pmatrix}
-    \]
-
-    \item \textbf{דיברגנץ' טנזור המאמץ-אנרגיה (שימור תנע-אנרגיה וצפיפות 4-כוח לורנץ):}
+    \item \textbf{דיברגנץ טנזור מאמץ-אנ' (שימור תנע-אנ' וצפיפות 4-כוח לורנץ):}
     \[
     \partial_\mu T^\mu{}_\nu = -\frac{1}{c^2} F^\mu{}_\nu J_\mu = -f_\nu
     \]
@@ -215,6 +208,10 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
         \item \textbf{רכיב הזמן ($\nu=0$ - שימור אנרגיה):} $\frac{\partial u}{\partial t} + \vec{\nabla} \cdot \vec{S} = -\vec{J} \cdot \vec{E}$
         \item \textbf{רכיבים מרחביים ($\nu=i$ - שימור תנע):} $\frac{\partial \vec{p}_{\text{EM}}}{\partial t} - \vec{\nabla} \cdot \overleftrightarrow{\sigma} = -\left( \rho \vec{E} + \frac{1}{c} \vec{J} \times \vec{B} \right)$
         \item \textbf{מע' סגורה (ללא מטענים/זרמים, $J_\mu=0$):} $\partial_\mu T^\mu{}_\nu = 0$
+        \item 
+        $
+        (\nabla \cdot \mathbf{\sigma})_i = \partial_j \sigma_{ji} = \frac{\partial \sigma_{ji}}{\partial x_j}
+        $
     \end{itemize}
     \item \textbf{עקבת הטנזור (Trace):} $\text{Tr}(T) = T^\mu{}_\mu = 0$.
 \end{itemize}
@@ -222,11 +219,11 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 \section{סוגי כיול (\textenglish{Gauge Transformations})}
 טרנספורמציית כיול: $A_\mu \to A_\mu + \partial_\mu \Lambda$.
 \begin{itemize}
-    \item \textbf{כיול לורנץ (\textenglish{Lorenz Gauge}):} תנאי: 
-    \[
+    \item \textbf{כיול לורנץ:} תנאי: 
+    $
     \partial_\mu A^\mu = 0 \iff \frac{1}{c}\frac{\partial \Phi}{\partial t} + \vec{\nabla}\cdot\vec{A} = 0
-    \]
-    מתאים לבעיות יחסותיות וגלים אלקטרומגנטיים. מעביר את משוואות מקסוול לצורה:
+    $
+    מתאים לבעיות יחסותיות וגלים א"מ. מעביר את משוואות מקסוול לצורה:
     \[
     \square A^\mu = \frac{4\pi}{c}J^\mu \quad \left(\square = \partial_\alpha \partial^\alpha = \frac{1}{c^2}\frac{\partial^2}{\partial t^2} - \nabla^2\right)
     \]
@@ -235,6 +232,9 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \[
     \nabla^2 \Phi = -4\pi\rho \implies \Phi(\vec{r}, t) = \int \frac{\rho(\vec{r}', t)}{|\vec{r}-\vec{r}'|} d^3 r'
     \]
+    \item \textbf{כיול טמפורלי:} ($ \phi =A^0 = 0$). השדה החשמלי - $\vec{E} = -\frac{1}{c}\frac{\partial \vec{A}}{\partial t}$.
+
+\item \textbf{כיול אקסיאלי:} קובעים רכיב מרחבי: $A_z = 0$ (בכללי $\vec{n} \cdot \vec{A} = 0$).
 \end{itemize}
 
 \section{הערך האינטגרלי (הפעולה) ומשוואות שדה}
@@ -246,12 +246,12 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     $
     כאשר $d^4x = c \, dt \, d^3x$.
 
-    \item \textbf{צפיפות הלגראנז'יאן :}
+    \item \textbf{צפיפות הלגראנז'יאן:}
     $
     \mathcal{L}_{\text{EM}} = -\frac{1}{16\pi c} F_{\mu\nu}F^{\mu\nu} - \frac{1}{c^2} J_\mu A^\mu
     $
     \begin{itemize}
-        \item \textbf{איבר השדה החופשי:} $\mathcal{L}_{\text{field}} = -\frac{1}{16\pi c} F_{\mu\nu}F^{\mu\nu} = \frac{1}{8\pi c} \left( E^2 - B^2 \right)$
+    \item \textbf{איבר השדה החופשי:} $\mathcal{L}_{\text{field}} = -\frac{1}{16\pi c} F_{\mu\nu}F^{\mu\nu} = \frac{1}{8\pi c} \left( E^2 - B^2 \right)$
         \item \textbf{איבר האינטראקציה:} $\mathcal{L}_{\text{int}} = -\frac{1}{c^2} J_\mu A^\mu = -\frac{1}{c} \rho \Phi + \frac{1}{c^2} \vec{J} \cdot \vec{A}$
     \end{itemize}
 
@@ -307,7 +307,7 @@ $
     \end{pmatrix}
     \]
     }
-    \item \textbf{סיבוב אקטיבי של וקטורי הבסיס ($\vec{e}'_\mu = \vec{e}_\nu (\Lambda^{-1})^\nu{}_\mu$):}
+    \item \textbf{סיבוב אקטיבי של ו' הבסיס ($\vec{e}'_\mu = \vec{e}_\nu (\Lambda^{-1})^\nu{}_\mu$):}
     $\mathbf{R}_z(\theta) = \Lambda_z(-\theta) = \Lambda_z(\theta)^T$.
     \item \textbf{בסיס דואלי ($\vec{e}'^\mu = \Lambda^\mu{}_\nu \vec{e}^\nu$):} משתנה פסיבית כמו רכיבי הווקטור ($x'^\mu$).
 \end{itemize}
@@ -373,34 +373,30 @@ $
     \item \textbf{מישור אינסופי מוארק ($z=0$):} 
     מטען מקורי $q$ ממוקם ב-$\vec{r}' = (x', y', z')$ (כאשר $z' > 0$). מטען דמות $q' = -q$ ב-$\vec{r}_{\text{img}} = (x', y', -z')$ ($z' < 0$):
     $
-    G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{1}{|\vec{r}-\vec{r}_{\text{img}}|}
+    G(\vec{r},\vec{r}') = \dfrac{1}{|\vec{r}-\vec{r}'|} - \dfrac{1}{|\vec{r}-\vec{r}_{\text{img}}|}
     $
+    
 
     \item \textbf{ספירה מוארקת ברדיוס $R$ (תנאי דיריכלה):}
     מטען $q$ ממוקם ב-$\vec{r}'$. מטען דמות $q' = -q \frac{R}{r'}$ ממוקם ב-$\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$.
     \[
-    G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - \frac{R^2}{r'^2}\vec{r}'\right|}
+    G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - \dfrac{R^2}{r'^2}\vec{r}'\right|}
     \]
     כאשר $\cos\gamma = \hat{r}\cdot\hat{r}' = \cos\theta\cos\theta' + \sin\theta\sin\theta'\cos(\phi-\phi')$:
     \[
-    G(\vec{r},\vec{r}') = \frac{1}{\sqrt{r^2 + r'^2 - 2rr'\cos\gamma}} - \frac{1}{\sqrt{\frac{r^2 r'^2}{R^2} + R^2 - 2rr'\cos\gamma}}
+    G(\vec{r},\vec{r}') = \frac{1}{\sqrt{r^2 + r'^2 - 2rr'\cos\gamma}} - \frac{1}{\sqrt{\dfrac{r^2 r'^2}{R^2} + R^2 - 2rr'\cos\gamma}}
     \]
 
-    \item \textbf{פיתוח בכדוריות (פונקציית גרין דיריכלה לספירה ברדיוס $R$):}
-    \begin{itemize}
-        \item \textbf{בתוך הספירה ($r, r' < R$):}
-        {\small
-        $
-        G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{(r \, r')^\ell}{R^{2\ell+1}} \Big] Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
-        $
-        }
-        \item \textbf{מחוץ לספירה ($r, r' > R$):}
-        {\small
-        $
-        G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \Big[ \frac{r_<^\ell}{r_>^{\ell+1}} - \frac{R^{2\ell+1}}{(r \, r')^{\ell+1}} \Big] Y_{\ell,m}^*(\theta',\phi') Y_{\ell,m}(\theta,\phi)
-        $
-        }
-    \end{itemize}
+    \item \textbf{פונקציית גרין דיריכלה לספירה ברדיוס $R$ (פיתוח ספרי):}
+\[
+G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \left[ \frac{r_<^\ell}{r_>^{\ell+1}} - W_\ell(r,r') \right] Y_{\ell m}^*(\theta',\phi') Y_{\ell m}(\theta,\phi)
+\]
+\[
+W_\ell = \begin{cases} 
+\dfrac{(rr')^\ell}{R^{2\ell+1}} & \text{בתוך הספירה } (r,r'<R) \\[4pt]
+\dfrac{R^{2\ell+1}}{(rr')^{\ell+1}} & \text{מחוץ לספירה } (r,r'>R)
+\end{cases}
+\]
 
     \item \textbf{משפט התוספת במרחב החופשי:}
     \[
@@ -410,7 +406,6 @@ $
     P_l(\cos\gamma) = \frac{4\pi}{2l+1} \sum_{m=-l}^{l} Y_{lm}^*(\theta', \phi') Y_{lm}(\theta, \phi)
     \]
 \end{itemize}
-
 \section{פוטנציאל בסימטריה כדורית / פיתוח מולטיפולי}
 פוטנציאל מפיזור מטען $\rho(\vec{r}')$:
 \[
@@ -420,23 +415,24 @@ $
 \[
 q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \quad q_{\ell,-m} = (-1)^m q_{\ell,m}^*
 \]
-\textbf{טנזור הקוודרופול:} $Q_{ij} = \int \rho(\vec{r}') (3x'_i x'_j - r'^2 \delta_{ij}) d^3r' \implies \text{Tr}(Q) = \sum_{i} Q_{ii} = 0$.
 
-\vspace{2pt}
 \textbf{פוטנציאל של קליפה כדורית ברדיוס $R$:}
 \begin{itemize}
-    \item \textbf{כללי (תלוי ב-$\theta,\phi$, במונחי הרמוניות כדוריות $Y_{\ell,m}$):}
+    \item \textbf{כללי (תלוי ב-$r,\theta,\phi$, במונחי הרמוניות כדוריות $Y_{\ell,m}$):}
     \[
-    \Phi_{\text{in}} = \sum_{\ell,m} A_{\ell,m} r^\ell Y_{\ell,m}(\theta,\phi), \quad \Phi_{\text{out}} = \sum_{\ell,m} \frac{B_{\ell,m}}{r^{\ell+1}} Y_{\ell,m}(\theta,\phi)
-    \]
+\phi(r, \theta, \phi) = \sum_{\ell=0}^{\infty} \sum_{m=-\ell}^{\ell} \left( A_{\ell,m} r^\ell + B_{\ell,m} r^{-(\ell+1)} \right) Y_{\ell,m}(\theta, \phi)
+\]
+
+
+    
     \item \textbf{סימטריה אזימותלית ($m=0$):} הפירוק מצטמצם לפולינומי לז'נדר $P_\ell(\cos\theta)$ עם מקדמים $A_\ell, B_\ell$.
 
     \item \textbf{תכונות אורתוגונליות ונירמול:}
     \begin{itemize}
         \item \textbf{פולינומי לז'נדר ($P_\ell(x)$):} 
-        {\small $
+         \[
         \int_{-1}^{1} P_\ell(x) P_{\ell'}(x) \, dx = \int_{0}^{\pi} P_\ell(\cos\theta) P_{\ell'}(\cos\theta) \sin\theta \, d\theta = \frac{2}{2\ell+1} \delta_{\ell\ell'}
-        $}
+        \]
         \item \textbf{פונקציות לז'נדר המיוחסות ($P_\ell^m(x)$):}
         \[
         \int_{-1}^{1} P_\ell^m(x) P_{\ell'}^m(x) \, dx = \frac{2}{2\ell+1} \frac{(\ell+m)!}{(\ell-m)!} \delta_{\ell\ell'}
@@ -447,6 +443,58 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
         \]
     \end{itemize}
 \end{itemize}
+
+\section*{פיתוח מולטיפולי קרטזי ($r \gg r'$)}
+\noindent
+פיתוח טיילור של הפוטנציאל האלקטרוסטטי במרחקים גדולים:
+\[
+\phi(\vec{r}) = \frac{q}{r} + \frac{\vec{d} \cdot \vec{r}}{r^3} + \frac{1}{2} \sum_{i,j} Q_{ij} \frac{x_i x_j}{r^5} + \mathcal{O}\left(\frac{1}{r^4}\right)
+\]
+\textbf{אינדקסים:} 
+$
+\phi(\vec{r}) = \dfrac{q}{r} + \dfrac{d_i x_i}{r^3} + \frac{1}{2} Q_{ij} \dfrac{x_i x_j}{r^5} + \dots \ (i,j \in \{x,y,z\})
+$
+
+\noindent
+\textbf{הגדרת איברי המולטיפול:}
+\begin{itemize}
+    \item \textbf{מונופול (מטען כולל):} $q = \int \rho(\vec{r}') \, d^3r'$
+    \item \textbf{מומנט דיפול חשמלי:} $\vec{d} = \int \vec{r}' \rho(\vec{r}') \, d^3r'$
+    \item \textbf{קוואדרופול ($\text{Tr}(Q)=0$):} 
+    $
+    Q_{ij} = \int \rho(\vec{r}') \left( 3x'_i x'_j - r'^2 \delta_{ij} \right) d^3r'
+    $
+\end{itemize}
+
+\section*{פוטנציאל וקטורי מגנטי $\vec{A}$}
+\noindent
+\textbf{חישוב מגנטוסטטי מאינטגרל צפיפות זרם (כיול קולון $\nabla \cdot \vec{A} = 0$):}
+\[
+\vec{A}(\vec{r}) = \frac{1}{c} \int \frac{\vec{J}(\vec{r}')}{|\vec{r} - \vec{r}'|} \, d^3r'
+\]
+
+\noindent
+\textbf{פוטנציאל וקטורי מעוכב (תלוי בזמן, כיול לורנץ $\nabla \cdot \vec{A} + \frac{1}{c}\frac{\partial \phi}{\partial t} = 0$):}
+\[
+\vec{A}(\vec{r}, t) = \frac{1}{c} \int \frac{\vec{J}\left(\vec{r}', \, t - \frac{|\vec{r} - \vec{r}'|}{c}\right)}{|\vec{r} - \vec{r}'|} \, d^3r'
+\]
+
+\section*{קרינה מולטיפולית והספק}
+
+\noindent
+\textbf{נוסחת לֶרְמוֹר (לא-יחסותי $v \ll c$):}
+$
+P = \dfrac{2}{3} \dfrac{q^2 a^2}{c^3} \ \left(a = |\ddot{\vec{r}}_0|\right)
+$
+
+\noindent
+\textbf{חישוב התאוצה $a$ ללרמור:} $\vec{a} = \frac{\vec{F}}{m} = \frac{q}{m}\left(\vec{E} + \frac{\vec{v}}{c}\times\vec{B}\right)$ \quad $|$ \quad \textbf{תנועה מעגלית:} $a = \frac{v^2}{R} = \omega^2 R$ \quad $|$ \quad \textbf{מתנד:} $\langle a^2 \rangle = \frac{1}{2}\omega^4 x_0^2$
+
+\noindent
+\textbf{מומנט דיפול מגנטי $\vec{m}$:}
+$
+\vec{m} = \frac{1}{2c} \int (\vec{r}' \times \vec{J}(\vec{r}')) \, d^3r'
+$
 
 \section{וקטורי יחידה במערכות קואורדינטות}
 \begin{itemize}
@@ -459,12 +507,12 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
     $\hat{y} = \sin\theta\sin\phi\hat{r} + \cos\theta\sin\phi\hat{\theta} + \cos\phi\hat{\phi}$, \quad
     $\hat{z} = \cos\theta\hat{r} - \sin\theta\hat{\theta}$
     \item \textbf{גליליות לקרטזיות:}
-    $\hat{r} = \cos\phi\hat{x} + \sin\phi\hat{y}$, \quad
-    $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$, \quad
+    $\hat{r} = \cos\phi\hat{x} + \sin\phi\hat{y}$, \
+    $\hat{\phi} = -\sin\phi\hat{x} + \cos\phi\hat{y}$, \
     $\hat{z} = \hat{z}$
     \item \textbf{קרטזיות לגליליות:}
-    $\hat{x} = \cos\phi\hat{r} - \sin\phi\hat{\phi}$, \quad
-    $\hat{y} = \sin\phi\hat{r} + \cos\phi\hat{\phi}$, \quad
+    $\hat{x} = \cos\phi\hat{r} - \sin\phi\hat{\phi}$, \
+    $\hat{y} = \sin\phi\hat{r} + \cos\phi\hat{\phi}$, \
     $\hat{z} = \hat{z}$
 \end{itemize}
 
