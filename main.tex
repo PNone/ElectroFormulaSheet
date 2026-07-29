@@ -394,8 +394,6 @@ $
 \begin{itemize}
     \item \textbf{הגדרת $r_<$ ו-$r_>$:} $r_< = \min(r, r')$, \quad $r_> = \max(r, r')$.
 
-    \item $\tilde{r}_< = \min(rr', R^2)$, $\tilde{r}_> = \max(rr', R^2)$.
-
     \item \textbf{מישור אינסופי מוארק ($z=0$):} 
     מטען מקורי $q$ ממוקם ב-$\vec{r}' = (x', y', z')$ (כאשר $z' > 0$). מטען דמות $q' = -q$ ב-$\vec{r}_{\text{img}} = (x', y', -z')$ ($z' < 0$):
     $
@@ -414,9 +412,8 @@ $
     \]
 
     \item \textbf{פונקציית גרין דיריכלה לספירה ברדיוס $R$ (פיתוח ספרי):}
-$
-G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \left[ \frac{r_<^\ell}{r_>^{\ell+1}} - \dfrac{\tilde{r}_<^\ell}{\tilde{r}_>^{\ell+1}} \right] Y_{\ell m}^*(\theta',\phi') Y_{\ell m}(\theta,\phi)
-$
+$$ G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{2\ell+1} \left[ \frac{r_<^\ell}{r_>^{\ell+1}} - \mathcal{R}_\ell \right] Y_{\ell m}^*(\theta',\phi') Y_{\ell m}(\theta,\phi) $$
+כאשר $\mathcal{R}_\ell = (rr')^\ell / R^{2\ell+1}$ עבור $r,r' < R$ (פנים), \\ ו-$\mathcal{R}_\ell = R^{2\ell+1} / (rr')^{\ell+1}$ עבור $r,r' > R$ (חוץ).
 \end{itemize}
 
 \section{תכונות זוגיות (Parity) של פולינומי לז'נדר והרמוניות ספריות:}
