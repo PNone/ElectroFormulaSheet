@@ -213,7 +213,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \end{pmatrix}
     $
 
-    \item $T^\mu{}_\nu = -\frac{1}{4\pi c} \left( F^\mu{}_\alpha F_\nu{}^\alpha - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
+    \item $T^\mu{}_\nu = -\frac{1}{4\pi c} \left( F^{\mu\alpha} F_{\nu\alpha} - \frac{1}{4}\delta^\mu_\nu F_{\alpha\beta}F^{\alpha\beta} \right) 
     = \begin{pmatrix} 
     \frac{u}{c} & -\vec{p}_{\text{EM}}^T \\
     \frac{1}{c^2}\vec{S} & \frac{1}{c}\overleftrightarrow{\sigma}
@@ -222,8 +222,9 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 
     \item \textbf{דיברגנץ טנזור מאמץ-אנ' (שימור תנע-אנ' וצפיפות 4-כוח לורנץ):}
     \[
-    \partial_\mu T^\mu{}_\nu = -\frac{1}{c^2} F^\mu{}_\nu J_\mu = -f_\nu
+    \partial_\mu T^\mu{}_\nu = -\frac{1}{c^2} F_{\nu\mu} J^\mu, \quad \partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\mu} J_\mu
     \]
+
     \begin{itemize}
         \item \textbf{רכיב הזמן ($\nu=0$ - שימור אנרגיה):} $\frac{\partial u}{\partial t} + \vec{\nabla} \cdot \vec{S} = -\vec{J} \cdot \vec{E}$
         \item \textbf{' מרחביים ($\nu=i$ - '' תנע):} $\frac{\partial \vec{p}_{\text{EM}}}{\partial t} - \vec{\nabla} \cdot \overleftrightarrow{\sigma} = -\left( \rho \vec{E} + \frac{1}{c} \vec{J} \times \vec{B} \right)$
@@ -434,7 +435,7 @@ $$ G_D(\vec{r},\vec{r}') = \sum_{\ell=0}^\infty \sum_{m=-\ell}^\ell \frac{4\pi}{
 q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \quad q_{\ell,-m} = (-1)^m q_{\ell,m}^*
 \]
 
-\textbf{פוטנציאל של קליפה כדורית ברדיוס $R$:}
+\textbf{פוטנציאל של קליפה כדורית ברדיוס $R$ - בעיית לפלס:}
 \begin{itemize}
     \item \textbf{כללי (תלוי ב-$r,\theta,\phi$, במונחי הרמוניות כדוריות $Y_{\ell,m}$):}
     \[
