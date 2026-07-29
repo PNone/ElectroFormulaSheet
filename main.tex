@@ -1,7 +1,7 @@
 \documentclass[10pt,a4paper]{article}
 
 % --- Margins (Maximizes printable area safely) ---
-\usepackage[top=0.5cm, bottom=0.5cm, left=0.5cm, right=0.5cm]{geometry}
+\usepackage[top=0.5cm, bottom=0.7cm, left=0.5cm, right=0.7cm]{geometry}
 
 % --- Multi-column Layout ---
 \usepackage{multicol}
@@ -167,7 +167,7 @@ $
     \]
 \end{itemize}
 
-\textbf{B,E באמצעות הפוט $(\Phi, \vec{A})$:}
+\textbf{B,E באמצעות הפוט' $(\Phi, \vec{A})$:}
 $
 \vec{E} = -\vec{\nabla}\Phi - \frac{1}{c}\frac{\partial \vec{A}}{\partial t}, \ \vec{B} = \vec{\nabla} \times \vec{A}
 $
@@ -190,8 +190,8 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 \begin{itemize}
     \item \textbf{גדלים אלקטרומגנטיים \textenglish{(CGS)}:}
     \begin{itemize}
-        \item צפיפות אנרגיה: $u = \dfrac{1}{8\pi}(E^2+B^2)$
-        \item שטף אנרגיה (וקטור פוינטינג): $\vec{S} = \dfrac{c}{4\pi}(\vec{E}\times\vec{B})$
+        \item צפיפות אנרגיה: $u = \frac{1}{8\pi}(E^2+B^2)$
+        \item שטף אנרגיה (וקטור פוינטינג): $\vec{S} = \frac{c}{4\pi}(\vec{E}\times\vec{B})$
         \item צפיפות תנע: $\vec{p}_{\text{EM}} = \dfrac{1}{c^2}\vec{S} = \dfrac{1}{4\pi c}(\vec{E}\times\vec{B})$
         \item צפיפות תנע זוויתי: $\vec{\mathcal{L}}_{\text{EM}} = \vec{r} \times \vec{p}_{\text{EM}} = \frac{1}{c^2}(\vec{r} \times \vec{S})$
         \item טנזור המאמצים: $\sigma_{ij} = \frac{1}{4\pi}\left(E_i E_j + B_i B_j - \frac{1}{2}\delta_{ij}(E^2+B^2)\right)$
@@ -233,7 +233,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
         (\nabla \cdot \mathbf{\sigma})_i = \partial_j \sigma_{ji} = \frac{\partial \sigma_{ji}}{\partial x_j}
         $
     \end{itemize}
-    \item \textbf{עקבת הטנזור (Trace):} $\text{Tr}(T) = T^\mu{}_\mu = 0$.
+    \item \textbf{עקבת הטנזור \textenglish{(Trace)}:} $\text{Tr}(T) = T^\mu{}_\mu = 0$.
 \end{itemize}
 
 \section{סוגי כיול (\textenglish{Gauge Transformations})}
@@ -371,7 +371,7 @@ $
 \begin{itemize}
     \item \textbf{חישוב הפוטנציאל הפואסוני:} $\nabla^2 \Phi = -4\pi \rho$
     \item \textbf{הגדרת פונקציית גרין:} $\nabla'^2 G(\vec{r}, \vec{r}') = -4\pi \delta^{(3)}(\vec{r} - \vec{r}')$
-    \item \textbf{כללי (סינגולרי+הרמוני):}
+    \item \textbf{כללי-סינגולרי+הרמוני:}
     {\small$
     G(\vec{r}, \vec{r}') = \frac{1}{|\vec{r} - \vec{r}'|} + F(\vec{r}, \vec{r}'), \nabla'^2 F(\vec{r}, \vec{r}') = 0
     $}
@@ -406,11 +406,11 @@ $
     \item \textbf{ספירה מוארקת ברדיוס $R$ (תנאי דיריכלה):}
     מטען $q$ ממוקם ב-$\vec{r}'$. מטען דמות $q' = -q \frac{R}{r'}$ ממוקם ב-$\vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'$.
     \[
-    G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - \dfrac{R^2}{r'^2}\vec{r}'\right|}
+    G(\vec{r},\vec{r}') = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - [(R^2)/(r'^2)]\vec{r}'\right|}
     \]
     כאשר $\cos\gamma = \hat{r}\cdot\hat{r}' = \cos\theta\cos\theta' + \sin\theta\sin\theta'\cos(\phi-\phi')$:
     \[
-    G(\vec{r},\vec{r}') = \frac{1}{\sqrt{r^2 + r'^2 - 2rr'\cos\gamma}} - \frac{1}{\sqrt{\dfrac{r^2 r'^2}{R^2} + R^2 - 2rr'\cos\gamma}}
+    G(\vec{r},\vec{r}') = \frac{1}{\sqrt{r^2 + r'^2 - 2rr'\cos\gamma}} - \frac{1}{\sqrt{(rr'/R)^2 + R^2 - 2rr'\cos\gamma}}
     \]
 
     \item \textbf{פונקציית גרין דיריכלה לספירה ברדיוס $R$ (פיתוח ספרי):}
@@ -489,7 +489,6 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
 \textbf{חישוב מגנטוסטטי מאינטגרל צפיפות זרם (כיול קולון $\nabla \cdot \vec{A} = 0$):}
 \noindent
 {\small\[\vec{A}(\vec{r}) = \frac{1}{c} \int \frac{\vec{J}(\vec{r}')}{|\vec{r} - \vec{r}'|} \, d^3r', \ \vec{B}(\vec{r}) = \nabla \times \vec{A} = \frac{1}{c} \int \frac{\vec{J}(\vec{r}') \times (\vec{r} - \vec{r}')}{|\vec{r} - \vec{r}'|^3} \, d^3r'\]}
-
 \noindent
 \text{פוטנציאל וקטורי מעוכב (תלוי בזמן, כיול לורנץ $\nabla \cdot \vec{A} + \frac{1}{c}\frac{\partial \phi}{\partial t} = 0$)}
 
