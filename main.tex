@@ -571,12 +571,12 @@ $
 {\small $r \gg d$: \textbf{מקור נקודתי} ($\dfrac{1}{|\vec{r}-\vec{r}'|} \approx \frac{1}{r}$) \ $|$ \ 
 $r \gg \lambda$: \textbf{אזור קרינה} (איברי $r^{-1}$, $\vec{E} \perp \vec{B} \perp \hat{r}$) \ $|$ \ 
 $\lambda \gg d \Leftrightarrow \dfrac{v}{c} \ll 1, \ (v \approx d \cdot \omega)$: \textbf{לא-יחסותי} (הפרדה למולטיפולים). \\
-\textbf{קיצורים וסימונים:} $t' = t - r/c$, \quad $\vec{E} = \vec{B} \times \hat{r}$, \quad $\vec{V}_{\mathbf{Q}} \equiv (\dddot{\mathbf{Q}} \cdot \hat{r}) \times \hat{r}$ כאשר $(\dddot{\mathbf{Q}} \cdot \hat{r})_i = \sum_j \dddot{Q}_{ij} \hat{r}_j$.}
+\textbf{קיצורים וסימונים:} $t' = t - r/c$, \quad $\vec{E} = \vec{B} \times \hat{r}$, \quad $\vec{U}_{\mathbf{Q}} \equiv \dddot{\mathbf{Q}} \cdot \hat{r}$, $\quad U_r \equiv \hat{r} \cdot \dddot{\mathbf{Q}} \cdot \hat{r}$. כאשר $(\dddot{\mathbf{Q}} \cdot \hat{r})_i = \sum_j \dddot{Q}_{ij} \hat{r}_j$}
 
 \vspace{3pt}
 \begingroup
 % 1. הגדלת מקדם גובה השורות מ-1.9 ל-2.3 (מרווח נדיב שמונע חיתוך נוסחאות)
-\renewcommand{\arraystretch}{2.3}
+\renewcommand{\arraystretch}{2.2}
 \footnotesize
 \setlength{\tabcolsep}{2pt}
 
@@ -588,31 +588,31 @@ $\Phi(\vec{r},t)$
 & $\dfrac{q}{r}$ 
 & $\dfrac{\dot{\vec{p}} \cdot \hat{r}}{cr}$ 
 & $0$ 
-& $\dfrac{\hat{r} \cdot \dddot{\mathbf{Q}} \cdot \hat{r}}{3c^2 r}$ \\ \hline
+& $\dfrac{U_r}{3c^2 r}$ \\ \hline
 
 $\vec{A}(\vec{r},t)$ 
 & $0$ 
 & $\dfrac{\dot{\vec{p}}}{cr}$ 
 & $\dfrac{\dot{\vec{m}} \times \hat{r}}{cr}$ 
-& $\dfrac{\dddot{\mathbf{Q}} \cdot \hat{r}}{3c^2 r}$ \\ \hline
+& $\dfrac{\vec{U}_{\mathbf{Q}}}{3c^2 r}$ \\ \hline
 
 $\vec{B}(\vec{r},t)$ 
 & $0$ 
 & $\dfrac{\ddot{\vec{p}} \times \hat{r}}{c^2 r}$ 
 & $\dfrac{(\ddot{\vec{m}} \cdot \hat{r})\hat{r} - \ddot{\vec{m}}}{c^2 r}$ 
-& $\dfrac{\vec{V}_{\mathbf{Q}}}{3c^3 r}$ \\ \hline
+& $-\dfrac{\hat{r} \times \vec{U}_{\mathbf{Q}}}{3c^3 r}$ \\ \hline
 
 $\vec{E}(\vec{r},t)$ 
 & $\dfrac{q\hat{r}}{r^2}$ 
 & $\dfrac{(\ddot{\vec{p}} \times \hat{r}) \times \hat{r}}{c^2 r}$ 
 & $\dfrac{\hat{r} \times \ddot{\vec{m}}}{c^2 r}$ 
-& $\dfrac{\vec{V}_{\mathbf{Q}} \times \hat{r}}{3c^3 r}$ \\ \hline
+& $-\dfrac{\vec{U}_{\mathbf{Q}} - U_r\hat{r}}{3c^3 r}$ \\ \hline
 
 $\dfrac{dP}{d\Omega}$ 
 & $0$ 
 & $\dfrac{|\ddot{\vec{p}} \times \hat{r}|^2}{4\pi c^3}$ 
 & $\dfrac{|\hat{r} \times \ddot{\vec{m}}|^2}{4\pi c^3}$ 
-& $\dfrac{|\vec{V}_{\mathbf{Q}}|^2}{36\pi c^5}$ \\ \hline
+& $\dfrac{|\vec{U}_{\mathbf{Q}}|^2 - |U_r|^2}{36\pi c^5}$ \\ \hline
 
 $P_{\text{total}}$ 
 & $0$ 
