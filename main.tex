@@ -123,22 +123,25 @@ $
 \begin{itemize}
     \item \textbf{מיקום:} $x^\mu = (ct, \vec{r})$, \quad $x_\mu = (ct, -\vec{r})$
     \item \textbf{נגזרת:} $\partial_\mu \equiv \frac{\partial}{\partial x^\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, \vec{\nabla}\right)$, \ $\partial^\mu \equiv \frac{\partial}{\partial x_\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, -\vec{\nabla}\right)$
-    \item \textbf{מהירות-4:} $U^\mu = \frac{dx^\mu}{d\tau} = \gamma(c, \vec{v})$, כאשר $U^\mu U_\mu = c^2$
-    \item \textbf{תאוצה-4:} $A^\mu = \frac{dU^\mu}{d\tau} = \gamma \frac{d}{dt}\left[\gamma(c, \vec{v})\right] = \gamma\left(c \dot{\gamma}, \, \dot{\gamma}\vec{v} + \gamma\vec{a}\right)$
+    \item \textbf{4-מהירות:} $U^\mu = \frac{dx^\mu}{d\tau} = \gamma(c, \vec{v})$, כאשר $U^\mu U_\mu = c^2$
+    \item \textbf{4-תאוצה:} $A^\mu = \frac{dU^\mu}{d\tau} = \gamma \frac{d}{dt}\left[\gamma(c, \vec{v})\right] = \gamma\left(c \dot{\gamma}, \, \dot{\gamma}\vec{v} + \gamma\vec{a}\right)$
     \\
 \begin{itemize*}[label=-, itemjoin={,\quad}]
     \item נגזרת $\gamma$: $\dot{\gamma} = \frac{d\gamma}{dt} = \frac{\gamma^3}{c^2}(\vec{v} \cdot \vec{a})$
     \item א"ג ל-4-מהירות: $U_\mu A^\mu = 0$
 \end{itemize*}
-    \item \textbf{תנע-אנרגיה 4:} $P^\mu = m U^\mu = \left(\frac{E}{c}, \vec{p}\right) = (\gamma m c, \gamma m \vec{v})$, כאשר $P^\mu P_\mu = m^2 c^2$
-    \item \textbf{חוק שני של ניוטון (כוח-4):} $K^\mu = \frac{dP^\mu}{d\tau} = m A^\mu = \gamma \left( \frac{\vec{F} \cdot \vec{v}}{c}, \, \vec{F} \right)$
-    \item \textbf{פוטנציאל-4:} $A^\mu = (\Phi, \vec{A})$, \quad $A_\mu = (\Phi, -\vec{A})$
-    \item \textbf{צפיפות זרם-4:} $J_\mu = (\rho c, -\vec{J}), \ J^\mu = \rho_0 u^\mu = (\rho c, \vec{J})$ \\ ($\text{ צפיפות במע' מנוחה} \rho_0, \; \rho = \gamma \rho_0$)
+    \item \textbf{4 תנע-אנרגיה:} $P^\mu = m U^\mu = \left(\frac{E}{c}, \vec{p}\right) = (\gamma m c, \gamma m \vec{v})$, כאשר $P^\mu P_\mu = m^2 c^2$
+    \item \textbf{4-פוטנציאל:} $A^\mu = (\Phi, \vec{A})$, \quad $A_\mu = (\Phi, -\vec{A})$
+    \item \textbf{4 צפיפות זרם:} $J_\mu = (\rho c, -\vec{J}), \ J^\mu = \rho_0 u^\mu = (\rho c, \vec{J})$ \\ ($\text{ צפיפות במע' מנוחה} \rho_0, \; \rho = \gamma \rho_0$)
 \end{itemize}
 
 \section{משוואות מקסוול וטנזור השדה $F_{\mu\nu}$}
 \begin{itemize}
-    \item \textbf{הגדרה:} $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu \quad | \quad F^{ij} = \epsilon^{ijk} B^k$
+    \item 
+    \begin{itemize*}[label=, itemjoin={\quad | \quad}]
+        \item \textbf{הגדרה:} $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
+        \item $F^{ij} = \epsilon^{ijk} B^k$
+    \end{itemize*}
     \item \textbf{ייצוג מטריצי:}
     {\scriptsize
     \setlength{\arraycolsep}{1.5pt}
@@ -189,7 +192,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 משמש לכתיבת המשוואות ההומ' בקיצור: $\partial_\mu \tilde{F}^{\mu\nu} = 0$.
 
 \section{גדלים אינווריאנטיים של השדה}
-\begin{itemize*}[label=\textbullet, itemjoin={,\quad}]
+\begin{itemize*}[label=\textbullet, itemjoin={\quad}]
     \item $F_{\mu\nu}F^{\mu\nu} = 2(B^2 - E^2)$
     \item $F_{\mu\nu}\tilde{F}^{\mu\nu} = -4(\vec{E}\cdot\vec{B})$
 \end{itemize*}
@@ -230,7 +233,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
 
     \item \textbf{דיברגנץ טנזור מאמץ-אנ' (שימור תנע-אנ' וצפיפות 4-כוח לורנץ):}
     \[
-    \partial_\mu T^\mu{}_\nu = -\frac{1}{c^2} F_{\nu\mu} J^\mu, \quad \partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\mu} J_\mu
+    \partial_\mu T^\mu{}_\nu = -\frac{1}{c^2} F_{\nu\rho} J^\rho, \quad \partial_\mu T^{\mu\nu} = -\frac{1}{c^2} F^{\nu\rho} J_\rho
     \]
 
     \begin{itemize}
@@ -466,6 +469,12 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
         \item $
         \int_{0}^{2\pi} d\phi \int_{0}^{\pi} \sin\theta \, d\theta \, Y_{\ell,m}^*(\theta,\phi) Y_{\ell',m'}(\theta,\phi) = \delta_{\ell\ell'} \delta_{mm'}
         $
+
+        \item \textbf{יחס שלמות:} ($\frac{\delta(\theta - \theta') \delta(\phi - \phi')}{\sin\theta} = \delta(\cos\theta - \cos\theta') \delta(\phi - \phi')$) \\
+        $
+        \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{+\ell} Y_{\ell m}^*(\theta, \phi) Y_{\ell m}(\theta', \phi') = \frac{\delta(\theta - \theta') \delta(\phi - \phi')}{\sin\theta}
+        $
+        
         \item $
     \dfrac{1}{|\vec{r} - \vec{r}'|} = \sum_{l=0}^{\infty} \dfrac{r_<^l}{r_>^{l+1}} P_l(\cos\gamma)$
       \item $
@@ -496,9 +505,6 @@ q_{\ell,m} = \int \rho(\vec{r}') r'^\ell Y_{\ell,m}^*(\theta',\phi') d^3r', \qua
 \textbf{חישוב מגנטוסטטי מאינטגרל צפיפות זרם (כיול קולון $\nabla \cdot \vec{A} = 0$):}
 \noindent
 {\small\[\vec{A}(\vec{r}) = \frac{1}{c} \int \frac{\vec{J}(\vec{r}')}{|\vec{r} - \vec{r}'|} \, d^3r', \ \vec{B}(\vec{r}) = \nabla \times \vec{A} = \frac{1}{c} \int \frac{\vec{J}(\vec{r}') \times (\vec{r} - \vec{r}')}{|\vec{r} - \vec{r}'|^3} \, d^3r'\]}
-\noindent
-\text{פוטנציאל וקטורי מעוכב (תלוי בזמן, כיול לורנץ $\nabla \cdot \vec{A} + \frac{1}{c}\frac{\partial \phi}{\partial t} = 0$)}
-
 \begin{itemize}
     \item \textbf{איבר הדיפול המגנטי ($n=1$):} האיבר המוביל במרחקים גדולים:
     \[
@@ -510,7 +516,7 @@ $
 $
 \end{itemize}
 
-\section*{קרינה מולטיפולית והספק}
+\section*{קרינה מולטיפולית והספק (תלוי בזמן, כיול לורנץ $\nabla \cdot \vec{A} + \frac{1}{c}\frac{\partial \phi}{\partial t} = 0$)}
 \noindent
 {\small
 $
@@ -553,21 +559,6 @@ $P = \dfrac{2}{3} \dfrac{q^2 a^2}{c^3} \ \left(a = |\ddot{\vec{r}}_0|\right)$
     \item \textbf{גליליות ($\hat{r}, \hat{\phi}, \hat{z}$):}
     $\hat{r} \times \hat{\phi} = \hat{z}, \quad \hat{\phi} \times \hat{z} = \hat{r}, \quad \hat{z} \times \hat{r} = \hat{\phi}$
 
-    {\small$\begin{pmatrix} \hat{r} \\ \hat{\theta} \\ \hat{\phi} \end{pmatrix} = 
-\begin{pmatrix} 
-\sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\ 
-\cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\ 
--\sin\phi & \cos\phi & 0 
-\end{pmatrix}
-\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix}
- $} \\ {\small$ \begin{pmatrix} \hat{\rho} \\ \hat{\phi} \\ \hat{z} \end{pmatrix} = 
-\begin{pmatrix} 
-\cos\phi & \sin\phi & 0 \\ 
--\sin\phi & \cos\phi & 0 \\ 
-0 & 0 & 1 
-\end{pmatrix}
-\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix}
-$}
 \end{itemize}
 
 \section*{קרינת מולטיפולים (שדה רחוק $r \gg \lambda \gg d$, כאשר $\lambda = \frac{2\pi c}{\omega}$, יחידות \textenglish{CGS})}
