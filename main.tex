@@ -86,11 +86,12 @@ $
     T'^\mu{}_\nu = \Lambda^\mu{}_\alpha \Lambda_\nu{}^\beta T^\alpha{}_\beta, 
     T'_{\mu\nu} = \Lambda_\mu{}^\alpha \Lambda_\nu{}^\beta T_{\alpha\beta}
     \]
+
     \item \textbf{טרנספורמציה של טנזורים (כתיב מטריצי):}
     \begin{itemize}
-        \item \textbf{עליונים ($T^{\mu\nu}$):} $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^T$
-        \item \textbf{תחתונים ($T_{\mu\nu}$):} $\mathbf{T}' = (\Lambda^{-1})^T \mathbf{T} \Lambda^{-1}$
-        \item \textbf{מעורבים ($T^\mu{}_\nu$):} $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^{-1}$
+        \item \textbf{עליונים ($T^{\mu\nu}$):} $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^T \quad | \quad \mathbf{T} = \Lambda^{-1} \mathbf{T}' (\Lambda^{-1})^T$
+        \item \textbf{תחתונים ($T_{\mu\nu}$):} $\mathbf{T}' = (\Lambda^{-1})^T \mathbf{T} \Lambda^{-1} \quad | \quad \mathbf{T} = \Lambda^T \mathbf{T}' \Lambda$
+        \item \textbf{מעורבים ($T^\mu{}_\nu$):} $\mathbf{T}' = \Lambda \mathbf{T} \Lambda^{-1} \quad | \quad \mathbf{T} = \Lambda^{-1} \mathbf{T}' \Lambda$
     \end{itemize}
 
 \item \textbf{זמן עצמי ($\tau$) והאינטרוואל השמור ($ds$):}
@@ -123,14 +124,21 @@ $
     \item \textbf{מיקום:} $x^\mu = (ct, \vec{r})$, \quad $x_\mu = (ct, -\vec{r})$
     \item \textbf{נגזרת:} $\partial_\mu \equiv \frac{\partial}{\partial x^\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, \vec{\nabla}\right)$, \ $\partial^\mu \equiv \frac{\partial}{\partial x_\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, -\vec{\nabla}\right)$
     \item \textbf{מהירות-4:} $U^\mu = \frac{dx^\mu}{d\tau} = \gamma(c, \vec{v})$, כאשר $U^\mu U_\mu = c^2$
+    \item \textbf{תאוצה-4:} $A^\mu = \frac{dU^\mu}{d\tau} = \gamma \frac{d}{dt}\left[\gamma(c, \vec{v})\right] = \gamma\left(c \dot{\gamma}, \, \dot{\gamma}\vec{v} + \gamma\vec{a}\right)$
+    \\
+\begin{itemize*}[label=-, itemjoin={,\quad}]
+    \item נגזרת $\gamma$: $\dot{\gamma} = \frac{d\gamma}{dt} = \frac{\gamma^3}{c^2}(\vec{v} \cdot \vec{a})$
+    \item א"ג ל-4-מהירות: $U_\mu A^\mu = 0$
+\end{itemize*}
     \item \textbf{תנע-אנרגיה 4:} $P^\mu = m U^\mu = \left(\frac{E}{c}, \vec{p}\right) = (\gamma m c, \gamma m \vec{v})$, כאשר $P^\mu P_\mu = m^2 c^2$
+    \item \textbf{חוק שני של ניוטון (כוח-4):} $K^\mu = \frac{dP^\mu}{d\tau} = m A^\mu = \gamma \left( \frac{\vec{F} \cdot \vec{v}}{c}, \, \vec{F} \right)$
     \item \textbf{פוטנציאל-4:} $A^\mu = (\Phi, \vec{A})$, \quad $A_\mu = (\Phi, -\vec{A})$
     \item \textbf{צפיפות זרם-4:} $J_\mu = (\rho c, -\vec{J}), \ J^\mu = \rho_0 u^\mu = (\rho c, \vec{J})$ \\ ($\text{ צפיפות במע' מנוחה} \rho_0, \; \rho = \gamma \rho_0$)
 \end{itemize}
 
 \section{משוואות מקסוול וטנזור השדה $F_{\mu\nu}$}
 \begin{itemize}
-    \item \textbf{הגדרה:} $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
+    \item \textbf{הגדרה:} $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu \quad | \quad F^{ij} = \epsilon^{ijk} B^k$
     \item \textbf{ייצוג מטריצי:}
     {\scriptsize
     \setlength{\arraycolsep}{1.5pt}
@@ -330,13 +338,13 @@ $
     }
 \end{itemize}
 
-\section{טנזור לוי-צ'יוויטה}
+\section*{טנזור לוי-צ'יוויטה ( $E_{\alpha\beta\gamma\delta} = \text{sgn}(g)\sqrt{|g|}\,\epsilon_{\alpha\beta\gamma\delta}, \ E^{\alpha\beta\gamma\delta} = \frac{1}{\sqrt{|g|}}\,e^{\alpha\beta\gamma\delta}$)}
 \begin{itemize}
      \item \textbf{3 אינ' (מרחביים):} $\epsilon_{123} = -\epsilon^{123} = +1$. אנטי-סימ' להחלפת אינ'.
     \item \textbf{4 ':} במינקובסקי (\textenglish{Mostly Minus}): $\epsilon^{0123} = +1$, לכן $\epsilon_{0123} = -1$.
 \end{itemize}
 
-\section{אופרטורים דיפרנציאליים}
+\section{אופרטורים דיפרנציאליים ($g \equiv \det(g_{\mu\nu})$)}
 
 \begin{itemize}
     \item \textbf{גרדיאנט:} 
@@ -351,7 +359,8 @@ $
 
     \item \textbf{רוטור:} הרכיב הקונטרה 
     $ (\vec{\nabla} \times \vec{E})^i = \frac{\varepsilon^{ijk}}{\sqrt{g}} \frac{\partial E_k}{\partial x^j} = \frac{\varepsilon^{ijk}}{\sqrt{g}} \partial_j E_k
-    $
+    $ \\
+    \textbf{מעבר לרכיב פיזיקלי (בכיוון $\hat{e}_i$):} $F^{\hat{i}} = h_i F^i = \sqrt{g_{ii}} \, F^i$
 
     \item \textbf{לפלסיאן:}
     \[
@@ -544,22 +553,21 @@ $P = \dfrac{2}{3} \dfrac{q^2 a^2}{c^3} \ \left(a = |\ddot{\vec{r}}_0|\right)$
     \item \textbf{גליליות ($\hat{r}, \hat{\phi}, \hat{z}$):}
     $\hat{r} \times \hat{\phi} = \hat{z}, \quad \hat{\phi} \times \hat{z} = \hat{r}, \quad \hat{z} \times \hat{r} = \hat{\phi}$
 
-    $
-\begin{pmatrix} \hat{r} \\ \hat{\theta} \\ \hat{\phi} \end{pmatrix} = 
+    {\small$\begin{pmatrix} \hat{r} \\ \hat{\theta} \\ \hat{\phi} \end{pmatrix} = 
 \begin{pmatrix} 
 \sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\ 
 \cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\ 
 -\sin\phi & \cos\phi & 0 
 \end{pmatrix}
 \begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix}
- $ \\ $ \begin{pmatrix} \hat{\rho} \\ \hat{\phi} \\ \hat{z} \end{pmatrix} = 
+ $} \\ {\small$ \begin{pmatrix} \hat{\rho} \\ \hat{\phi} \\ \hat{z} \end{pmatrix} = 
 \begin{pmatrix} 
 \cos\phi & \sin\phi & 0 \\ 
 -\sin\phi & \cos\phi & 0 \\ 
 0 & 0 & 1 
 \end{pmatrix}
 \begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix}
-$
+$}
 \end{itemize}
 
 \section*{קרינת מולטיפולים (שדה רחוק $r \gg \lambda \gg d$, כאשר $\lambda = \frac{2\pi c}{\omega}$, יחידות \textenglish{CGS})}
