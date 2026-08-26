@@ -97,8 +97,8 @@ $
 \item \textbf{זמן עצמי ($\tau$) והאינטרוואל השמור ($ds$):}
 \begin{itemize}
     \item \textbf{קשר לאורך השמור:} $ds^2 = c^2 d\tau^2 = \eta_{\mu\nu} dx^\mu dx^\nu$
-    \item \textbf{קשר לזמן במערכת כללית ($t$):} $d\tau = \dfrac{ds}{c} = \dfrac{dt}{\gamma}$
-    \item \textbf{אינטגרל במסלול:} $\tau = \int \dfrac{ds}{c} = \int_{t_1}^{t_2} \sqrt{1 - \dfrac{v^2(t)}{c^2}} \, dt$
+    \item \textbf{קשר לזמן במערכת כללית ($t$):} $d\tau = \frac{ds}{c} = \frac{dt}{\gamma}$
+    \item \textbf{אינטגרל במסלול:} $\tau = \int \frac{ds}{c} = \int_{t_1}^{t_2} \sqrt{1 - \frac{v^2(t)}{c^2}} \, dt$
 \end{itemize}
 
 \item \textbf{ייצוג טנזורים כמטריצות :}
@@ -130,7 +130,8 @@ $
     \item נגזרת $\gamma$: $\dot{\gamma} = \frac{d\gamma}{dt} = \frac{\gamma^3}{c^2}(\vec{v} \cdot \vec{a})$
     \item א"ג ל-4-מהירות: $U_\mu A^\mu = 0$
 \end{itemize*}
-    \item \textbf{4 תנע-אנרגיה:} $P^\mu = m U^\mu = \left(\frac{E}{c}, \vec{p}\right) = (\gamma m c, \gamma m \vec{v})$, כאשר $P^\mu P_\mu = m^2 c^2$
+    \item \textbf{4 תנע-אנ':} $P^\mu = m U^\mu = \left(\frac{E}{c}, \vec{p}\right) = \gamma m(c, \vec{v})$, עם $P^\mu P_\mu = m^2 c^2$
+    \item \textbf{4-כח (לורנץ):} $K^\mu = \frac{dP^\mu}{d\tau} = m A^\mu = \frac{q}{c} F^{\mu\nu} U_\nu = \gamma \left( \frac{\vec{F} \cdot \vec{v}}{c}, \vec{F} \right)$. \\ {\small$\vec{F} = q (\vec{E} + \frac{\vec{v}}{c} \times \vec{B}) = \frac{d\vec{p}}{dt} = \frac{d(\gamma m \vec{v})}{dt} | \frac{\vec{p}}{E} = \frac{\gamma m\vec{v}}{\gamma m c^2} \Rightarrow \vec{v} = \frac{\vec{p}c^2}{E} | \frac{\vec{F} \cdot \vec{v}}{c}=\frac{dE}{d(ct)}$}
     \item \textbf{4-פוטנציאל:} $A^\mu = (\Phi, \vec{A})$, \quad $A_\mu = (\Phi, -\vec{A})$
     \item \textbf{4 צפיפות זרם:} $J_\mu = (\rho c, -\vec{J}), \ J^\mu = \rho_0 u^\mu = (\rho c, \vec{J})$ \\ ($\text{ צפיפות במע' מנוחה} \rho_0, \; \rho = \gamma \rho_0$)
 \end{itemize}
@@ -142,10 +143,10 @@ $
         \item \textbf{הגדרה:} $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
         \item $F^{ij} = \epsilon^{ijk} B^k$
     \end{itemize*}
-    \item \textbf{ייצוג מטריצי:}
+    \item 
     {\scriptsize
     \setlength{\arraycolsep}{1.5pt}
-    \[
+    $
     F_{\mu\nu} = \begin{pmatrix}
     0 & E_x & E_y & E_z \\
     -E_x & 0 & -B_z & B_y \\
@@ -158,7 +159,7 @@ $
     E_y & B_z & 0 & -B_x \\
     E_z & -B_y & B_x & 0
     \end{pmatrix}
-    \]
+    $
     }
     \item 
     $
@@ -248,8 +249,7 @@ $\Delta E_\perp = 4\pi\sigma, \; \Delta \vec{E}_\parallel = 0, \; \Delta\Phi = 0
     \item \textbf{עקבת הטנזור \textenglish{(Trace)}:} $\text{Tr}(T) = T^\mu{}_\mu = 0$.
 \end{itemize}
 
-\section{סוגי כיול (\textenglish{Gauge Transformations})}
-טרנספורמציית כיול: $A_\mu \to A_\mu + \partial_\mu \Lambda$.
+\section*{סוגי כיול (\textenglish{Gauge Transformations}) - טרנספ' כיול: $A_\mu \to A_\mu + \partial_\mu \Lambda$}
 \begin{itemize}
     \item \textbf{כיול לורנץ:} תנאי: 
     $
@@ -363,7 +363,7 @@ $
     \item \textbf{רוטור:} הרכיב הקונטרה 
     $ (\vec{\nabla} \times \vec{E})^i = \frac{\varepsilon^{ijk}}{\sqrt{g}} \frac{\partial E_k}{\partial x^j} = \frac{\varepsilon^{ijk}}{\sqrt{g}} \partial_j E_k
     $ \\
-    \textbf{מעבר לרכיב פיזיקלי (בכיוון $\hat{e}_i$):} $F^{\hat{i}} = h_i F^i = \sqrt{g_{ii}} \, F^i$
+    \textbf{מעבר לרכיב פיזיקלי (בכיוון $\hat{e}_i$):} $A^{(\hat{i})} = \sqrt{g_{ii}} \, A^i = \frac{1}{\sqrt{g_{ii}}} \, A_i$
 
     \item \textbf{לפלסיאן:}
     \[
@@ -374,8 +374,8 @@ $
 
     \item \textbf{קשר בין וקטורי יחידה $\hat{e}_\mu$ לווקטורי בסיס מטבעיים $e_\mu = \frac{\partial}{\partial x^\mu}$:}
 \begin{itemize}
-    \item \textbf{גליליות:} $\hat{\rho} = e_\rho, \quad \hat{\phi} = \frac{1}{\rho} e_\phi, \quad \hat{z} = e_z \quad \left(e_\phi = \rho \hat{\phi}\right)$
-    \item \textbf{ספ':} $\hat{r} = e_r, \ \hat{\theta} = \dfrac{1}{r} e_\theta, \ \hat{\phi} = \dfrac{1}{r \sin\theta} e_\phi \ \left(e_\theta = r\hat{\theta}, \; e_\phi = r\sin\theta \hat{\phi}\right)$
+    \item \textbf{גליליות:} $\hat{\rho} = e_\rho = e^\rho, \hat{\phi} = \frac{1}{\rho} e_\phi = \rho e^\phi, \hat{z} = e_z = e^z, \left(e_\phi = \rho \hat{\phi}\right)$
+    \item \textbf{ספ':} $\hat{r} = e_r, \ \hat{\theta} = \dfrac{1}{r} e_\theta, \ \hat{\phi} = \dfrac{1}{r \sin\theta} e_\phi, \ \left(e_\theta = r\hat{\theta}, \; e_\phi = r\sin\theta \hat{\phi}\right)$
 \end{itemize}
 \end{itemize}
 
@@ -567,9 +567,8 @@ $P = \dfrac{2}{3} \dfrac{q^2 a^2}{c^3} \ \left(a = |\ddot{\vec{r}}_0|\right)$
 \textbf{קירובים:} 
 {\small $r \gg d$: \textbf{מקור נקודתי} ($\dfrac{1}{|\vec{r}-\vec{r}'|} \approx \frac{1}{r}$) \ $|$ \ 
 $r \gg \lambda$: \textbf{אזור קרינה} (איברי $r^{-1}$, $\vec{E} \perp \vec{B} \perp \hat{r}$) \ $|$ \ 
-$\lambda \gg d \Leftrightarrow \dfrac{v}{c} \ll 1, \ (v \approx d \cdot \omega)$: \textbf{לא-יחסותי} (הפרדה למולטיפולים). \\
-\textbf{קיצורים וסימונים:} $t' = t - r/c$, \quad $\vec{E} = \vec{B} \times \hat{r}$, \quad $\vec{U}_{\mathbf{Q}} \equiv \dddot{\mathbf{Q}} \cdot \hat{r}$, $\quad U_r \equiv \hat{r} \cdot \dddot{\mathbf{Q}} \cdot \hat{r}$. כאשר $(\mathbf{Q} \cdot \hat{r})_i = \sum_j Q_{ij} \hat{r}_j$}
-
+$\lambda \gg d \Leftrightarrow \dfrac{v}{c} \ll 1, \ (v \approx d \cdot \omega)$: \textbf{לא-יחסותי} (הפרדה למולטיפולים).
+\textbf{קיצורים וסימונים:} $t' = t - r/c$, \quad $\vec{E} = \vec{B} \times \hat{r}$, \quad $\vec{U}_{\mathbf{Q}} \equiv \dddot{\mathbf{Q}} \cdot \hat{r}$, $\quad U_r \equiv \hat{r} \cdot \dddot{\mathbf{Q}} \cdot \hat{r}$. כאשר $(\mathbf{Q} \cdot \hat{r})_i = \sum_j Q_{ij} \hat{r}_j$}. \textbf{חתך פעולה דיפ':} $\frac{d\sigma}{d\Omega} = \frac{1}{|\vec{S}_{in}|} \left\langle \frac{dP_{out}}{d\Omega} \right\rangle$.
 \vspace{3pt}
 \begingroup
 % 1. הגדלת מקדם גובה השורות מ-1.9 ל-2.3 (מרווח נדיב שמונע חיתוך נוסחאות)
@@ -605,7 +604,7 @@ $\vec{E}(\vec{r},t)$
 & $\dfrac{\hat{r} \times \ddot{\vec{m}}}{c^2 r}$ 
 & $-\dfrac{\vec{U}_{\mathbf{Q}} - U_r\hat{r}}{3c^3 r}$ \\ \hline
 
-$\dfrac{dP}{d\Omega}$ 
+$\dfrac{dP}{d\Omega} = r^2 \hat{r} \cdot \vec{S}$ 
 & $0$ 
 & $\dfrac{|\ddot{\vec{p}} \times \hat{r}|^2}{4\pi c^3}$ 
 & $\dfrac{|\hat{r} \times \ddot{\vec{m}}|^2}{4\pi c^3}$ 
