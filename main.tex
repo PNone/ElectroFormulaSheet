@@ -618,25 +618,6 @@ $P_{\text{total}}$
 \end{tabularx}
 \endgroup
 
-\section{אופרטורים וקטוריים בקואורדינטות עקומות אורתוגונליות}
-\begin{itemize}
-\item \textbf{גליליות ($\rho, \phi, z$):}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{גרדיאנט:} $\nabla f = \frac{\partial f}{\partial \rho}\hat{\rho} + \frac{1}{\rho}\frac{\partial f}{\partial \phi}\hat{\phi} + \frac{\partial f}{\partial z}\hat{z}$
-    \item \textbf{דיברגנץ:} $\nabla \cdot \vec{A} = \frac{1}{\rho}\frac{\partial(\rho A_\rho)}{\partial \rho} + \frac{1}{\rho}\frac{\partial A_\phi}{\partial \phi} + \frac{\partial A_z}{\partial z}$
-    \item \textbf{רוטור:} $\nabla \times \vec{A} = \left(\frac{1}{\rho}\frac{\partial A_z}{\partial \phi} - \frac{\partial A_\phi}{\partial z}\right)\hat{\rho} + \left(\frac{\partial A_\rho}{\partial z} - \frac{\partial A_z}{\partial \rho}\right)\hat{\phi} + \frac{1}{\rho}\left(\frac{\partial(\rho A_\phi)}{\partial \rho} - \frac{\partial A_\rho}{\partial \phi}\right)\hat{z}$
-    \item \textbf{לפלסיאן:} $\nabla^2 f = \frac{1}{\rho}\frac{\partial}{\partial \rho}\left(\rho \frac{\partial f}{\partial \rho}\right) + \frac{1}{\rho^2}\frac{\partial^2 f}{\partial \phi^2} + \frac{\partial^2 f}{\partial z^2}$
-\end{itemize}
-
-\item \textbf{כדוריות ($r, \theta, \phi$):}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{גרדיאנט:} $\nabla f = \frac{\partial f}{\partial r}\hat{r} + \frac{1}{r}\frac{\partial f}{\partial \theta}\hat{\theta} + \frac{1}{r\sin\theta}\frac{\partial f}{\partial \phi}\hat{\phi}$
-    \item \textbf{דיברגנץ:} $\nabla \cdot \vec{A} = \frac{1}{r^2}\frac{\partial(r^2 A_r)}{\partial r} + \frac{1}{r\sin\theta}\frac{\partial(\sin\theta A_\theta)}{\partial \theta} + \frac{1}{r\sin\theta}\frac{\partial A_\phi}{\partial \phi}$
-    \item \textbf{רוטור:} $\nabla \times \vec{A} = \frac{1}{r\sin\theta}\left(\frac{\partial(\sin\theta A_\phi)}{\partial \theta} - \frac{\partial A_\theta}{\partial \phi}\right)\hat{r} + \frac{1}{r}\left(\frac{1}{\sin\theta}\frac{\partial A_r}{\partial \phi} - \frac{\partial(r A_\phi)}{\partial r}\right)\hat{\theta} + \frac{1}{r}\left(\frac{\partial(r A_\theta)}{\partial r} - \frac{\partial A_r}{\partial \theta}\right)\hat{\phi}$
-    \item \textbf{לפלסיאן:} $\nabla^2 f = \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 \frac{\partial f}{\partial r}\right) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta \frac{\partial f}{\partial \theta}\right) + \frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial \phi^2}$
-\end{itemize}
-\end{itemize}
-
 
 
 \section{פונקציות גרין, ייצוגים בקואורדינטות ונגזרות שפה}
@@ -785,7 +766,7 @@ $P_{\text{total}}$
     $f(x) = \sum_{n} c_n \phi_n(x)$\\
     כאשר פונקציות הבסיס א"ג ביחס לפונקציית משקל $w(x) \ge 0$:
     $$\langle \phi_n, \phi_m \rangle = \int_{a}^{b} w(x) \phi_n^*(x) \phi_m(x) \, dx = N_n \delta_{nm}$$
-    *($N_n = \|\phi_n\|^2$ הוא נורמת הפו' בריבוע. אם הבסיס א"נ, $N_n = 1$)*
+    \small{*($N_n = \|\phi_n\|^2$ הוא נורמת הפו' בריבוע. אם הבסיס א"נ, $N_n = 1$)*}
 
     \item \textbf{דוגמאות נפוצות בפיזיקה:}
 
@@ -800,9 +781,7 @@ $P_{\text{total}}$
     \end{itemize}
 \end{itemize}
 
-\section{צפיפות לגראנז'יאן של חלקיק חופשי ומשוואות אוילר-לגראנז'}
-
-    \textbf{חלקיק נקודתי חופשי יחסותי (מכניקה אנליטית):}
+\section*{צפיפות לגראנז'יאן של חלקיק נקודתי חופשי יחסותי ומשוואות \textenglish{E-L}}
     \begin{itemize}
         \item \textbf{לגראנז'יאן לפי זמן עצמי ($\tau$):} $L = -mc \sqrt{-\dot{x}^\mu \dot{x}_\mu}$
         \item \textbf{תוצאת \textenglish{E-L}:} שימור 4-תנע חופשי $\frac{d}{d\tau} p^\mu = 0$ (כאשר $p^\mu = m u^\mu$).
@@ -865,7 +844,7 @@ $P_{\text{total}}$
     מביטוי Lienard היחסותי עבור תאוצה מאונכת למהירות ($\vec{a} \perp \vec{v}$):
     $$P = \frac{2 q^2}{3 c^3} \gamma^4 \left( \gamma^2 a_\parallel^2 + a_\perp^2 \right) \xrightarrow{a_\parallel = 0} \frac{2 q^2}{3 c^3} \gamma^4 a_\perp^2$$
     הצבת התאוצה המאונכת $a_\perp = \frac{|q| B \beta_\perp}{\gamma m}$ במשוואה מעניקה:
-    $$P_{\text{synch}} = \frac{2 q^2}{3 c^3} \gamma^4 \left( \frac{|q| B \beta_\perp}{\gamma m} \right)^2 = \frac{2 q^4 B^2 \beta_\perp^2 \gamma^2}{3 m^2 c^3} \propto \frac{\gamma^2}{m^2} \propto m^{-4}$$
+    $$P_{\text{synch}} = \frac{2 q^2}{3 c^3} \gamma^4 \left( \frac{|q| B \beta_\perp}{\gamma m} \right)^2 = \frac{2 q^4 B^2 \beta_\perp^2 \gamma^2}{3 m^2 c^3} \propto \frac{\gamma^2}{m^2} \overset{E=\text{const}}{\propto} m^{-4}$$
     *(הגורם $\gamma^4$ במונה מצטמצם בחלקו עם $\gamma^2$ במכנה שמקורו בריבוע התאוצה, כך שההספק הסופי פרופורציונלי ל-$\gamma^2$)*.
     \item \textbf{ספקטרום הקרינה:}
     הספקטרום רחב ונפרש עד לתדירות הקריטית:
@@ -924,6 +903,88 @@ $P_{\text{total}}$
         \item \textbf{מסקנה:} המולטיפול המוביל בקרינה עבור טבעת זרם זו הוא **דיפול מגנטי \textenglish{(M1)}**.
     \end{itemize}
 \end{itemize}
+
+\section*{חישוב מומנטי מולטיפול אפקטיביים בקרינה ($\rho = 0, \vec{J} \neq 0$)}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{הרעיון המרכזי:} 
+    כאשר צפיפות המטען במערכת מתאפסת ($\rho = 0$), אין מומנט דיפול חשמלי סטנדרטי ($\vec{p} = \int \rho \vec{r}' d^3r' = 0$). עם זאת, צפיפות זרם נפחית מושרה $\vec{J}(\vec{r}', t)$ יוצרת קרינה השקולה למומנטים אפקטיביים בשדה הרחוק.
+
+    
+
+    \item \textbf{הכרעה בסדר השני:}
+    * אם *רק אחד* מהם שונה מאפס ($\ddot{\vec{m}}_{\text{eff}} \neq 0$ או $\dddot{\mathbf{Q}}_{\text{eff}} \neq 0$), הוא המולטיפול המוביל.
+    * אם *שניהם שונים מאפס*, שתי התרומות מופיעות באותו סדר גודל פיזיקלי ($v/c$), וההספק הכולל בשדה הרחוק הוא סכום שניהם:
+      $$\langle P_{\text{total}} \rangle = \langle P_{M1} \rangle + \langle P_{E2} \rangle$$
+      *(איברי ההצלבה בין $M1$ ל-$E2$ מתאפסים בעת ביצוע האינטגרציה הזוויתית על פני הנגזרת המרחבית של כל הספירה)*.
+\end{itemize}
+$$\dot{\vec{p}}_{\text{eff}} = \int_V \vec{J} \, d^3r' \implies \langle P_{E1} \rangle = \frac{2}{3c^3} \left\langle |\ddot{\vec{p}}_{\text{eff}}|^2 \right\rangle$$
+$$\vec{m}_{\text{eff}} = \frac{1}{2c} \int_V (\vec{r}' \times \vec{J}) \, d^3r' \implies \langle P_{M1} \rangle = \frac{2}{3c^3} \left\langle |\ddot{\vec{m}}_{\text{eff}}|^2 \right\rangle$$
+$$\dot{Q}_{\text{eff}, ij} = \frac{1}{2} \int_V \left( 3x'_i J_j + 3x'_j J_i - 2(\vec{r}' \cdot \vec{J})\delta_{ij} \right) d^3r'$$ $$ \Rightarrow \langle P_{E2} \rangle = \frac{1}{45c^5} \sum_{i,j} \left\langle |\dddot{Q}_{\text{eff}, ij}|^2 \right\rangle$$
+
+
+
+\section*{חישוב מומנטי מולטיפול אפקטיביים בקרינה ($\rho = 0, \vec{J} \neq 0$)}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{הרעיון המרכזי:} 
+    כאשר צפיפות המטען במערכת מתאפסת ($\rho = 0$), אין מומנט דיפול חשמלי סטנדרטי ($\vec{p} = \int \rho \vec{r}' d^3r' = 0$). עם זאת, צפיפות זרם נפחית מושרה $\vec{J}(\vec{r}', t)$ יוצרת קרינה השקולה למומנטים אפקטיביים בשדה הרחוק.
+
+    \item \textbf{הגדרת המומנטים האפקטיביים:}
+    \begin{enumerate}
+        \item \textbf{דיפול חשמלי אפקטיבי ($E1_{\text{eff}}$):} 
+        נקבע ישירות ע"י אינטגרל נפחי על הזרם (הסדר האפס בפיתוח מרחבי $r'^0$):
+        $$\dot{\vec{p}}_{\text{eff}}(t) \equiv \int_V \vec{J}(\vec{r}', t) \, d^3r' \quad \implies \quad \ddot{\vec{p}}_{\text{eff}}(t) = \frac{\partial}{\partial t} \int_V \vec{J}(\vec{r}', t) \, d^3r'$$
+        *אם $\ddot{\vec{p}}_{\text{eff}} \neq 0$, הקרינה המובילה היא מסדר דיפול חשמלי אפקטיבי.*
+
+        \item \textbf{דיפול מגנטי אפקטיבי ($M1_{\text{eff}}$):} 
+        החלק האנטי-סימטרי של האיבר בסדר הראשון ($r'^1$):
+        $$\vec{m}_{\text{eff}}(t) \equiv \frac{1}{2c} \int_V \left( \vec{r}' \times \vec{J}(\vec{r}', t) \right) d^3r'$$
+
+        \item \textbf{קוודרופול חשמלי אפקטיבי ($E2_{\text{eff}}$):} 
+        נגזרת הזמן של טנזור הקוודרופול מבוססת על ההגדרה $Q_{ij} = \frac{1}{2} \int \rho (3x'_i x'_j - r'^2 \delta_{ij}) d^3r'$ בשילוב משוואת הרציפות:
+        $$\dot{Q}_{\text{eff}, ij}(t) \equiv \frac{1}{2} \int_V \left( 3 x'_i J_j + 3 x'_j J_i - 2 (\vec{r}' \cdot \vec{J}) \delta_{ij} \right) d^3r'$$
+    \end{enumerate}
+
+    \item \textbf{אלגוריתם חישוב מולטיפול מוביל מתוך צפיפות זרם $\vec{J}$:}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{שלב 1 — פיתוח פאזה בשדה הרחוק:} 
+    מפרקים את הזרם במערכת עבור מקור הקטן בהרבה מאורך הגל ($\frac{\omega L}{c} \ll 1$):
+    $$\vec{J}\left(\vec{r}', t_0 + \frac{\hat{n}\cdot\vec{r}'}{c}\right) \approx \vec{J}(\vec{r}', t_0) + \left(\frac{\hat{n}\cdot\vec{r}'}{c}\right) \frac{\partial \vec{J}(\vec{r}', t_0)}{\partial t_0} + \dots$$
+
+    \item \textbf{שלב 2 — בדיקת דיפול חשמלי אפקטיבי ($E1_{\text{eff}}$):} 
+    מחשבים את האינטגרל מסדר אפס:
+    $$\dot{\vec{p}}_{\text{eff}}(t_0) = \int_V \vec{J}(\vec{r}', t_0) \, d^3r'$$
+    * **אם $\ddot{\vec{p}}_{\text{eff}} \neq 0$:** זהו המולטיפול המוביל! הספק הקרינה הממוצע:
+      $$\langle P_{E1} \rangle = \frac{2}{3 c^3} \left\langle |\ddot{\vec{p}}_{\text{eff}}(t_0)|^2 \right\rangle$$
+
+    \item \textbf{שלב 3 — בדיקת דיפול מגנטי אפקטיבי ($M1_{\text{eff}}$) וקוודרופול חשמלי אפקטיבי ($E2_{\text{eff}}$):} 
+    אם $\ddot{\vec{p}}_{\text{eff}} = 0$, עוברים לאיבר הסדר הראשון ($\frac{\partial \vec{J}}{\partial t_0}$) \underline{ומחשבים את שני המומנטים}:
+
+    \begin{itemize}
+        \item \textbf{חישוב $M1_{\text{eff}}$ (דיפול מגנטי):} $\vec{m}_{\text{eff}}(t_0)$.
+        אם $\ddot{\vec{m}}_{\text{eff}} \neq 0$, הוא תורם לקרינה. תרומת ההספק הממוצעת של $M1$:
+        $$\langle P_{M1} \rangle = \frac{2}{3 c^3} \left\langle |\ddot{\vec{m}}_{\text{eff}}(t_0)|^2 \right\rangle$$
+
+
+        \item \textbf{חישוב $E2_{\text{eff}}$ (קוודרופול חשמלי):}
+        מחשבים את נגזרת טנזור הקוודרופול האפקטיבי - $\dot{Q}_{\text{eff}, ij}(t_0)$.
+        אם $\dddot{Q}_{\text{eff}, ij} \neq 0$, הוא תורם לקרינה. תרומת ההספק הממוצעת של $E2$:
+        $$\langle P_{E2} \rangle = \frac{1}{45 c^5} \sum_{i,j} \left\langle |\dddot{Q}_{\text{eff}, ij}(t_0)|^2 \right\rangle$$
+    \end{itemize}
+
+    \item \textbf{שלב 4 — סיכום והכרעה בסדר השני:}
+    * אם **רק אחד** מהם שונה מאפס ($\ddot{\vec{m}}_{\text{eff}} \neq 0$ או $\dddot{\mathbf{Q}}_{\text{eff}} \neq 0$), הוא המולטיפול המוביל.
+    * אם **שניהם שונים מאפס**, שתי התרומות מופיעות באותו סדר גודל פיזיקלי ($v/c$), וההספק הכולל בשדה הרחוק הוא סכום שניהם:
+      $$\langle P_{\text{total}} \rangle = \langle P_{M1} \rangle + \langle P_{E2} \rangle$$
+      *(איברי ההצלבה בין $M1$ ל-$E2$ מתאפסים בעת ביצוע האינטגרציה הזוויתית על פני הנגזרת המרחבית של כל הספירה)*.
+\end{enumerate}
+\end{itemize}
+
+\section*{חישוב מומנטי מולטיפול אפקטיביים בקרינה ($\rho = 0, \vec{J} \neq 0$)}
+$$\dot{\vec{p}}_{\text{eff}} = \int_V \vec{J} \, d^3r' \implies \langle P_{E1} \rangle = \frac{2}{3c^3} \left\langle |\ddot{\vec{p}}_{\text{eff}}|^2 \right\rangle$$
+$$\vec{m}_{\text{eff}} = \frac{1}{2c} \int_V (\vec{r}' \times \vec{J}) \, d^3r' \implies \langle P_{M1} \rangle = \frac{2}{3c^3} \left\langle |\ddot{\vec{m}}_{\text{eff}}|^2 \right\rangle$$
+$$\dot{Q}_{\text{eff}, ij} = \frac{1}{2} \int_V \left( 3x'_i J_j + 3x'_j J_i - 2(\vec{r}' \cdot \vec{J})\delta_{ij} \right) d^3r'$$ $$ \Rightarrow \langle P_{E2} \rangle = \frac{1}{45c^5} \sum_{i,j} \left\langle |\dddot{Q}_{\text{eff}, ij}|^2 \right\rangle$$
 
 \end{multicols*}
 \end{document}
