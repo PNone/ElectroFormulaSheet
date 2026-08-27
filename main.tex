@@ -637,42 +637,7 @@ $P_{\text{total}}$
 \end{itemize}
 \end{itemize}
 
-\section{מעבר מטריצי בין בסיסים אורתונורמליים ($R^{-1} = R^T$)}
-\begin{itemize}
 
-\item \textbf{גליליות $\leftrightarrow$ קרטזיות:}
-{\small$$\begin{pmatrix} \hat{\rho} \\ \hat{\phi} \\ \hat{z} \end{pmatrix} = 
-\begin{pmatrix} 
-\cos\phi & \sin\phi & 0 \\ 
--\sin\phi & \cos\phi & 0 \\ 
-0 & 0 & 1 
-\end{pmatrix} 
-\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix}
- \mid \begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} = 
-\begin{pmatrix} 
-\cos\phi & -\sin\phi & 0 \\ 
-\sin\phi & \cos\phi & 0 \\ 
-0 & 0 & 1 
-\end{pmatrix} 
-\begin{pmatrix} \hat{\rho} \\ \hat{\phi} \\ \hat{z} \end{pmatrix}$$}
-
-\item \textbf{כדוריות $\leftrightarrow$ קרטזיות:}
-$$\begin{pmatrix} \hat{r} \\ \hat{\theta} \\ \hat{\phi} \end{pmatrix} = 
-\begin{pmatrix} 
-\sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\ 
-\cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\ 
--\sin\phi & \cos\phi & 0 
-\end{pmatrix} 
-\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix}$$
-
-$$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} = 
-\begin{pmatrix} 
-\sin\theta\cos\phi & \cos\theta\cos\phi & -\sin\phi \\ 
-\sin\theta\sin\phi & \cos\theta\sin\phi & \cos\phi \\ 
-\cos\theta & -\sin\theta & 0 
-\end{pmatrix} 
-\begin{pmatrix} \hat{r} \\ \hat{\theta} \\ \hat{\phi} \end{pmatrix}$$
-\end{itemize}
 
 \section{פונקציות גרין, ייצוגים בקואורדינטות ונגזרות שפה}
 
@@ -701,7 +666,7 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
             \item \textbf{קרטזית:} $\left.\frac{\partial G}{\partial n'}\right|_{r'=R} = \pm \frac{x^2 + y^2 + z^2 - R^2}{R\left[x^2 + y^2 + z^2 + R^2 - 2(xx' + yy' + zz')\right]^{3/2}}$
             \item \textbf{גלילית:} $\left.\frac{\partial G}{\partial n'}\right|_{r'=R} = \pm \frac{\rho^2 + z^2 - R^2}{R\left[\rho^2 + z^2 + R^2 - 2R(\rho\sin\theta'\cos\Delta\phi + z\cos\theta')\right]^{3/2}}$
         \end{itemize}
-        *(כאשר $+$ מיועד לבעיה חיצונית $r \ge R$, ו-$-$ לבעיה פנימית $r \le R$)*
+        *(כאשר $+$ מיועד לבעיה חיצונית $r \ge R$, ו-$-$ לפנימית $r \le R$)*
     \end{itemize}
 
     \item \textbf{קשר בין נגזרת מכוונת ($\frac{\partial G}{\partial n'}$) לנגזרות קרטזיות ($\nabla' G \cdot \hat{n}'$):}
@@ -750,7 +715,7 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
         $$\epsilon_{ijk} \epsilon_{imn} = \delta_{jm}\delta_{kn} - \delta_{jn}\delta_{km} \mid \epsilon_{ijk} \epsilon_{ijn} = 2\delta_{kn}, \quad \epsilon_{ijk} \epsilon_{ijk} = 6$$
         \item \textbf{זהות הרוטור כפול (תחליף לאופרטורים וקטוריים):}\\
         $(\nabla \times (\nabla \times \vec{A}))_i = \epsilon_{ijk} \partial_j (\epsilon_{klm} \partial_l A_m) = \nabla_i (\nabla \cdot \vec{A}) - \nabla^2 A_i$
-        \item \textbf{ייצוג נפח רציף מרוכז ע"י דלתא ולוי-צ'יוויטה (צפיפות זרם של מטען נקודתי $q$):}
+        \item \textbf{ייצוג נפח רציף מרוכז (צפיפות זרם של מטען נקודתי $q$):}
         $$\rho(\vec{r}) = q \delta^{(3)}(\vec{r} - \vec{r}_0(t)), \quad \vec{J}(\vec{r}) = q \vec{v} \delta^{(3)}(\vec{r} - \vec{r}_0(t))$$
         \text{רכיב הזרם המגנטי/צפיפות: } $$J_i(\vec{r}) = \epsilon_{ijk} m_j \partial_k \delta^{(3)}(\vec{r} - \vec{r}_0) \quad (\vec{m} \text{עבור דיפול מגנטי })$$
     \end{itemize}
@@ -779,7 +744,7 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
 
         \item \textbf{סימטריה לשיקוף במישור (למשל $z \to -z$):}
         \begin{itemize}
-            \item אם $\rho(x,y,-z) = -\rho(x,y,z)$: $\Rightarrow$ הרכיב $p_z = 0$, וכן $Q_{xx}, Q_{yy}, Q_{zz}, Q_{xy} = 0$ (רק רכיבי הצימוד $Q_{xz}, Q_{yz}$ יכולים לשרוד).
+            \item אם $\rho(x,y,-z) = -\rho(x,y,z)$: הרכיב $p_z = 0$, וכן $Q_{xx}, Q_{yy}, Q_{zz}, Q_{xy} = 0$ (רק רכיבי הצימוד $Q_{xz}, Q_{yz}$ יכולים לשרוד).
             \item אם לזרם יש סימטריית שיקוף במישור $xy$: הרכיבים המקבילים למישור של הדיפול המגנטי מתאפסים ($m_x = m_y = 0$).
         \end{itemize}
 
@@ -815,29 +780,16 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
 \section{חילוץ מקדמים בטורים של פונקציות אורתוגונליות}
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{הגדרה כללית של המערכת האורתוגונלית:}
+    \item \textbf{הגדרה כללית של המע' הא"ג:}
     נתונה פונקציה $f(x)$ המוצגת כטור של פונקציות בסיס $\phi_n(x)$ בקטע $[a,b]$:
-    $$f(x) = \sum_{n} c_n \phi_n(x)$$
-    כאשר פונקציות הבסיס אורתוגונליות ביחס לפונקציית משקל $w(x) \ge 0$:
+    $f(x) = \sum_{n} c_n \phi_n(x)$\\
+    כאשר פונקציות הבסיס א"ג ביחס לפונקציית משקל $w(x) \ge 0$:
     $$\langle \phi_n, \phi_m \rangle = \int_{a}^{b} w(x) \phi_n^*(x) \phi_m(x) \, dx = N_n \delta_{nm}$$
-    *(כאשר $N_n = \|\phi_n\|^2$ הוא נורמת הפונקציה בריבוע. אם הבסיס אורתונורמלי, $N_n = 1$)*
-
-    \item \textbf{אלגוריתם חילוץ המקדמים ($c_k$):}
-    \begin{enumerate}[leftmargin=*]
-        \item \textbf{כפל:} מכפילים את שני אגפי המשוואה בפונקציה $\phi_k^*(x)$ ובפונקציית המשקל $w(x)$.
-        \item \textbf{אינטגרציה:} מבצעים אינטגרציה על הקטע $[a,b]$:
-        $$\int_{a}^{b} w(x) \phi_k^*(x) f(x) \, dx = \int_{a}^{b} w(x) \phi_k^*(x) \left( \sum_{n} c_n \phi_n(x) \right) dx$$
-        \item \textbf{החלפת סדר סכימה ואינטגרציה:}
-        $$\int_{a}^{b} w(x) \phi_k^*(x) f(x) \, dx = \sum_{n} c_n \underbrace{\int_{a}^{b} w(x) \phi_k^*(x) \phi_n(x) \, dx}_{N_k \delta_{kn}}$$
-        \item \textbf{הפעלת הדלתא של קרונקר ובידוד המקדם:}
-        $$c_k = \frac{\langle \phi_k, f \rangle}{\|\phi_k\|^2} = \frac{1}{N_k} \int_{a}^{b} w(x) \phi_k^*(x) f(x) \, dx$$
-    \end{enumerate}
+    *($N_n = \|\phi_n\|^2$ הוא נורמת הפו' בריבוע. אם הבסיס א"נ, $N_n = 1$)*
 
     \item \textbf{דוגמאות נפוצות בפיזיקה:}
 
     \begin{itemize}
-        \item \textbf{טור פורייה מורכב ($w(x)=1, \; [-\pi, \pi]$):}
-        $$f(x) = \sum_{n=-\infty}^{\infty} c_n e^{i n x} \quad \implies \quad c_k = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-i k x} \, dx$$
 
         \item \textbf{פיתוח לפי פולינומי לז'נדר ($w(x)=1, \; [-1, 1]$):}
         $$f(x) = \sum_{l=0}^{\infty} A_l P_l(x) \quad \implies \quad A_l = \frac{2l+1}{2} \int_{-1}^{1} f(x) P_l(x) \, dx$$
@@ -857,7 +809,7 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
     \end{itemize}
 
 
-\section{קרינה מטענים מואצים: Bremsstrahlung, Cyclotron ו-Synchrotron}
+\section*{קרינה מטענים מואצים: \textenglish{Bremsstrahlung, Cyclotron} ו-Synchrotron}
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{קרינת Bremsstrahlung (קרינת עקירה / בלימה):}
@@ -872,8 +824,7 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
         \item \textbf{קירוב יחסותי ($\gamma \gg 1$) ופיתוח לזוויות קטנות ($\theta \ll 1$):}
         נשתמש בקשר היחסותי $\gamma = \frac{E}{m c^2}$ ונגדיר את הפרמטר הקטן $x \equiv \frac{1}{\gamma^2} = \left(\frac{m c^2}{E}\right)^2 \ll 1$.
         לפי קירוב טיילור:
-        $$\beta = \sqrt{1 - x} \approx 1 - \frac{1}{2}x$$
-        $$\cos\theta \approx 1 - \frac{1}{2}\theta^2, \quad \sin^2\theta \approx \theta^2$$
+        $$\beta = \sqrt{1 - x} \approx 1 - \frac{1}{2}x \quad \mid \quad \cos\theta \approx 1 - \frac{1}{2}\theta^2, \quad \sin^2\theta \approx \theta^2$$
         מכאן שרכיב המכנה מתפתח ל:
         $$1 - \beta\cos\theta \approx 1 - (1 - \frac{1}{2}x)\left(1 - \frac{1}{2}\theta^2\right) \approx \frac{1}{2}\left(x + \theta^2\right) = \frac{1}{2}\left(\frac{1}{\gamma^2} + \theta^2\right)$$
         ולכן התלות הזוויתית של השטף הינה:
@@ -914,18 +865,18 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
     מביטוי Lienard היחסותי עבור תאוצה מאונכת למהירות ($\vec{a} \perp \vec{v}$):
     $$P = \frac{2 q^2}{3 c^3} \gamma^4 \left( \gamma^2 a_\parallel^2 + a_\perp^2 \right) \xrightarrow{a_\parallel = 0} \frac{2 q^2}{3 c^3} \gamma^4 a_\perp^2$$
     הצבת התאוצה המאונכת $a_\perp = \frac{|q| B \beta_\perp}{\gamma m}$ במשוואה מעניקה:
-    $$P_{\text{synch}} = \frac{2 q^2}{3 c^3} \gamma^4 \left( \frac{|q| B \beta_\perp}{\gamma m} \right)^2 = \frac{2 q^4 B^2 \beta_\perp^2 \gamma^2}{3 m^2 c^3}$$
+    $$P_{\text{synch}} = \frac{2 q^2}{3 c^3} \gamma^4 \left( \frac{|q| B \beta_\perp}{\gamma m} \right)^2 = \frac{2 q^4 B^2 \beta_\perp^2 \gamma^2}{3 m^2 c^3} \propto \frac{\gamma^2}{m^2} \propto m^{-4}$$
     *(הגורם $\gamma^4$ במונה מצטמצם בחלקו עם $\gamma^2$ במכנה שמקורו בריבוע התאוצה, כך שההספק הסופי פרופורציונלי ל-$\gamma^2$)*.
     \item \textbf{ספקטרום הקרינה:}
     הספקטרום רחב ונפרש עד לתדירות הקריטית:
-    $$\omega_c^{\text{synch}} = \frac{3}{2} \gamma^3 \omega_0 \sin\alpha = \frac{3 |q| B \gamma^2}{2 m c} \sin\alpha$$
+    $\omega_c^{\text{synch}} = \frac{3}{2} \gamma^3 \omega_0 \sin\alpha = \frac{3 |q| B \gamma^2}{2 m c} \sin\alpha$
     *(כאשר $\alpha$ היא זווית ה-Pitch בין המהירות $\vec{v}$ לשדה המגנטי $\vec{B}$, כך ש-$v_\perp = v \sin\alpha$)*.
 \end{itemize}
 
 
 \end{itemize}
 
-\section*{הטנזור הדואלי \textenglish{(CGS and Mostly Minus)}:}
+\section*{הטנזור הדואלי \textenglish{(CGS and Mostly Minus)}, ($\epsilon^{0123} = +1$):}
     {\scriptsize$
     \tilde{F}^{\mu\nu} = \begin{pmatrix}
     0 & -B_x & -B_y & -B_z \\
@@ -937,9 +888,7 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
     -B_x & 0 & E_z & -E_y \\
     -B_y & -E_z & 0 & E_x \\
     -B_z & E_y & -E_x & 0
-    \end{pmatrix}$} \\
-    *(כאשר $\epsilon^{0123} = +1$)*.
-
+    \end{pmatrix}$}
 \section{זיהוי וחילוץ המולטיפול המוביל בקרינה מתוך הפוטנציאל הווקטורי}
 
 \begin{itemize}[leftmargin=*]
@@ -953,7 +902,7 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
     המולטיפול המוביל הוא **האיבר הראשון בטור שאינו מתאפס**:
     \begin{enumerate}
         \item \textbf{דיפול חשמלי \textenglish{(Electric Dipole - E1)}:} האיבר הראשון ($r'^0$). מתוך זהות הרציפות ($\nabla \cdot \vec{J} = -\dot{\rho}$):
-        $$\int \vec{J} d^3r' = \dot{\vec{p}} \quad \implies \quad \vec{A}_{\text{E1}} = \frac{\dot{\vec{p}}(t_0)}{c r}$$
+        $$\int \vec{J} d^3r' = \dot{\vec{p}} \Rightarrow \vec{A}_{\text{E1}} = \frac{\dot{\vec{p}}(t_0)}{c r}$$
         *אם $\dot{\vec{p}} \neq 0$, הקרינה היא מסדר דיפול חשמלי \textenglish{(E1)}.*
 
         \item \textbf{איבר הסדר השני ($r'^1$):} אם $\dot{\vec{p}} = 0$, מפרקים את האיבר השני לחלק אנטי-סימטרי (דיפול מגנטי \textenglish{M1}) ולחלק סימטרי (קוודרופול חשמלי \textenglish{E2}):
@@ -964,9 +913,8 @@ $$\begin{pmatrix} \hat{x} \\ \hat{y} \\ \hat{z} \end{pmatrix} =
     \begin{itemize}
         \item \textbf{תיאור המערכת:} טבעת דקה ברדיוס $R$ במישור $xy$, שזורם בה זרם אחיד משתנה בזמן $I(t) = I_0 \cos(\omega t) \hat{\phi}$.
         \item \textbf{שלב 1 — בדיקת דיפול חשמלי \textenglish{(E1)}:}
-        צפיפות המטען מתאפסת בכל המרחב ($\rho = 0$), ולכן המומנט הדיפולי החשמלי מתאפס תמיד:
+        צפיפות המטען מתאפסת בכל המרחב ($\rho = 0$), ולכן המומנט הדיפולי החשמלי מתאפס תמיד *(אין קרינת דיפול חשמלי)*:
         $$\vec{p} = \int \rho \vec{r}' d^3r' = 0 \quad \implies \quad \vec{A}_{\text{E1}} = 0$$
-        *(אין קרינת דיפול חשמלי)*.
 
         \item \textbf{שלב 2 — חישוב האיבר הבא (\textenglish{M1} לעומת \textenglish{E2}):}
         נחשב את המומנט המגנטי של הטבעת:
