@@ -619,68 +619,43 @@ $P_{\text{total}}$
 \endgroup
 
 
-
-\section{פונקציות גרין, ייצוגים בקואורדינטות ונגזרות שפה}
+\section*{פונקציות גרין, ייצוגים בקואורדינטות ונגזרות שפה}
+\textbf{כלל הנורמל:} $\frac{\partial G}{\partial n'} \equiv \nabla' G \cdot \hat{n}'$ כאשר $\hat{n}'$ מצביע \textbf{החוצה מנפח הבעיה}.
 
 \begin{itemize}[leftmargin=*]
 
-    \item \textbf{1. מישור אינסופי מוארק ($z'=0$, נפח הבעיה: $z > 0$):}
+    % 1. מישור
+    \item \textbf{1. מישור אינסופי מוארק ($z'=0$):}
     \begin{itemize}
         \item \textbf{ייצוג גלילי:}
-        $G_{\text{cyl}} = \frac{1}{\sqrt{\rho^2 + \rho'^2 - 2\rho\rho'\cos(\Delta\phi) + (z-z')^2}} - \frac{1}{\sqrt{\rho^2 + \rho'^2 - 2\rho\rho'\cos(\Delta\phi) + (z+z')^2}}$
-        \item \textbf{נגזרת מכוונת על השפה ($\hat{n}' = -\hat{z} \implies \frac{\partial G}{\partial n'} = -\frac{\partial G}{\partial z'}$):}
-        \begin{itemize}
-            \item \textbf{קרטזית:} $\left.\frac{\partial G}{\partial n'}\right|_{z'=0} = \frac{2z}{\left[(x-x')^2 + (y-y')^2 + z^2\right]^{3/2}}$
-            \item \textbf{גלילית:} $\left.\frac{\partial G}{\partial n'}\right|_{z'=0} = \frac{2z}{\left[\rho^2 + \rho'^2 - 2\rho\rho'\cos(\phi-\phi') + z^2\right]^{3/2}}$
-            \item \textbf{ספרית ($\theta'=\frac{\pi}{2}$):} $\left.\frac{\partial G}{\partial n'}\right|_{\theta'=\pi/2} = \frac{2r\cos\theta}{\left[r^2 + r'^2 - 2rr'\sin\theta\cos(\phi-\phi')\right]^{3/2}}$
-        \end{itemize}
+        $G = \frac{1}{\sqrt{\rho^2 + \rho'^2 - 2\rho\rho'\cos(\Delta\phi) + (z-z')^2}} - \frac{1}{\sqrt{\rho^2 + \rho'^2 - 2\rho\rho'\cos(\Delta\phi) + (z+z')^2}}$
+        \item \textbf{נגזרת מרחבית בשפה:} $\left.\frac{\partial G}{\partial z'}\right|_{z'=0} = \frac{-2z}{\left[(x-x')^2 + (y-y')^2 + z^2\right]^{3/2}}$
+        \item \textbf{נגזרת מכוונת:} $\left.\frac{\partial G}{\partial n'}\right|_{z'=0} = \mp \left.\frac{\partial G}{\partial z'}\right|_{z'=0}$ \quad ($-$ לנפח מעל $z>0$ בה נורמל $\hat{n}'=-\hat{z}'$; $+$ לנפח מתחת $z<0$)
+        \item \textbf{בגלילי/ספרי ($\theta'=\frac{\pi}{2}$):} $\left.\frac{\partial G}{\partial n'}\right|_{z'=0} = \frac{2z}{\left[\rho^2 + \rho'^2 - 2\rho\rho'\cos\Delta\phi + z^2\right]^{3/2}} = \frac{2r\cos\theta}{\left[r^2 + r'^2 - 2rr'\sin\theta\cos\Delta\phi\right]^{3/2}}$
     \end{itemize}
 
-    \item \textbf{2. ספירה מוארקת ברדיוס $R$ (תנאי דיריכלה, שפה: $r'=R$):}
+    % 2. ספירה
+    \item \textbf{2. ספירה מוארקת ברדיוס $R$ ($r'=R$):}
     \begin{itemize}
-        \item \textbf{פונקציית גרין (ספרית):} $\left(q' = -q\frac{R}{r'}, \; \vec{r}_{\text{img}} = \frac{R^2}{r'^2}\vec{r}'\right)$
-        \item \textbf{ייצוג גלילי:}
-        $G_{\text{cyl}} = \frac{1}{\sqrt{\rho^2+\rho'^2-2\rho\rho'\cos(\Delta\phi)+(z-z')^2}} - \frac{1}{\sqrt{\frac{(\rho^2+z^2)(\rho'^2+z'^2)}{R^2} + R^2 - 2(\rho\rho'\cos(\Delta\phi)+zz')}}$
-        \item \textbf{נגזרת מכוונת על השפה ($\frac{\partial G}{\partial n'} = \mp \frac{\partial G}{\partial r'}$ עבור בעיה חיצונית/פנימית):}
-        \begin{itemize}
-            \item \textbf{ספרית:} $\left.\frac{\partial G}{\partial n'}\right|_{r'=R} = \pm \frac{r^2 - R^2}{R\left(r^2 + R^2 - 2rR\cos\gamma\right)^{3/2}}$
-            \item \textbf{קרטזית:} $\left.\frac{\partial G}{\partial n'}\right|_{r'=R} = \pm \frac{x^2 + y^2 + z^2 - R^2}{R\left[x^2 + y^2 + z^2 + R^2 - 2(xx' + yy' + zz')\right]^{3/2}}$
-            \item \textbf{גלילית:} $\left.\frac{\partial G}{\partial n'}\right|_{r'=R} = \pm \frac{\rho^2 + z^2 - R^2}{R\left[\rho^2 + z^2 + R^2 - 2R(\rho\sin\theta'\cos\Delta\phi + z\cos\theta')\right]^{3/2}}$
-        \end{itemize}
-        *(כאשר $+$ מיועד לבעיה חיצונית $r \ge R$, ו-$-$ לפנימית $r \le R$)*
+        \item \textbf{פונקציית גרין:} $G = \frac{1}{|\vec{r}-\vec{r}'|} - \frac{R/r'}{\left|\vec{r} - (R^2/r'^2)\vec{r}'\right|}$
+        \item \textbf{נגזרת מרחבית בשפה:} $\left.\frac{\partial G}{\partial r'}\right|_{r'=R} = \frac{r^2 - R^2}{R\left(r^2 + R^2 - 2rR\cos\gamma\right)^{3/2}}$
+        \item \textbf{נגזרת מכוונת:} $\left.\frac{\partial G}{\partial n'}\right|_{r'=R} = \mp \left.\frac{\partial G}{\partial r'}\right|_{r'=R}$ \quad ($-$ לבעיה חיצונית $r>R$ בה $\hat{n}'=-\hat{r}'$; $+$ לבעיה פנימית $r<R$ בה $\hat{n}'=+\hat{r}'$)
+        \item \textbf{ייצוג קרטזי/גלילי:} מציבים במכנה $r^2+R^2-2rR\cos\gamma = x^2+y^2+z^2+R^2-2(xx'+yy'+zz') = \rho^2+z^2+R^2-2R(\rho\sin\theta'\cos\Delta\phi + z\cos\theta')$.
     \end{itemize}
 
-    \item \textbf{קשר בין נגזרת מכוונת ($\frac{\partial G}{\partial n'}$) לנגזרות קרטזיות ($\nabla' G \cdot \hat{n}'$):}
-\begin{itemize}
-    \item \textbf{שפה גלילית ($\hat{n}' = \hat{\rho}'$):} 
-    $\frac{\partial G}{\partial n'} = \frac{\partial G}{\partial \rho'} = \cos\phi' \frac{\partial G}{\partial x'} + \sin\phi' \frac{\partial G}{\partial y'}$
-    
-    \item \textbf{שפה כדורית ($\hat{n}' = \hat{r}'$):} 
-    $\frac{\partial G}{\partial n'} = \frac{\partial G}{\partial r'} = \sin\theta'\cos\phi' \frac{\partial G}{\partial x'} + \sin\theta'\sin\phi' \frac{\partial G}{\partial y'} + \cos\theta' \frac{\partial G}{\partial z'}$
-    
-    \item \textbf{שפה מישורית ($\hat{n}' = \hat{z}'$):} 
-    $\frac{\partial G}{\partial n'} = \frac{\partial G}{\partial z'}$
+    % 3. פירוק נגזרות
+    \item \textbf{3. פירוק נגזרת מכוונת ($\nabla' G \cdot \hat{n}'$):}
+    \begin{itemize}
+        \item \textbf{גלילי ($\hat{n}'=\hat{\rho}'$):} $\frac{\partial G}{\partial n'} = \cos\phi' \frac{\partial G}{\partial x'} + \sin\phi' \frac{\partial G}{\partial y'}$
+        \item \textbf{ספרי ($\hat{n}'=\hat{r}'$):} $\frac{\partial G}{\partial n'} = \sin\theta'\cos\phi' \frac{\partial G}{\partial x'} + \sin\theta'\sin\phi' \frac{\partial G}{\partial y'} + \cos\theta' \frac{\partial G}{\partial z'}$
+        \item \textbf{מישור ($z'=0 \iff \theta'=\frac{\pi}{2}$):} $\left.\frac{\partial G}{\partial z'}\right|_{z'=0} = -\frac{1}{r'}\left.\frac{\partial G}{\partial \theta'}\right|_{\theta'=\pi/2}$
+    \end{itemize}
 
-\item \textbf{קשר במישור אינסופי ($z'=0 \iff \theta'=\frac{\pi}{2}$) לפי כיוון הנורמל:}
-\begin{itemize}
-    \item {\small\textbf{$z'>0$ ($\hat{n}' = -\hat{z}'$):}} 
-    $\left.\frac{\partial G}{\partial n'}\right|_{z'=0} = -\left.\frac{\partial G}{\partial z'}\right|_{z'=0} = +\frac{1}{r'} \left.\frac{\partial G}{\partial \theta'}\right|_{\theta'=\pi/2}$
-    \item \textbf{נורמל בכיוון $+\hat{z}'$:} 
-    $\left.\frac{\partial G}{\partial z'}\right|_{z'=0} = -\frac{1}{r'} \left.\frac{\partial G}{\partial \theta'}\right|_{\theta'=\pi/2}$
-\end{itemize}
-\end{itemize}
 \end{itemize}
 
 \section{פונקציית הדלתא של דיראק וזהויות טנזוריות}
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{דלתא של דיראק בקואורדינטות עקומות אורתוגונליות במרחב $D$-ממדי:}
-    $$\delta^{(D)}(\vec{r} - \vec{r}') = \frac{1}{\prod_{i=1}^{D} h_i} \prod_{i=1}^{D} \delta(q_i - q_i') = \frac{1}{\sqrt{\det(g)}} \prod_{i=1}^{D} \delta(q_i - q_i')$$
-    כאשר $h_i$ הם גורמי קנה-המידה \textenglish{(scale factors)}, $g_{ij}$ הוא טנזור המטריקה, ו-$\det(g) = \prod_{i=1}^{D} h_i^2$ הוא הדטרמיננטה שלו.
-    \begin{itemize}
-        \item \textbf{גליליות ($\rho, \phi, z$):} $\delta^{(3)}(\vec{r} - \vec{r}') = \frac{1}{\rho} \delta(\rho - \rho') \delta(\phi - \phi') \delta(z - z')$
-        \item \textbf{כדוריות ($r, \theta, \phi$):} $\delta^{(3)}(\vec{r} - \vec{r}') = \frac{1}{r^2 \sin\theta} \delta(r - r') \delta(\theta - \theta') \delta(\phi - \phi') = \frac{1}{r^2} \delta(r - r') \delta(\cos\theta - \cos\theta') \delta(\phi - \phi')$
-    \end{itemize}
 
     \item \textbf{זהויות בסיסיות של פונקציית הדלתא:}
     \begin{itemize}
@@ -696,9 +671,6 @@ $P_{\text{total}}$
         $$\epsilon_{ijk} \epsilon_{imn} = \delta_{jm}\delta_{kn} - \delta_{jn}\delta_{km} \mid \epsilon_{ijk} \epsilon_{ijn} = 2\delta_{kn}, \quad \epsilon_{ijk} \epsilon_{ijk} = 6$$
         \item \textbf{זהות הרוטור כפול (תחליף לאופרטורים וקטוריים):}\\
         $(\nabla \times (\nabla \times \vec{A}))_i = \epsilon_{ijk} \partial_j (\epsilon_{klm} \partial_l A_m) = \nabla_i (\nabla \cdot \vec{A}) - \nabla^2 A_i$
-        \item \textbf{ייצוג נפח רציף מרוכז (צפיפות זרם של מטען נקודתי $q$):}
-        $$\rho(\vec{r}) = q \delta^{(3)}(\vec{r} - \vec{r}_0(t)), \quad \vec{J}(\vec{r}) = q \vec{v} \delta^{(3)}(\vec{r} - \vec{r}_0(t))$$
-        \text{רכיב הזרם המגנטי/צפיפות: } $$J_i(\vec{r}) = \epsilon_{ijk} m_j \partial_k \delta^{(3)}(\vec{r} - \vec{r}_0) \quad (\vec{m} \text{עבור דיפול מגנטי })$$
     \end{itemize}
 \end{itemize}
 
@@ -773,11 +745,12 @@ $P_{\text{total}}$
     \begin{itemize}
 
         \item \textbf{פיתוח לפי פולינומי לז'נדר ($w(x)=1, \; [-1, 1]$):}
-        $$f(x) = \sum_{l=0}^{\infty} A_l P_l(x) \quad \implies \quad A_l = \frac{2l+1}{2} \int_{-1}^{1} f(x) P_l(x) \, dx$$
+        $$f(x) = \sum_{l=0}^{\infty} A_l P_l(x) \implies A_l = \frac{2l+1}{2} \int_{-1}^{1} f(x) P_l(x) \, dx$$
         *(מכיוון ש-$N_l = \int_{-1}^{1} [P_l(x)]^2 dx = \frac{2}{2l+1}$)*
 
-        \item \textbf{הצלבה מרחבית על ספירה (הרמוניות כדוריות $Y_{lm}(\theta,\phi)$):}
-        $f(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi) \Rightarrow a_{lm} = \int_{0}^{2\pi} d\phi \int_{0}^{\pi} \sin\theta d\theta \, Y_{lm}^*(\theta,\phi) f(\theta,\phi)$
+        \item \textbf{הצלבה מרחבית על ספירה (הרמוניות כדוריות $Y_{lm}(\theta,\phi)$):}\\
+        $f(\theta,\phi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{l} a_{lm} Y_{lm}(\theta,\phi)$ \\
+        $\Rightarrow a_{lm} = \int_{0}^{2\pi} d\phi \int_{0}^{\pi} \sin\theta d\theta \, Y_{lm}^*(\theta,\phi) f(\theta,\phi)$
     \end{itemize}
 \end{itemize}
 
@@ -794,11 +767,11 @@ $P_{\text{total}}$
     \item \textbf{קרינת Bremsstrahlung (קרינת עקירה / בלימה):}
     \begin{itemize}
         \item \textbf{תיאור פיזיקלי:} קרינה הנפלטת כאשר חלקיק טעון $q$ מואט או מוסט במסלולו כתוצאה מאינטראקציה קולונית עם שדה חשמלי של גרעין ($Z e$).
-        
+
         \item \textbf{התפלגות זוויתית של ההספק \textenglish{(CGS)}:}
-        כאשר התאוצה מקבילה/אנטי-מקבילה למהירות ($\vec{a} \parallel \vec{v}$, בלימה פרונטלית), קצב פליטת האנרגיה לזווית מרחבית בזמן המטען ניתנת ע"י:
-        $$\frac{dP}{d\Omega} = \frac{q^2 a^2 \sin^2\theta}{4\pi c^3 (1-\beta\cos\theta)^5}$$
-        *(כאשר $\theta$ היא הזווית בין כיוון התנועה $\vec{\beta}$ לכיוון הצופים $\vec{n}$, ו-$\kappa = 1-\beta\cos\theta$ הוא פקטור הקיטוב היחסותי)*.
+        כאשר $\vec{a} \parallel \vec{v}$ (בלימה פרונטלית), קצב פליטת האנרגיה לזווית מרחבית בזמן המטען ($t'$) נתון ע"י:
+        $$\frac{dP}{d\Omega} \equiv \kappa \, S \, r^2 = \frac{q^2 a^2 \sin^2\theta}{4\pi c^3 \kappa^5}$$
+        *(כאשר $\kappa \equiv 1 - \vec{\beta} \cdot \hat{n} = 1 - \beta\cos\theta$ הוא פקטור הזמן המעוכב, ו-$\hat{n}$ כיוון הצופה)*. בנוסף $a \propto 1/m_e$. לכן, ככל שהחלקיק יותר קל - יש יותר קרינה.
 
         \item \textbf{קירוב יחסותי ($\gamma \gg 1$) ופיתוח לזוויות קטנות ($\theta \ll 1$):}
         נשתמש בקשר היחסותי $\gamma = \frac{E}{m c^2}$ ונגדיר את הפרמטר הקטן $x \equiv \frac{1}{\gamma^2} = \left(\frac{m c^2}{E}\right)^2 \ll 1$.
@@ -817,41 +790,51 @@ $P_{\text{total}}$
             
             \item \textbf{חוץ לקונוס הקרינה ($x \ll \theta^2 \ll 1 \iff \theta \gg 1/\gamma$):}
             $$\frac{dP}{d\Omega} \sim \frac{\theta^2}{\theta^{10}} = \theta^{-8}$$
-            דעיכה חזקה מאוד של הקרינה מחוץ לקונוס הצר שזווית פתיחתו היא $\Delta\theta \sim 1/\gamma$.
+            דעיכה חזקה מאוד של הקרינה מחוץ לקונוס הצר שזווית פתיחתו היא $\Delta\theta \sim 1/\gamma$. זה גבול עבור מסה קטנה.
         \end{enumerate}
     \end{itemize}
 
-    \item \textbf{קרינת Cyclotron (ציקלוטרונית - גבול בלתי-יחסותי):}
-    \begin{itemize}
-        \item \textbf{תנאים וגבולות:} תנועה מעגלית/ספירלית של חלקיק טעון בשדה מגנטי אחיד $B$ במהירות לא-יחסותית ($\beta \ll 1, \gamma \approx 1$).
-        \item \textbf{תכונות המהירות והתאוצה:} $\vec{v} \perp \vec{a}$, תאוצה צנטריפטלית $a = \omega_c v_{\perp}$ כאשר $\omega_c = \frac{|q| B}{m c}$.
-        \item \textbf{הספק \textenglish{(Larmor Power)}:} מונוכרומטי בתדירות $\omega_c$, עם הספק כולל $P = \frac{2 q^2 a^2}{3 c^3} = \frac{2 q^4 B^2 v_\perp^2}{3 m^2 c^5}$.
-    \end{itemize}
-
-
-
-\item \textbf{קרינת Synchrotron (סינכרוטרונית - גבול יחסותי):}
+\item \textbf{קרינת Cyclotron (גבול בלתי-יחסותי, $\beta \ll 1, \gamma \approx 1$):}
 \begin{itemize}
-    \item \textbf{תנאים וגבולות:} תנועה בשדה מגנטי $B$ במהירות יחסותית ($\beta \to 1, \; \gamma \gg 1$).
-    \item \textbf{תכונות המהירות והתאוצה:} 
+    \item \textbf{תנאים:} תנועה מעגלית/ספירלית בשדה $B$ אחיד ($\vec{a}_\perp \perp \vec{v}$). $\kappa = 1-\beta\cos\theta \approx 1$.
+    \item \textbf{התפלגות זוויתית:} $\frac{dP}{d\Omega} = \frac{q^2 a^2}{4\pi c^3} (1 - \sin^2\theta\cos^2\phi)$ \quad (עבור $\vec{\beta} \parallel \hat{z}, \vec{a} \parallel \hat{x}$)
+
+    \item \textbf{נקודות מקסימום ומינימום (עבור מהירות $\vec{\beta}\parallel\hat{z}$ ותאוצה $\vec{a}\parallel\hat{x}$):}
+\begin{itemize}
+    \item \textbf{מקסימום (עוצמה מרבית $\frac{q^2 a^2}{4\pi c^3}$):}
     \begin{itemize}
-        \item תדירות הסיבוב המסלולית קטנה בגלל הגדלת המסה היחסותית: $\omega_0 = \frac{\omega_c}{\gamma} = \frac{|q| B}{\gamma m c}$.
-        \item הקרינה מוצרת לקונוס קדמי בעל זווית פתיחה צרה: $\theta \sim \frac{1}{\gamma}$.
-        \item \textbf{הביטוי לתאוצה המאונכת:} כוח לורנץ המגנטי $\vec{F} = \frac{q}{c} (\vec{v} \times \vec{B})$ פועל מאונך לתנועה ($\vec{a} \perp \vec{v} \implies a_\parallel = 0$). מכיוון ש-$\frac{d\vec{p}}{dt} = \gamma m \vec{a}$, גודל התאוצה התלת-ממדית הפיזיקלית הוא:
-        $$a_\perp = \frac{|q| B v_\perp}{\gamma m c} = \frac{|q| B \beta_\perp}{\gamma m}$$
+        \item \textbf{לאורך ציר התנועה $\hat{z}$ ($\theta=0$ או $\theta=\pi$)}
+        \item \textbf{בכל מישור $y\text{-}z$ המאונך לתאוצה ($\phi=\pm\pi/2$, כלומר $\cos\phi=0$):} העוצמה מרבית לכל זווית $\theta$.
     \end{itemize}
-    \item \textbf{פיתוח קצר והספק כולל:}
-    מביטוי Lienard היחסותי עבור תאוצה מאונכת למהירות ($\vec{a} \perp \vec{v}$):
-    $$P = \frac{2 q^2}{3 c^3} \gamma^4 \left( \gamma^2 a_\parallel^2 + a_\perp^2 \right) \xrightarrow{a_\parallel = 0} \frac{2 q^2}{3 c^3} \gamma^4 a_\perp^2$$
-    הצבת התאוצה המאונכת $a_\perp = \frac{|q| B \beta_\perp}{\gamma m}$ במשוואה מעניקה:
-    $$P_{\text{synch}} = \frac{2 q^2}{3 c^3} \gamma^4 \left( \frac{|q| B \beta_\perp}{\gamma m} \right)^2 = \frac{2 q^4 B^2 \beta_\perp^2 \gamma^2}{3 m^2 c^3} \propto \frac{\gamma^2}{m^2} \overset{E=\text{const}}{\propto} m^{-4}$$
-    *(הגורם $\gamma^4$ במונה מצטמצם בחלקו עם $\gamma^2$ במכנה שמקורו בריבוע התאוצה, כך שההספק הסופי פרופורציונלי ל-$\gamma^2$)*.
-    \item \textbf{ספקטרום הקרינה:}
-    הספקטרום רחב ונפרש עד לתדירות הקריטית:
-    $\omega_c^{\text{synch}} = \frac{3}{2} \gamma^3 \omega_0 \sin\alpha = \frac{3 |q| B \gamma^2}{2 m c} \sin\alpha$
-    *(כאשר $\alpha$ היא זווית ה-Pitch בין המהירות $\vec{v}$ לשדה המגנטי $\vec{B}$, כך ש-$v_\perp = v \sin\alpha$)*.
+
+    \item \textbf{מינימום / התאפסות מוחלטת ($\frac{dP}{d\Omega} = 0$):}
+    \begin{itemize}
+        \item \textbf{לאורך ציר התאוצה $\hat{x}$ בלבד ($\theta=\pi/2$ וגם $\phi=0$ או $\phi=\pi$)}
+        \item \textbf{משמעות פיזיקלית:} מטען מואץ אינו מקרין לעולם לאורך קו התאוצה שלו ($\vec{a} \parallel \hat{x}$).
+    \end{itemize}
+\end{itemize}
 \end{itemize}
 
+\item \textbf{קרינת Synchrotron (גבול יחסותי, $\beta \to 1, \gamma \gg 1$):}
+\begin{itemize}
+    \item \textbf{תנועה ותדירות:} תדירות סיבוב יחסותית $\omega_0 = \frac{\omega_c}{\gamma} = \frac{|q| B}{\gamma m c}$. תאוצה מאונכת: $a_\perp = \frac{|q| B \beta_\perp}{\gamma m}$.
+    \item \textbf{קונוס הקרינה והספק כולל:} הקרינה מוצרת לקונוס קדמי בעל זווית \textbf{קטנה} $\theta \sim \frac{1}{\gamma}$.
+    $$P = \frac{2 q^2}{3 c^3} \gamma^4 a_\perp^2 = \frac{2 q^4 B^2 \gamma^2 \beta_\perp^2}{3 m^2 c^3} \overset{E=\text{const}}{\propto} \gamma^4 \propto m^{-4}$$
+\end{itemize}
+
+\item \textbf{קרינת Synchrotron (גבול יחסותי, $\beta \to 1, \; \gamma \gg 1$):}
+\begin{itemize}
+    \item \textbf{התפלגות זוויתית דיפרנציאלית ($\vec{a}_q \perp \vec{\beta}_q$):}
+    $$\kappa |\vec{S}| \equiv \frac{dP}{d\Omega \, r^2} = \frac{q^2 a_q^2}{4\pi c^3 r^2} \kappa^{-3} \left[ 1 - (1-\beta^2) \frac{\sin^2\theta\cos^2\phi}{(1-\beta\cos\theta)^2} \right]$$
+    *(כאשר $\kappa = 1 - \hat{r} \cdot \vec{\beta}_q = 1 - \beta\cos\theta$)*.
+    
+    \item \textbf{אינטגרציה על זוויות (הספק כולל):} הקרינה מוצרת לקונוס קדמי בעל זווית \textbf{קטנה} $\theta \sim \frac{1}{\gamma}$.
+    $$P = \int \kappa \vec{S} \cdot d\vec{a} = \frac{2}{3} \frac{q^2}{c^3} \gamma^4 \left[ \vec{a}_q^2 + \gamma^2 (\vec{\beta}_q \cdot \vec{a}_q)^2 \right]$$
+    
+    \item \textbf{עבור תאוצה ניצבת בלבד ($\vec{\beta}_q \cdot \vec{a}_q = 0$):}
+    האיבר השני מתאפס, וההספק הכולל נותן תלות מפורשת ב-$\gamma^4$:
+    $$P = \frac{2}{3} \frac{q^2}{c^3} \gamma^4 \vec{a}_q^2 \overset{E=\text{const}}{\propto} \gamma^4 \propto m^{-4}$$
+\end{itemize}
 
 \end{itemize}
 
@@ -871,37 +854,19 @@ $P_{\text{total}}$
 \section{זיהוי וחילוץ המולטיפול המוביל בקרינה מתוך הפוטנציאל הווקטורי}
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{הבסיס הפיזיקלי והפיתוח בשדה הרחוק ($R \to \infty$):}
-    בשדה הרחוק ($r \gg r'$ ו-$r \gg \lambda$), הפוטנציאל הווקטורי המעוכב $\vec{A}(\vec{r}, t)$ מפותח כטור חזקות של גודל המקור ביחס למרחק ($r'/r$) וביחס לאורך הגל ($r'/\lambda \sim v/c$):
-    $$\vec{A}(\vec{r}, t) = \frac{1}{c r} \int \vec{J}\left(\vec{r}', t - \frac{r}{c} + \frac{\hat{n} \cdot \vec{r}'}{c}\right) d^3r'$$
-    פיתוח טיילור של הזמן המעוכב סביב $t_0 = t - \frac{r}{c}$ מניב:
-    $$\vec{A}(\vec{r}, t) \approx \frac{1}{c r} \int \vec{J}(\vec{r}', t_0) d^3r' + \frac{1}{c^2 r} \frac{\partial}{\partial t} \int (\hat{n} \cdot \vec{r}') \vec{J}(\vec{r}', t_0) d^3r' + \dots$$
 
     \item \textbf{כללי זיהוי המולטיפול המוביל \textenglish{(Leading Order)}:}
     המולטיפול המוביל הוא **האיבר הראשון בטור שאינו מתאפס**:
     \begin{enumerate}
         \item \textbf{דיפול חשמלי \textenglish{(Electric Dipole - E1)}:} האיבר הראשון ($r'^0$). מתוך זהות הרציפות ($\nabla \cdot \vec{J} = -\dot{\rho}$):
-        $$\int \vec{J} d^3r' = \dot{\vec{p}} \Rightarrow \vec{A}_{\text{E1}} = \frac{\dot{\vec{p}}(t_0)}{c r}$$
+        $\int \vec{J} d^3r' = \dot{\vec{p}} \Rightarrow \vec{A}_{\text{E1}} = \frac{\dot{\vec{p}}(t_0)}{c r}$
         *אם $\dot{\vec{p}} \neq 0$, הקרינה היא מסדר דיפול חשמלי \textenglish{(E1)}.*
 
         \item \textbf{איבר הסדר השני ($r'^1$):} אם $\dot{\vec{p}} = 0$, מפרקים את האיבר השני לחלק אנטי-סימטרי (דיפול מגנטי \textenglish{M1}) ולחלק סימטרי (קוודרופול חשמלי \textenglish{E2}):
         $$\vec{A}^{(2)} = \underbrace{\frac{\dot{\vec{m}}(t_0) \times \hat{n}}{r}}_{\text{\textenglish{M1 (Magnetic Dipole)}}} + \underbrace{\frac{\ddot{\mathbf{Q}}(t_0) \cdot \hat{n}}{6 c^2 r}}_{\text{\textenglish{E2 (Electric Quadrupole)}}}$$
     \end{enumerate}
 
-    \item \textbf{דוגמה חישובית: טבעת זרם רוטטת / משתנה בזמן}
-    \begin{itemize}
-        \item \textbf{תיאור המערכת:} טבעת דקה ברדיוס $R$ במישור $xy$, שזורם בה זרם אחיד משתנה בזמן $I(t) = I_0 \cos(\omega t) \hat{\phi}$.
-        \item \textbf{שלב 1 — בדיקת דיפול חשמלי \textenglish{(E1)}:}
-        צפיפות המטען מתאפסת בכל המרחב ($\rho = 0$), ולכן המומנט הדיפולי החשמלי מתאפס תמיד *(אין קרינת דיפול חשמלי)*:
-        $$\vec{p} = \int \rho \vec{r}' d^3r' = 0 \quad \implies \quad \vec{A}_{\text{E1}} = 0$$
-
-        \item \textbf{שלב 2 — חישוב האיבר הבא (\textenglish{M1} לעומת \textenglish{E2}):}
-        נחשב את המומנט המגנטי של הטבעת:
-        $$\vec{m}(t) = \frac{1}{2c} \int (\vec{r}' \times \vec{J}) d^3r' = \frac{I(t)}{c} \cdot (\pi R^2) \hat{z} = \frac{\pi R^2 I_0 \cos(\omega t)}{c} \hat{z}$$
-        מכיוון ש-$\dot{\vec{m}}(t) = -\frac{\pi R^2 I_0 \omega \sin(\omega t)}{c} \hat{z} \neq 0$, הפוטנציאל הווקטורי המוביל בשדה הרחוק נתון ע"י:
-        $$\vec{A}_{\text{rad}}(\vec{r}, t) \approx \frac{\dot{\vec{m}}(t_0) \times \hat{n}}{r} = -\frac{\pi R^2 I_0 \omega \sin(\omega t_0)}{c r} (\hat{z} \times \hat{n}), \ (\hat{n} = \hat{r})$$
-        \item \textbf{מסקנה:} המולטיפול המוביל בקרינה עבור טבעת זרם זו הוא **דיפול מגנטי \textenglish{(M1)}**.
-    \end{itemize}
+    
 \end{itemize}
 
 \section*{חישוב מומנטי מולטיפול אפקטיביים בקרינה ($\rho = 0, \vec{J} \neq 0$)}
@@ -922,6 +887,73 @@ $$\dot{\vec{p}}_{\text{eff}} = \int_V \vec{J} \, d^3r' \implies \langle P_{E1} \
 $$\vec{m}_{\text{eff}} = \frac{1}{2c} \int_V (\vec{r}' \times \vec{J}) \, d^3r' \implies \langle P_{M1} \rangle = \frac{2}{3c^3} \left\langle |\ddot{\vec{m}}_{\text{eff}}|^2 \right\rangle$$
 $$\dot{Q}_{\text{eff}, ij} = \frac{1}{2} \int_V \left( 3x'_i J_j + 3x'_j J_i - 2(\vec{r}' \cdot \vec{J})\delta_{ij} \right) d^3r'$$ $$ \Rightarrow \langle P_{E2} \rangle = \frac{1}{45c^5} \sum_{i,j} \left\langle |\dddot{Q}_{\text{eff}, ij}|^2 \right\rangle$$
 
+
+\section*{שטף פוינטינג והספק מוקרן ממטען נקודתי מואץ כללי (נוסחאות Lienard-Wiechert)}
+
+\textbf{התרחיש הפיזיקלי:} קרינה בשדה הרחוק ממטען יחסותי $q$ במסלול שרירותי, בקישור בין זמן הצופה $t$ לזמן המעוכב $t'$.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{שטף פוינטינג בשדה הרחוק בזמן הצופה ($t$):}
+    $$\vec{S}(t) = \frac{c}{4\pi} |\vec{E}|^2 \hat{n} = \frac{q^2}{4\pi c^3 \kappa^6 r^2} \left| \hat{r} \times \left[ (\hat{r} - \vec{\beta}_q) \times \vec{a}_q \right] \right|^2 \hat{n}$$
+    *(כאשר $\hat{n} = \hat{r}$ הוא כיוון הצופה, ו-$\kappa = 1 - \hat{r} \cdot \vec{\beta}_q$)*.
+
+    \item \textbf{שטף הקרינה ליחידת זמן המטען ($t'$):}
+    עקב המעבר בזמנים $dt = \kappa \, dt'$, קצב פליטת האנרגיה מתוך המטען מבוטא באמצעות השטף המתוקן $\kappa \vec{S}$:
+    $\frac{dP}{d\Omega} = \kappa |\vec{S}| r^2$
+
+    \item \textbf{הספק הקרינה הכולל בזמן המטען (נוסחת Lienard היחסותית):}
+    אינט' של $\kappa \vec{S}$ על מעטפת כדורית ברדיוס אינסופי בשדה הרחוק:
+    $$P = \int \kappa \vec{S} \cdot d\vec{a} = \frac{2}{3} \frac{q^2}{c^3} \gamma^4 \left[ \vec{a}_q^2 + \gamma^2 (\vec{\beta}_q \cdot \vec{a}_q)^2 \right]$$
+\end{itemize}
+
+\section*{קיטוב אלקטרומגנטי ופרמטריזציה (עבור כיוון התקדמות כללי $\vec{k}$)}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{ייצוג השדה החשמלי במרחב:}
+    $$\mathbf{E}(\vec{r}, t) = \Re\{\vec{\epsilon} \, e^{i(\vec{k}\cdot\vec{r}-\omega t)}\}$$
+    *(כאשר $\vec{k}$ הוא וקטור הגל המייצג את כיוון ההתקדמות, ו-$\vec{\epsilon}$ הוא וקטור הקיטוב הקומפלקסי)*.
+
+    \item \textbf{תנאי הניצבות (Transversality):} 
+    מתוך משוואות מקסוול, שדה הקרינה הוא רוחבי (מאונך לכיוון ההתקדמות):
+    $$\vec{k} \cdot \vec{\epsilon} = 0$$
+
+    \item \textbf{בסיס קיטוב ופרמטריזציה כללית ($0 \le \theta \le \pi/2$):}
+    נגדיר שני וקטורי יחידה ממשיים ואורתוגונליים, $\hat{e}_1$ ו-$\hat{e}_2$, הפורשים את המישור הניצב ל-$\vec{k}$ (כך שמתקיים $\hat{e}_1 \times \hat{e}_2 = \hat{k}$). ניתן לכתוב את וקטור הקיטוב בבסיס זה כ:
+    $$\vec{\epsilon} = \cos\theta \, \hat{e}_1 - i\sin\theta \, \hat{e}_2$$
+
+    \item \textbf{אפיון מצבי הקיטוב לפי הזווית $\theta$:}
+    \begin{itemize}
+        \item \textbf{קיטוב ליניארי:} עבור $\theta = 0$ ($\vec{\epsilon} = \hat{e}_1$) או $\theta = \pi/2$ ($\vec{\epsilon} = -i\hat{e}_2$, קיטוב לאורך הציר השני).
+        \item \textbf{קיטוב מעגלי ימני/שמאלי:} עבור $\theta = \pi/4$, נקבל $\vec{\epsilon} = \frac{1}{\sqrt{2}}(\hat{e}_1 - i\hat{e}_2)$, הפרש פאזה של $\pi/2$ ואמפליטודות שוות.
+        \item \textbf{קיטוב אליפטי:} עבור שאר ערכי הביניים, כאשר יחס הצירים של האליפסה הוא $b/a = \tan\theta$.
+    \end{itemize}
+\end{itemize}
+
+\section*{הרמוניות ספריות ראשונות ($Y_{l,m}(\theta, \phi)$)}
+
+\begin{itemize}[leftmargin=*]
+
+    \item $l=0$ (ספירה/מונופול): 
+    $Y_{0,0} = \frac{1}{\sqrt{4\pi}}$
+    
+    \item $l=1$ (דיפול):
+    $Y_{1,0} = \sqrt{\frac{3}{4\pi}} \cos\theta, \quad Y_{1,\pm 1} = \mp \sqrt{\frac{3}{8\pi}} \sin\theta \, e^{\pm i \phi}$
+
+    \item $l=2$ (קוואדרופול):
+    $Y_{2,0} = \sqrt{\frac{5}{16\pi}} \left(3\cos^2\theta - 1\right)$
+    $$Y_{2,\pm 1} = \mp \sqrt{\frac{15}{8\pi}} \sin\theta \cos\theta \, e^{\pm i \phi}, \quad Y_{2,\pm 2} = \sqrt{\frac{15}{32\pi}} \sin^2\theta \, e^{\pm 2i \phi}$$
+\end{itemize}
+
+\section*{הקשר בין המקדמים הספריים $q_{lm}$ למומנטים הקרטזיים}
+
+\begin{itemize}[leftmargin=*]
+
+    \item \textbf{מונופול ($l=0$):}
+    $\sqrt{4\pi} \, q_{00} = q$
+
+    \item \textbf{דיפול ($l=1$):}
+    $\sqrt{\frac{4\pi}{3}} \, q_{1,0} = d_z, \quad \sqrt{\frac{4\pi}{3}} \, q_{1,\pm 1} = \mp \frac{1}{\sqrt{2}} \left(d_x \mp i d_y\right)$
+\end{itemize}
 
 \end{multicols*}
 \end{document}
