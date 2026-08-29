@@ -744,8 +744,8 @@ $P_{\text{total}}$
 
     \begin{itemize}
 
-        \item \textbf{פיתוח לפי פולינומי לז'נדר ($w(x)=1, \; [-1, 1]$):}
-        $$f(x) = \sum_{l=0}^{\infty} A_l P_l(x) \implies A_l = \frac{2l+1}{2} \int_{-1}^{1} f(x) P_l(x) \, dx$$
+        \item \textbf{פיתוח לפי פולינומי לז'נדר ($w(x)=1, \; [-1, 1]$):}\\
+        $f(x) = \sum_{l=0}^{\infty} A_l P_l(x) \implies A_l = \frac{2l+1}{2} \int_{-1}^{1} f(x) P_l(x) \, dx$\\
         *(מכיוון ש-$N_l = \int_{-1}^{1} [P_l(x)]^2 dx = \frac{2}{2l+1}$)*
 
         \item \textbf{הצלבה מרחבית על ספירה (הרמוניות כדוריות $Y_{lm}(\theta,\phi)$):}\\
@@ -773,6 +773,7 @@ $P_{\text{total}}$
         $$\frac{dP}{d\Omega} \equiv \kappa \, S \, r^2 = \frac{q^2 a^2 \sin^2\theta}{4\pi c^3 \kappa^5}$$
         *(כאשר $\kappa \equiv 1 - \vec{\beta} \cdot \hat{n} = 1 - \beta\cos\theta$ הוא פקטור הזמן המעוכב, ו-$\hat{n}$ כיוון הצופה)*. בנוסף $a \propto 1/m_e$. לכן, ככל שהחלקיק יותר קל - יש יותר קרינה.
 
+        
         \item \textbf{קירוב יחסותי ($\gamma \gg 1$) ופיתוח לזוויות קטנות ($\theta \ll 1$):}
         נשתמש בקשר היחסותי $\gamma = \frac{E}{m c^2}$ ונגדיר את הפרמטר הקטן $x \equiv \frac{1}{\gamma^2} = \left(\frac{m c^2}{E}\right)^2 \ll 1$.
         לפי קירוב טיילור:
@@ -890,20 +891,20 @@ $$\dot{Q}_{\text{eff}, ij} = \frac{1}{2} \int_V \left( 3x'_i J_j + 3x'_j J_i - 2
 
 \section*{שטף פוינטינג והספק מוקרן ממטען נק' מואץ כללי (נוסחאות \textenglish{Lienard-W})}
 
-\textbf{התרחיש הפיזיקלי:} קרינה בשדה הרחוק ממטען יחסותי $q$ במסלול שרירותי, בקישור בין זמן הצופה $t$ לזמן המעוכב $t'$.
+\textbf{התרחיש הפיזיקלי:} קרינה בשדה הרחוק ממטען יחסותי $q$ במסלול שרירותי, בקישור בין זמן הצופה $t$ לזמן המעוכב של $q$: $t' = t - r/c$.
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{שטף פוינטינג בשדה הרחוק בזמן הצופה ($t$):}
-    $$\vec{S}(t) = \frac{c}{4\pi} |\vec{E}|^2 \hat{n} = \frac{q^2}{4\pi c^3 \kappa^6 r^2} \left| \hat{r} \times \left[ (\hat{r} - \vec{\beta}_q) \times \vec{a}_q \right] \right|^2 \hat{n}$$
+    $$\vec{S}(t) = \frac{c}{4\pi} |\vec{E}|^2 \hat{n} = \frac{q^2}{4\pi c^3 \kappa^6 r^2} \left| \hat{r} \times \left[ (\hat{r} - \vec{\beta}_q) \times \vec{a}_q \right] \right|^2 \hat{n} \quad \Big|_{t'=t-r/c}$$
     *(כאשר $\hat{n} = \hat{r}$ הוא כיוון הצופה, ו-$\kappa = 1 - \hat{r} \cdot \vec{\beta}_q$)*.
 
     \item \textbf{שטף הקרינה ליחידת זמן המטען ($t'$):}
     עקב המעבר בזמנים $dt = \kappa \, dt'$, קצב פליטת האנרגיה מתוך המטען מבוטא באמצעות השטף המתוקן $\kappa \vec{S}$:
-    $\frac{dP}{d\Omega} = \kappa |\vec{S}| r^2$
+    $\frac{dP(t')}{d\Omega} = \kappa |\vec{S}| r^2$
 
     \item \textbf{הספק הקרינה הכולל בזמן המטען (נוסחת Lienard היחסותית):}
     אינט' של $\kappa \vec{S}$ על מעטפת כדורית ברדיוס אינסופי בשדה הרחוק:
-    $$P = \int \kappa \vec{S} \cdot d\vec{a} = \frac{2}{3} \frac{q^2}{c^3} \gamma^4 \left[ \vec{a}_q^2 + \gamma^2 (\vec{\beta}_q \cdot \vec{a}_q)^2 \right]$$
+    $$P(t') = \int \kappa \vec{S} \cdot d\vec{a} = \frac{2}{3} \frac{q^2}{c^3} \gamma^4 \left[ \vec{a}_q^2 + \gamma^2 (\vec{\beta}_q \cdot \vec{a}_q)^2 \right] \quad \Big|_{t'=t-r/c}$$
 \end{itemize}
 
 \section*{קיטוב אלקטרומגנטי ופרמטריזציה (עבור כיוון התקדמות כללי $\vec{k}$)}
